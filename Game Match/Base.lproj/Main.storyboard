@@ -1177,7 +1177,7 @@ Any person taking part in this group, specifically events posted on this group, 
         <scene sceneID="4hs-ML-l6O">
             <objects>
                 <tabBarController id="b1Y-ND-2gb" customClass="MainTabBarController" customModule="Game_Match" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="4Zh-v5-zFv">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="centered" id="4Zh-v5-zFv" customClass="GMTabBar" customModule="Game_Match" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </tabBar>
@@ -1251,8 +1251,7 @@ Any person taking part in this group, specifically events posted on this group, 
         <scene sceneID="aic-yY-q5e">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YOw-1D-QP7" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="star" catalog="system" selectedImage="star.fill" id="5jt-hk-5wo">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
+                    <tabBarItem key="tabBarItem" title="" image="favorites-icon" selectedImage="favorites-fill-icon" id="5jt-hk-5wo">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1273,9 +1272,7 @@ Any person taking part in this group, specifically events posted on this group, 
         <scene sceneID="jEM-Qa-cFH">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kiL-o7-iQa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass.circle" catalog="system" id="hAO-UY-Oh8">
-                        <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="search-icon" selectedImage="search-fill-icon" id="hAO-UY-Oh8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ldc-uO-r43">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -1649,16 +1646,22 @@ This group has been super honorable and respectful for years with no known major
             <point key="canvasLocation" x="5260.8695652173919" y="1460.4910714285713"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4Zh-v5-zFv">
+            <size key="intrinsicContentSize" width="-1" height="83"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="favorites-fill-icon" width="25" height="25"/>
+        <image name="favorites-icon" width="25" height="25"/>
         <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="platini" width="240" height="232"/>
+        <image name="search-fill-icon" width="25" height="25"/>
+        <image name="search-icon" width="25" height="25"/>
         <image name="soccerball" width="232" height="217"/>
         <image name="soccergame" width="900" height="540"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <image name="star" catalog="system" width="128" height="116"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

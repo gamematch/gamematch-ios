@@ -37,8 +37,8 @@ class HomeViewController: UIViewController
         pan.addTarget(self, action: #selector(panAction))
         resultView.addGestureRecognizer(pan)
         
-        searchViewTop.constant = resultViewPositionY.constant - 45
-        searchViewLeft.constant = 0
+//        searchViewTop.constant = resultViewPositionY.constant - 45
+//        searchViewLeft.constant = 0
         
         startPosition = resultViewPositionY.constant
         
@@ -46,6 +46,13 @@ class HomeViewController: UIViewController
         setupMapView()
         
         showActivityLocations()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(mapTapped))
+        mapView.addGestureRecognizer(tap)
+    }
+    
+    @objc private func mapTapped() {
+        searchBar.resignFirstResponder()
     }
     
     private func setupMapView() {
@@ -64,18 +71,18 @@ class HomeViewController: UIViewController
         
         navigationController?.isNavigationBarHidden = false
     }
-    
+        
     @objc func panAction(_ pan: UIPanGestureRecognizer) {
         switch pan.state {
         case .began:
             currentPosition = resultViewPositionY.constant
-            searchViewTop.constant = currentPosition - searchBar.bounds.height
-            searchViewLeft.constant = 0
+//            searchViewTop.constant = currentPosition - searchBar.bounds.height
+//            searchViewLeft.constant = 0
         case .changed:
             let translation = pan.translation(in: self.view)
             let newPosition = currentPosition + translation.y
             resultViewPositionY.constant = max(startPosition, newPosition)
-            searchViewTop.constant = resultViewPositionY.constant - searchBar.bounds.height
+//            searchViewTop.constant = resultViewPositionY.constant - searchBar.bounds.height
         case .ended:
             currentPosition = 0
         default:
@@ -121,14 +128,14 @@ extension HomeViewController: UISearchBarDelegate
                        })
     }
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        UIView.animate(withDuration: 0.6,
-                       animations: { [weak self] in
-                           self?.searchViewTop.constant = 0
-                           self?.searchViewLeft.constant = 20
-                           self?.view.layoutIfNeeded()
-                       })
-    }
+//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+//        UIView.animate(withDuration: 0.6,
+//                       animations: { [weak self] in
+//                           self?.searchViewTop.constant = 0
+//                           self?.searchViewLeft.constant = 20
+//                           self?.view.layoutIfNeeded()
+//                       })
+//    }
 }
 
 extension HomeViewController: UITableViewDataSource

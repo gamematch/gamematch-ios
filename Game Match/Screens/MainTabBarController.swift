@@ -7,9 +7,11 @@
 
 import UIKit
 
+let tabBarHeight: CGFloat = 46
+
 class MainTabBarController: UITabBarController
 {
-    let buttonWidth: CGFloat = 44
+    let buttonWidth: CGFloat = 36
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -24,16 +26,16 @@ class MainTabBarController: UITabBarController
     
         setupPlusButton()
         
-        tabBarItem.imageInsets = UIEdgeInsets(top: 6, left: 0, bottom: 0, right: 0)
+        tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
     }
-        
+
     private func setupPlusButton() {
         let plusButton = UIButton(frame: CGRect(x: (view.bounds.width - buttonWidth) / 2,
-                                                y: 6,
+                                                y: (50 - buttonWidth) / 2,
                                                 width: buttonWidth,
                                                 height: buttonWidth))
-        let image = traitCollection.userInterfaceStyle == .light ? UIImage(systemName: "plus.circle.fill")
-                                                                 : UIImage(systemName: "plus.circle.fill")?.withColor(.white)
+        let image = traitCollection.userInterfaceStyle == .light ? UIImage(systemName: "plus.circle")
+                                                                 : UIImage(systemName: "plus.circle")?.withColor(.white)
         plusButton.setBackgroundImage(image, for: .normal)
         plusButton.addTarget(self, action: #selector(addActivity), for: .touchUpInside)
         tabBar.addSubview(plusButton)

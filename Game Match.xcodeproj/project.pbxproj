@@ -12,7 +12,6 @@
 		A3893F5426C4D84B0004C766 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F5326C4D84B0004C766 /* SceneDelegate.swift */; };
 		A3893F5626C4D84B0004C766 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F5526C4D84B0004C766 /* HomeViewController.swift */; };
 		A3893F5926C4D84B0004C766 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3893F5726C4D84B0004C766 /* Main.storyboard */; };
-		A3893F5B26C4D84C0004C766 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3893F5A26C4D84C0004C766 /* Assets.xcassets */; };
 		A3893F5E26C4D84C0004C766 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3893F5C26C4D84C0004C766 /* LaunchScreen.storyboard */; };
 		A3893F6926C4D84C0004C766 /* Game_MatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F6826C4D84C0004C766 /* Game_MatchTests.swift */; };
 		A3893F7426C4D84C0004C766 /* Game_MatchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F7326C4D84C0004C766 /* Game_MatchUITests.swift */; };
@@ -31,7 +30,7 @@
 		A39C062226DCB25B00CE8DCA /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C062126DCB25B00CE8DCA /* MembersViewController.swift */; };
 		A39C062526DD837000CE8DCA /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C062426DD837000CE8DCA /* MemberTableViewCell.swift */; };
 		A39C062826DD978E00CE8DCA /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C062726DD978E00CE8DCA /* EventsViewController.swift */; };
-		A3C6F61E26D34AD600C01549 /* CurvedTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61D26D34AD600C01549 /* CurvedTabBar.swift */; };
+		A3C6F61E26D34AD600C01549 /* GMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61D26D34AD600C01549 /* GMTabBar.swift */; };
 		A3C6F62026D3803D00C01549 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61F26D3803D00C01549 /* LoginViewController.swift */; };
 		A3C6F62226D4D1A800C01549 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F62126D4D1A800C01549 /* SetupViewController.swift */; };
 		A3CD34E826D76A990049C6AE /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34E726D76A990049C6AE /* UIImage+.swift */; };
@@ -40,6 +39,7 @@
 		A3CD34EF26DB1E7B0049C6AE /* GroupInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34EE26DB1E7B0049C6AE /* GroupInfoTableViewCell.swift */; };
 		A3CD34F126DB46C50049C6AE /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34F026DB46C50049C6AE /* EventTableViewCell.swift */; };
 		A3CD34F326DC5E500049C6AE /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34F226DC5E500049C6AE /* NewEventViewController.swift */; };
+		A3E28A1926E3CF8100923B29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E28A1826E3CF8000923B29 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,7 +67,6 @@
 		A3893F5326C4D84B0004C766 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A3893F5526C4D84B0004C766 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A3893F5826C4D84B0004C766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A3893F5A26C4D84C0004C766 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A3893F5D26C4D84C0004C766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3893F5F26C4D84C0004C766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3893F6426C4D84C0004C766 /* Game MatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Game MatchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,7 +90,7 @@
 		A39C062126DCB25B00CE8DCA /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
 		A39C062426DD837000CE8DCA /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		A39C062726DD978E00CE8DCA /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
-		A3C6F61D26D34AD600C01549 /* CurvedTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedTabBar.swift; sourceTree = "<group>"; };
+		A3C6F61D26D34AD600C01549 /* GMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMTabBar.swift; sourceTree = "<group>"; };
 		A3C6F61F26D3803D00C01549 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A3C6F62126D4D1A800C01549 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		A3CD34E726D76A990049C6AE /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
@@ -100,6 +99,7 @@
 		A3CD34EE26DB1E7B0049C6AE /* GroupInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoTableViewCell.swift; sourceTree = "<group>"; };
 		A3CD34F026DB46C50049C6AE /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		A3CD34F226DC5E500049C6AE /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		A3E28A1826E3CF8000923B29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD5227EB512060CA818B630A /* Pods-Game Match.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game Match.release.xcconfig"; path = "Target Support Files/Pods-Game Match/Pods-Game Match.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,7 +157,7 @@
 				A3893F5F26C4D84C0004C766 /* Info.plist */,
 				A3893F5126C4D84B0004C766 /* AppDelegate.swift */,
 				A3893F5326C4D84B0004C766 /* SceneDelegate.swift */,
-				A3893F5A26C4D84C0004C766 /* Assets.xcassets */,
+				A3E28A1826E3CF8000923B29 /* Assets.xcassets */,
 				A3893F9526CCCB980004C766 /* Extensions */,
 				A3893F5C26C4D84C0004C766 /* LaunchScreen.storyboard */,
 				A3893F5726C4D84B0004C766 /* Main.storyboard */,
@@ -247,8 +247,8 @@
 			isa = PBXGroup;
 			children = (
 				A3893F8626C604DB0004C766 /* ActivityTableViewCell.swift */,
-				A3C6F61D26D34AD600C01549 /* CurvedTabBar.swift */,
 				A39C061F26DC986200CE8DCA /* GMPointAnnotation.swift */,
+				A3C6F61D26D34AD600C01549 /* GMTabBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -386,7 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3893F5E26C4D84C0004C766 /* LaunchScreen.storyboard in Resources */,
-				A3893F5B26C4D84C0004C766 /* Assets.xcassets in Resources */,
+				A3E28A1926E3CF8100923B29 /* Assets.xcassets in Resources */,
 				A3893F5926C4D84B0004C766 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,7 +457,7 @@
 				A3893F9726CCCBC10004C766 /* UIImageView+.swift in Sources */,
 				A3893F5626C4D84B0004C766 /* HomeViewController.swift in Sources */,
 				A3CD34F326DC5E500049C6AE /* NewEventViewController.swift in Sources */,
-				A3C6F61E26D34AD600C01549 /* CurvedTabBar.swift in Sources */,
+				A3C6F61E26D34AD600C01549 /* GMTabBar.swift in Sources */,
 				A3CD34E826D76A990049C6AE /* UIImage+.swift in Sources */,
 				A3C6F62026D3803D00C01549 /* LoginViewController.swift in Sources */,
 				A3C6F62226D4D1A800C01549 /* SetupViewController.swift in Sources */,
