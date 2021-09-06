@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1250"
+   LastUpgradeVersion = "1240"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BC6B6E503B22585BC2BD76E19A98D554"
-               BuildableName = "Pods_Game_Match.framework"
-               BlueprintName = "Pods-Game Match"
+               BlueprintIdentifier = "D7BA3EF615F5B8C01844A7D51A50381F"
+               BuildableName = "Pods_GameMatch.framework"
+               BlueprintName = "Pods-GameMatch"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

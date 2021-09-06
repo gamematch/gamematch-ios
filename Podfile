@@ -5,7 +5,7 @@
 
 inhibit_all_warnings!
 
-target 'Game Match' do
+target 'GameMatch' do
     use_frameworks!
 
     pod 'SwiftIcons'

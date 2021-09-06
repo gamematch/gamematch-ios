@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8059F4FE426E16424E2D0E25 /* Pods_Game_Match.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72730F95642CF10C35BEAE73 /* Pods_Game_Match.framework */; };
+		480506069FC21677AE2CB80F /* Pods_GameMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1B527AB8B6AF812AFE57F2 /* Pods_GameMatch.framework */; };
 		A3893F5226C4D84B0004C766 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F5126C4D84B0004C766 /* AppDelegate.swift */; };
 		A3893F5426C4D84B0004C766 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F5326C4D84B0004C766 /* SceneDelegate.swift */; };
 		A3893F5626C4D84B0004C766 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F5526C4D84B0004C766 /* HomeViewController.swift */; };
@@ -60,19 +60,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D1B527AB8B6AF812AFE57F2 /* Pods_GameMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		419A5AE2B8D53ECE0F9FAE5C /* Pods-Game Match.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game Match.debug.xcconfig"; path = "Target Support Files/Pods-Game Match/Pods-Game Match.debug.xcconfig"; sourceTree = "<group>"; };
-		72730F95642CF10C35BEAE73 /* Pods_Game_Match.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Game_Match.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A3893F4E26C4D84B0004C766 /* Game Match.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Match.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B74BD069D913280A93D4EF8 /* Pods-GameMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameMatch.release.xcconfig"; path = "Target Support Files/Pods-GameMatch/Pods-GameMatch.release.xcconfig"; sourceTree = "<group>"; };
+		A3893F4E26C4D84B0004C766 /* GameMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3893F5126C4D84B0004C766 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3893F5326C4D84B0004C766 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A3893F5526C4D84B0004C766 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A3893F5826C4D84B0004C766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A3893F5D26C4D84C0004C766 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A3893F5F26C4D84C0004C766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A3893F6426C4D84C0004C766 /* Game MatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Game MatchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3893F6426C4D84C0004C766 /* GameMatchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameMatchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3893F6826C4D84C0004C766 /* Game_MatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_MatchTests.swift; sourceTree = "<group>"; };
 		A3893F6A26C4D84C0004C766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A3893F6F26C4D84C0004C766 /* Game MatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Game MatchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3893F6F26C4D84C0004C766 /* GameMatchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameMatchUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3893F7326C4D84C0004C766 /* Game_MatchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game_MatchUITests.swift; sourceTree = "<group>"; };
 		A3893F7526C4D84C0004C766 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3893F8126C4DEBA0004C766 /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +101,7 @@
 		A3CD34F026DB46C50049C6AE /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		A3CD34F226DC5E500049C6AE /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		A3E28A1826E3CF8000923B29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD67621A0D27D42D3AA9A122 /* Pods-GameMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameMatch.debug.xcconfig"; path = "Target Support Files/Pods-GameMatch/Pods-GameMatch.debug.xcconfig"; sourceTree = "<group>"; };
 		BD5227EB512060CA818B630A /* Pods-Game Match.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game Match.release.xcconfig"; path = "Target Support Files/Pods-Game Match/Pods-Game Match.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8059F4FE426E16424E2D0E25 /* Pods_Game_Match.framework in Frameworks */,
+				480506069FC21677AE2CB80F /* Pods_GameMatch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,9 +134,9 @@
 		A3893F4526C4D84B0004C766 = {
 			isa = PBXGroup;
 			children = (
-				A3893F5026C4D84B0004C766 /* Game Match */,
-				A3893F6726C4D84C0004C766 /* Game MatchTests */,
-				A3893F7226C4D84C0004C766 /* Game MatchUITests */,
+				A3893F5026C4D84B0004C766 /* GameMatch */,
+				A3893F6726C4D84C0004C766 /* GameMatchTests */,
+				A3893F7226C4D84C0004C766 /* GameMatchUITests */,
 				A3893F4F26C4D84B0004C766 /* Products */,
 				F4C28124B774A28A595E0351 /* Pods */,
 				E5191AE57602C8DB7C6C9F2D /* Frameworks */,
@@ -144,14 +146,14 @@
 		A3893F4F26C4D84B0004C766 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A3893F4E26C4D84B0004C766 /* Game Match.app */,
-				A3893F6426C4D84C0004C766 /* Game MatchTests.xctest */,
-				A3893F6F26C4D84C0004C766 /* Game MatchUITests.xctest */,
+				A3893F4E26C4D84B0004C766 /* GameMatch.app */,
+				A3893F6426C4D84C0004C766 /* GameMatchTests.xctest */,
+				A3893F6F26C4D84C0004C766 /* GameMatchUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A3893F5026C4D84B0004C766 /* Game Match */ = {
+		A3893F5026C4D84B0004C766 /* GameMatch */ = {
 			isa = PBXGroup;
 			children = (
 				A3893F5F26C4D84C0004C766 /* Info.plist */,
@@ -164,25 +166,25 @@
 				A3893F8526C4DEF00004C766 /* Screens */,
 				A3C6F61C26D34A8800C01549 /* Views */,
 			);
-			path = "Game Match";
+			path = GameMatch;
 			sourceTree = "<group>";
 		};
-		A3893F6726C4D84C0004C766 /* Game MatchTests */ = {
+		A3893F6726C4D84C0004C766 /* GameMatchTests */ = {
 			isa = PBXGroup;
 			children = (
 				A3893F6826C4D84C0004C766 /* Game_MatchTests.swift */,
 				A3893F6A26C4D84C0004C766 /* Info.plist */,
 			);
-			path = "Game MatchTests";
+			path = GameMatchTests;
 			sourceTree = "<group>";
 		};
-		A3893F7226C4D84C0004C766 /* Game MatchUITests */ = {
+		A3893F7226C4D84C0004C766 /* GameMatchUITests */ = {
 			isa = PBXGroup;
 			children = (
 				A3893F7326C4D84C0004C766 /* Game_MatchUITests.swift */,
 				A3893F7526C4D84C0004C766 /* Info.plist */,
 			);
-			path = "Game MatchUITests";
+			path = GameMatchUITests;
 			sourceTree = "<group>";
 		};
 		A3893F8526C4DEF00004C766 /* Screens */ = {
@@ -266,7 +268,7 @@
 		E5191AE57602C8DB7C6C9F2D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				72730F95642CF10C35BEAE73 /* Pods_Game_Match.framework */,
+				3D1B527AB8B6AF812AFE57F2 /* Pods_GameMatch.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,6 +278,8 @@
 			children = (
 				419A5AE2B8D53ECE0F9FAE5C /* Pods-Game Match.debug.xcconfig */,
 				BD5227EB512060CA818B630A /* Pods-Game Match.release.xcconfig */,
+				AD67621A0D27D42D3AA9A122 /* Pods-GameMatch.debug.xcconfig */,
+				9B74BD069D913280A93D4EF8 /* Pods-GameMatch.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -283,9 +287,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A3893F4D26C4D84B0004C766 /* Game Match */ = {
+		A3893F4D26C4D84B0004C766 /* GameMatch */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A3893F7826C4D84C0004C766 /* Build configuration list for PBXNativeTarget "Game Match" */;
+			buildConfigurationList = A3893F7826C4D84C0004C766 /* Build configuration list for PBXNativeTarget "GameMatch" */;
 			buildPhases = (
 				D2A987DD5F2A781F2095C5E7 /* [CP] Check Pods Manifest.lock */,
 				A3893F4A26C4D84B0004C766 /* Sources */,
@@ -297,14 +301,14 @@
 			);
 			dependencies = (
 			);
-			name = "Game Match";
+			name = GameMatch;
 			productName = "Game Match";
-			productReference = A3893F4E26C4D84B0004C766 /* Game Match.app */;
+			productReference = A3893F4E26C4D84B0004C766 /* GameMatch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A3893F6326C4D84C0004C766 /* Game MatchTests */ = {
+		A3893F6326C4D84C0004C766 /* GameMatchTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A3893F7B26C4D84C0004C766 /* Build configuration list for PBXNativeTarget "Game MatchTests" */;
+			buildConfigurationList = A3893F7B26C4D84C0004C766 /* Build configuration list for PBXNativeTarget "GameMatchTests" */;
 			buildPhases = (
 				A3893F6026C4D84C0004C766 /* Sources */,
 				A3893F6126C4D84C0004C766 /* Frameworks */,
@@ -315,14 +319,14 @@
 			dependencies = (
 				A3893F6626C4D84C0004C766 /* PBXTargetDependency */,
 			);
-			name = "Game MatchTests";
+			name = GameMatchTests;
 			productName = "Game MatchTests";
-			productReference = A3893F6426C4D84C0004C766 /* Game MatchTests.xctest */;
+			productReference = A3893F6426C4D84C0004C766 /* GameMatchTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A3893F6E26C4D84C0004C766 /* Game MatchUITests */ = {
+		A3893F6E26C4D84C0004C766 /* GameMatchUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A3893F7E26C4D84C0004C766 /* Build configuration list for PBXNativeTarget "Game MatchUITests" */;
+			buildConfigurationList = A3893F7E26C4D84C0004C766 /* Build configuration list for PBXNativeTarget "GameMatchUITests" */;
 			buildPhases = (
 				A3893F6B26C4D84C0004C766 /* Sources */,
 				A3893F6C26C4D84C0004C766 /* Frameworks */,
@@ -333,9 +337,9 @@
 			dependencies = (
 				A3893F7126C4D84C0004C766 /* PBXTargetDependency */,
 			);
-			name = "Game MatchUITests";
+			name = GameMatchUITests;
 			productName = "Game MatchUITests";
-			productReference = A3893F6F26C4D84C0004C766 /* Game MatchUITests.xctest */;
+			productReference = A3893F6F26C4D84C0004C766 /* GameMatchUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -360,7 +364,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A3893F4926C4D84B0004C766 /* Build configuration list for PBXProject "Game Match" */;
+			buildConfigurationList = A3893F4926C4D84B0004C766 /* Build configuration list for PBXProject "GameMatch" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -373,9 +377,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A3893F4D26C4D84B0004C766 /* Game Match */,
-				A3893F6326C4D84C0004C766 /* Game MatchTests */,
-				A3893F6E26C4D84C0004C766 /* Game MatchUITests */,
+				A3893F4D26C4D84B0004C766 /* GameMatch */,
+				A3893F6326C4D84C0004C766 /* GameMatchTests */,
+				A3893F6E26C4D84C0004C766 /* GameMatchUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -423,7 +427,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Game Match-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-GameMatch-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -436,15 +440,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Game Match/Pods-Game Match-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-GameMatch/Pods-GameMatch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Game Match/Pods-Game Match-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-GameMatch/Pods-GameMatch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Game Match/Pods-Game Match-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GameMatch/Pods-GameMatch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -505,12 +509,12 @@
 /* Begin PBXTargetDependency section */
 		A3893F6626C4D84C0004C766 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A3893F4D26C4D84B0004C766 /* Game Match */;
+			target = A3893F4D26C4D84B0004C766 /* GameMatch */;
 			targetProxy = A3893F6526C4D84C0004C766 /* PBXContainerItemProxy */;
 		};
 		A3893F7126C4D84C0004C766 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A3893F4D26C4D84B0004C766 /* Game Match */;
+			target = A3893F4D26C4D84B0004C766 /* GameMatch */;
 			targetProxy = A3893F7026C4D84C0004C766 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -653,13 +657,13 @@
 		};
 		A3893F7926C4D84C0004C766 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 419A5AE2B8D53ECE0F9FAE5C /* Pods-Game Match.debug.xcconfig */;
+			baseConfigurationReference = AD67621A0D27D42D3AA9A122 /* Pods-GameMatch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2F48UN9H99;
-				INFOPLIST_FILE = "Game Match/Info.plist";
+				INFOPLIST_FILE = GameMatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -673,13 +677,13 @@
 		};
 		A3893F7A26C4D84C0004C766 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BD5227EB512060CA818B630A /* Pods-Game Match.release.xcconfig */;
+			baseConfigurationReference = 9B74BD069D913280A93D4EF8 /* Pods-GameMatch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2F48UN9H99;
-				INFOPLIST_FILE = "Game Match/Info.plist";
+				INFOPLIST_FILE = GameMatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -697,7 +701,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Game MatchTests/Info.plist";
+				INFOPLIST_FILE = GameMatchTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -708,7 +712,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Game Match.app/Game Match";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameMatch.app/GameMatch";
 			};
 			name = Debug;
 		};
@@ -718,7 +722,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Game MatchTests/Info.plist";
+				INFOPLIST_FILE = GameMatchTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -729,7 +733,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Game Match.app/Game Match";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameMatch.app/GameMatch";
 			};
 			name = Release;
 		};
@@ -738,7 +742,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Game MatchUITests/Info.plist";
+				INFOPLIST_FILE = GameMatchUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -757,7 +761,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "Game MatchUITests/Info.plist";
+				INFOPLIST_FILE = GameMatchUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -774,7 +778,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A3893F4926C4D84B0004C766 /* Build configuration list for PBXProject "Game Match" */ = {
+		A3893F4926C4D84B0004C766 /* Build configuration list for PBXProject "GameMatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A3893F7626C4D84C0004C766 /* Debug */,
@@ -783,7 +787,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A3893F7826C4D84C0004C766 /* Build configuration list for PBXNativeTarget "Game Match" */ = {
+		A3893F7826C4D84C0004C766 /* Build configuration list for PBXNativeTarget "GameMatch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A3893F7926C4D84C0004C766 /* Debug */,
@@ -792,7 +796,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A3893F7B26C4D84C0004C766 /* Build configuration list for PBXNativeTarget "Game MatchTests" */ = {
+		A3893F7B26C4D84C0004C766 /* Build configuration list for PBXNativeTarget "GameMatchTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A3893F7C26C4D84C0004C766 /* Debug */,
@@ -801,7 +805,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A3893F7E26C4D84C0004C766 /* Build configuration list for PBXNativeTarget "Game MatchUITests" */ = {
+		A3893F7E26C4D84C0004C766 /* Build configuration list for PBXNativeTarget "GameMatchUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A3893F7F26C4D84C0004C766 /* Debug */,
