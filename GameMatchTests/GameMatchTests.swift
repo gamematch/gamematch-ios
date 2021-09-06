@@ -1,14 +1,14 @@
 //
-//  Game_MatchTests.swift
+//  GameMatchTests.swift
 //  Game MatchTests
 //
 //  Created by Luke Shi on 8/11/21.
 //
 
 import XCTest
-@testable import Game_Match
+@testable import GameMatch
 
-class Game_MatchTests: XCTestCase {
+class GameMatchTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
