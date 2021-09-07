@@ -36,10 +36,7 @@ class HomeViewController: UIViewController
         let pan = UIPanGestureRecognizer()
         pan.addTarget(self, action: #selector(panAction))
         resultView.addGestureRecognizer(pan)
-        
-//        searchViewTop.constant = resultViewPositionY.constant - 45
-//        searchViewLeft.constant = 0
-        
+                
         startPosition = resultViewPositionY.constant
         
         mapView.delegate = self
@@ -76,14 +73,18 @@ class HomeViewController: UIViewController
         switch pan.state {
         case .began:
             currentPosition = resultViewPositionY.constant
-//            searchViewTop.constant = currentPosition - searchBar.bounds.height
-//            searchViewLeft.constant = 0
         case .changed:
             let translation = pan.translation(in: self.view)
             let newPosition = currentPosition + translation.y
             resultViewPositionY.constant = max(startPosition, newPosition)
-//            searchViewTop.constant = resultViewPositionY.constant - searchBar.bounds.height
         case .ended:
+            let dragVelocity = pan.velocity(in: view)
+            if abs(dragVelocity.y) >= 1300 {
+                // Velocity fast enough to dismiss the uiview
+                let translation = pan.translation(in: self.view)
+                let newPosition = currentPosition + translation.y + (dragVelocity.y / 15)
+                resultViewPositionY.constant = max(startPosition, newPosition)
+            }
             currentPosition = 0
         default:
             break
@@ -127,15 +128,6 @@ extension HomeViewController: UISearchBarDelegate
                            self?.view.layoutIfNeeded()
                        })
     }
-    
-//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-//        UIView.animate(withDuration: 0.6,
-//                       animations: { [weak self] in
-//                           self?.searchViewTop.constant = 0
-//                           self?.searchViewLeft.constant = 20
-//                           self?.view.layoutIfNeeded()
-//                       })
-//    }
 }
 
 extension HomeViewController: UITableViewDataSource
