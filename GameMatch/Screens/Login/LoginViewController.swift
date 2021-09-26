@@ -30,12 +30,17 @@ class LoginViewController: BaseViewController
         
         loginButton.permissions = ["public_profile", "email"]
 
-        if let token = AccessToken.current,
-            !token.isExpired {
-            // User is logged in, do work such as go to next view controller.
-            print("========= User is logged in =========")
+        if let token = AccessToken.current, !token.isExpired {
+            print("========= User is logged in FB - Access Token: \(String(describing: token.tokenString))")
         } else {
-            print("========= User is NOT logged in =========")
+            print("========= User is NOT logged in FB =========")
+        }
+        
+        NotificationCenter.default.addObserver(forName: .AccessTokenDidChange,
+                                               object: nil,
+                                               queue: OperationQueue.main) { notification in
+            print("======== notification: \(notification) =========")
+            print("FB Access Token: \(String(describing: AccessToken.current?.tokenString))")
         }
     }
     

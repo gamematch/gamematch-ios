@@ -869,15 +869,8 @@ Any person taking part in this group, specifically events posted on this group, 
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEG-ac-g0N">
-                                <rect key="frame" x="60" y="360" width="294" height="30"/>
-                                <state key="normal" title="Next"/>
-                                <connections>
-                                    <action selector="nextAction" destination="orq-pR-EgV" eventType="touchUpInside" id="zUN-AT-djo"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ft-Rg-MAv">
-                                <rect key="frame" x="96" y="192" width="222" height="44"/>
+                                <rect key="frame" x="96" y="322" width="222" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="BYj-YI-Clo"/>
@@ -885,7 +878,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRa-og-vB5" customClass="GIDSignInButton">
-                                <rect key="frame" x="96" y="266" width="222" height="44"/>
+                                <rect key="frame" x="91" y="396" width="232" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="I4H-rH-tO8"/>
@@ -894,18 +887,25 @@ Any person taking part in this group, specifically events posted on this group, 
                                     <action selector="googleLoginAction:" destination="orq-pR-EgV" eventType="valueChanged" id="run-lu-GJ4"/>
                                 </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEG-ac-g0N">
+                                <rect key="frame" x="60" y="192" width="294" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextAction" destination="orq-pR-EgV" eventType="touchUpInside" id="zUN-AT-djo"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HKL-Wc-5X5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="4ft-Rg-MAv" firstAttribute="top" secondItem="ZEG-ac-g0N" secondAttribute="bottom" constant="100" id="0m8-CV-Ort"/>
                             <constraint firstItem="PUh-Ew-XaZ" firstAttribute="top" secondItem="HKL-Wc-5X5" secondAttribute="top" constant="40" id="1Ou-Ql-g20"/>
                             <constraint firstItem="DRa-og-vB5" firstAttribute="top" secondItem="4ft-Rg-MAv" secondAttribute="bottom" constant="30" id="ACH-wI-tFX"/>
                             <constraint firstItem="4ft-Rg-MAv" firstAttribute="centerX" secondItem="xVp-fs-pls" secondAttribute="centerX" id="I6K-gv-YlR"/>
                             <constraint firstItem="PUh-Ew-XaZ" firstAttribute="leading" secondItem="HKL-Wc-5X5" secondAttribute="leading" constant="60" id="KGR-Eb-JvK"/>
-                            <constraint firstItem="4ft-Rg-MAv" firstAttribute="top" secondItem="PUh-Ew-XaZ" secondAttribute="bottom" constant="30" id="MWF-MH-vbY"/>
-                            <constraint firstItem="DRa-og-vB5" firstAttribute="leading" secondItem="4ft-Rg-MAv" secondAttribute="leading" id="RuZ-ko-hKZ"/>
-                            <constraint firstItem="ZEG-ac-g0N" firstAttribute="top" secondItem="DRa-og-vB5" secondAttribute="bottom" constant="50" id="ZIu-0U-paF"/>
-                            <constraint firstItem="DRa-og-vB5" firstAttribute="trailing" secondItem="4ft-Rg-MAv" secondAttribute="trailing" id="f3M-9J-qOh"/>
+                            <constraint firstItem="DRa-og-vB5" firstAttribute="leading" secondItem="4ft-Rg-MAv" secondAttribute="leading" constant="-5" id="RuZ-ko-hKZ"/>
+                            <constraint firstItem="DRa-og-vB5" firstAttribute="trailing" secondItem="4ft-Rg-MAv" secondAttribute="trailing" constant="5" id="f3M-9J-qOh"/>
+                            <constraint firstItem="ZEG-ac-g0N" firstAttribute="top" secondItem="PUh-Ew-XaZ" secondAttribute="bottom" constant="30" id="gTj-al-8jm"/>
                             <constraint firstItem="HKL-Wc-5X5" firstAttribute="trailing" secondItem="PUh-Ew-XaZ" secondAttribute="trailing" constant="60" id="ik2-Oa-0mU"/>
                             <constraint firstItem="ZEG-ac-g0N" firstAttribute="leading" secondItem="PUh-Ew-XaZ" secondAttribute="leading" id="sLC-yc-oM1"/>
                             <constraint firstItem="ZEG-ac-g0N" firstAttribute="trailing" secondItem="PUh-Ew-XaZ" secondAttribute="trailing" id="wUS-Cx-v9K"/>
