@@ -64,10 +64,10 @@ class LoginViewController: BaseViewController
                                     } else if state.status == "USER_ALREADY_EXISTED" {
                                         self?.showSignInScreen(identity: identity)
                                     } else {
-                                        print("Data Error")
+                                        self?.showMessage("Data Error")
                                     }
                                 case .failure(let error):
-                                    print(error)
+                                    self?.showError(error)
                                 }
                             })
         }

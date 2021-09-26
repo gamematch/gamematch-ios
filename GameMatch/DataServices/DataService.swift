@@ -17,8 +17,3 @@ protocol DataRequest
 {
     var url: URL { get }
 }
-
-enum ServiceError: Error
-{
-    case invalidData
-}

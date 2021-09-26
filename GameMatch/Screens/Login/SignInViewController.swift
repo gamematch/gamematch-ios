@@ -38,10 +38,10 @@ class SignInViewController: BaseViewController
                            completion: { [weak self] result in
                                switch result {
                                case .success(let state):
-                                    print("========= userId: \(state.userId) =========")
-                                    self?.dismiss(animated: true, completion: nil)
+                                   print("========= userId: \(state.userId) =========")
+                                   self?.dismiss(animated: true, completion: nil)
                                case .failure(let error):
-                                    print(error)
+                                   self?.showError(error)
                                }
                            })
         }

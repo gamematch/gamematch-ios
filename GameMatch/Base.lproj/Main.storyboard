@@ -948,7 +948,7 @@ Any person taking part in this group, specifically events posted on this group, 
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sE3-zg-Rzx">
                                 <rect key="frame" x="60" y="300" width="294" height="30"/>
-                                <state key="normal" title="Register"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="registerAction" destination="sM2-QD-qjn" eventType="touchUpInside" id="PSy-wn-TSf"/>
                                 </connections>
@@ -1651,20 +1651,20 @@ This group has been super honorable and respectful for years with no known major
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6g-AY-JQ8">
-                                <rect key="frame" x="60" y="124.5" width="294" height="34"/>
+                                <rect key="frame" x="60" y="123.5" width="294" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES" textContentType="username"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfP-a6-RWX">
-                                <rect key="frame" x="60" y="188.5" width="294" height="30"/>
+                                <rect key="frame" x="60" y="187.5" width="294" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextAction" destination="Flm-rU-L2N" eventType="touchUpInside" id="doq-pZ-xHN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHv-0S-n9l">
-                                <rect key="frame" x="186" y="74" width="42" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="187.5" y="74" width="39.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>

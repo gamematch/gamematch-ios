@@ -49,6 +49,7 @@
 		A3CD34EF26DB1E7B0049C6AE /* GroupInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34EE26DB1E7B0049C6AE /* GroupInfoTableViewCell.swift */; };
 		A3CD34F126DB46C50049C6AE /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34F026DB46C50049C6AE /* EventTableViewCell.swift */; };
 		A3CD34F326DC5E500049C6AE /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34F226DC5E500049C6AE /* NewEventViewController.swift */; };
+		A3D3B3C32700CB5400E1D8A0 /* GMError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3B3C22700CB5400E1D8A0 /* GMError.swift */; };
 		A3E28A1926E3CF8100923B29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3E28A1826E3CF8000923B29 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 		A3CD34EE26DB1E7B0049C6AE /* GroupInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoTableViewCell.swift; sourceTree = "<group>"; };
 		A3CD34F026DB46C50049C6AE /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		A3CD34F226DC5E500049C6AE /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
+		A3D3B3C22700CB5400E1D8A0 /* GMError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMError.swift; sourceTree = "<group>"; };
 		A3E28A1826E3CF8000923B29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD67621A0D27D42D3AA9A122 /* Pods-GameMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameMatch.debug.xcconfig"; path = "Target Support Files/Pods-GameMatch/Pods-GameMatch.debug.xcconfig"; sourceTree = "<group>"; };
 		BD5227EB512060CA818B630A /* Pods-Game Match.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game Match.release.xcconfig"; path = "Target Support Files/Pods-Game Match/Pods-Game Match.release.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		A3893F5026C4D84B0004C766 /* GameMatch */ = {
 			isa = PBXGroup;
 			children = (
+				A3D3B3C12700CB2F00E1D8A0 /* ErrorHandling */,
 				A3893F5F26C4D84C0004C766 /* Info.plist */,
 				A3893F5126C4D84B0004C766 /* AppDelegate.swift */,
 				A3893F5326C4D84B0004C766 /* SceneDelegate.swift */,
@@ -333,6 +336,14 @@
 				A3CD34EE26DB1E7B0049C6AE /* GroupInfoTableViewCell.swift */,
 			);
 			path = "Group Details";
+			sourceTree = "<group>";
+		};
+		A3D3B3C12700CB2F00E1D8A0 /* ErrorHandling */ = {
+			isa = PBXGroup;
+			children = (
+				A3D3B3C22700CB5400E1D8A0 /* GMError.swift */,
+			);
+			path = ErrorHandling;
 			sourceTree = "<group>";
 		};
 		E5191AE57602C8DB7C6C9F2D /* Frameworks */ = {
@@ -542,6 +553,7 @@
 				A3385B32270022E6004799E8 /* BaseViewController.swift in Sources */,
 				A39C062026DC986200CE8DCA /* GMPointAnnotation.swift in Sources */,
 				A39C062226DCB25B00CE8DCA /* MembersViewController.swift in Sources */,
+				A3D3B3C32700CB5400E1D8A0 /* GMError.swift in Sources */,
 				A3893F9026C7A5340004C766 /* MessageTableViewCell.swift in Sources */,
 				A3385B1826FFD3E9004799E8 /* DataService.swift in Sources */,
 				A3385B2C27000EE0004799E8 /* RegisterViewController.swift in Sources */,

@@ -14,7 +14,8 @@ class SignInViewModel
     func signup(identity: String,
                 completion: @escaping (Result<SignUpState, Error>) -> Void)
     {
-        AuthenticationAPIService().signup(identity: identity, completion: completion)
+        AuthenticationAPIService().signup(identity: identity,
+                                          completion: completion)
     }
     
     func register(identity: String,

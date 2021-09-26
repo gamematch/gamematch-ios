@@ -17,20 +17,21 @@ class BaseAPIService
                               parameters: parameters) { result in
                                   switch result {
                                   case .success(let data):
-                                    do {
-                                        let object: T = try JSONDecoder().decode(T.self, from: data)
-                                        DispatchQueue.main.async {
-                                            completion(.success(object))
-                                        }
-                                    } catch {
-                                        DispatchQueue.main.async {
-                                            completion(.failure(error))
-                                        }
-                                    }
+                                      do {
+                                          let object: T = try JSONDecoder().decode(T.self, from: data)
+                                          DispatchQueue.main.async {
+                                              completion(.success(object))
+                                          }
+                                      } catch {
+                                          let gmError = GMError(message: String(decoding: data, as: UTF8.self))
+                                          DispatchQueue.main.async {
+                                              completion(.failure(gmError))
+                                          }
+                                      }
                                   case .failure(let error):
-                                    DispatchQueue.main.async {
-                                        completion(.failure(error))
-                                    }
+                                      DispatchQueue.main.async {
+                                          completion(.failure(error))
+                                      }
                                   }
                               }
     }

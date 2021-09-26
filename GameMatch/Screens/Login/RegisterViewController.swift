@@ -33,8 +33,14 @@ class RegisterViewController: BaseViewController
         if let identity = signinVM.identity,
            let code = codeField.text,
            let name = nameField.text,
-           let password = passwordField.text
+           let password = passwordField.text,
+           let confirmPassword = confirmPasswordField.text
         {
+            if password != confirmPassword {
+                showMessage("Passwords don't match")
+                return
+            }
+            
             signinVM.register(identity: identity,
                               code: code,
                               name: name,
@@ -42,11 +48,11 @@ class RegisterViewController: BaseViewController
                               completion: { [weak self] result in
                                 switch result {
                                 case .success(let state):
-                                    print("========= status: \(state.userId) =========")
+                                    print("========= userId: \(state.userId) =========")
                                     self?.dismiss(animated: true,
                                                   completion: nil)
                                 case .failure(let error):
-                                    print(error)
+                                    self?.showError(error)
                                 }
                              })
         }

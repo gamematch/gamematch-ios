@@ -13,11 +13,20 @@ class BaseViewController: UIViewController
     {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
+
+    func showMessage(_ message: String)
+    {
+        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        present(alert, animated: true, completion: nil)
+    }
     
-//    override func viewDidLoad()
-//    {
-//        super.viewDidLoad()
-//
-//        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-//    }
+    func showError(_ error: Error)
+    {
+        if let error = error as? GMError {
+            showMessage(error.message)
+        } else {
+            showMessage(error.localizedDescription)
+        }
+    }
 }
