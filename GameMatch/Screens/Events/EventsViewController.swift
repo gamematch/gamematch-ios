@@ -7,12 +7,8 @@
 
 import UIKit
 
-class EventsViewController: UIViewController
-{
-    open override func awakeFromNib() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    }
-    
+class EventsViewController: BaseViewController
+{    
     override func viewDidLoad() {
         super.viewDidLoad()
 

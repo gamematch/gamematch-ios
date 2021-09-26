@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		480506069FC21677AE2CB80F /* Pods_GameMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1B527AB8B6AF812AFE57F2 /* Pods_GameMatch.framework */; };
+		A3385B1826FFD3E9004799E8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1726FFD3E9004799E8 /* DataService.swift */; };
+		A3385B1A26FFD458004799E8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1926FFD458004799E8 /* NetworkService.swift */; };
+		A3385B1F26FFD7FC004799E8 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1E26FFD7FC004799E8 /* LoginState.swift */; };
+		A3385B2126FFDA16004799E8 /* APIRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B2026FFDA16004799E8 /* APIRequests.swift */; };
+		A3385B2526FFDDC5004799E8 /* SignUpState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B2426FFDDC5004799E8 /* SignUpState.swift */; };
+		A3385B27270008C0004799E8 /* BaseAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B26270008C0004799E8 /* BaseAPIService.swift */; };
+		A3385B2A27000D32004799E8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B2927000D32004799E8 /* SignInViewController.swift */; };
+		A3385B2C27000EE0004799E8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B2B27000EE0004799E8 /* RegisterViewController.swift */; };
+		A3385B2E2700166A004799E8 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B2D2700166A004799E8 /* SignInViewModel.swift */; };
+		A3385B3027001F27004799E8 /* AuthenticationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B2F27001F27004799E8 /* AuthenticationAPIService.swift */; };
+		A3385B32270022E6004799E8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B31270022E6004799E8 /* BaseViewController.swift */; };
 		A3893F5226C4D84B0004C766 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F5126C4D84B0004C766 /* AppDelegate.swift */; };
 		A3893F5426C4D84B0004C766 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F5326C4D84B0004C766 /* SceneDelegate.swift */; };
 		A3893F5626C4D84B0004C766 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F5526C4D84B0004C766 /* HomeViewController.swift */; };
@@ -32,7 +43,6 @@
 		A39C062826DD978E00CE8DCA /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C062726DD978E00CE8DCA /* EventsViewController.swift */; };
 		A3C6F61E26D34AD600C01549 /* GMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61D26D34AD600C01549 /* GMTabBar.swift */; };
 		A3C6F62026D3803D00C01549 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61F26D3803D00C01549 /* LoginViewController.swift */; };
-		A3C6F62226D4D1A800C01549 /* SetupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F62126D4D1A800C01549 /* SetupViewController.swift */; };
 		A3CD34E826D76A990049C6AE /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34E726D76A990049C6AE /* UIImage+.swift */; };
 		A3CD34EA26D88C950049C6AE /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34E926D88C950049C6AE /* SendMessageViewController.swift */; };
 		A3CD34EC26DAB1C20049C6AE /* GroupDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34EB26DAB1C20049C6AE /* GroupDetailsViewController.swift */; };
@@ -63,6 +73,17 @@
 		3D1B527AB8B6AF812AFE57F2 /* Pods_GameMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		419A5AE2B8D53ECE0F9FAE5C /* Pods-Game Match.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game Match.debug.xcconfig"; path = "Target Support Files/Pods-Game Match/Pods-Game Match.debug.xcconfig"; sourceTree = "<group>"; };
 		9B74BD069D913280A93D4EF8 /* Pods-GameMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameMatch.release.xcconfig"; path = "Target Support Files/Pods-GameMatch/Pods-GameMatch.release.xcconfig"; sourceTree = "<group>"; };
+		A3385B1726FFD3E9004799E8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		A3385B1926FFD458004799E8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		A3385B1E26FFD7FC004799E8 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
+		A3385B2026FFDA16004799E8 /* APIRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequests.swift; sourceTree = "<group>"; };
+		A3385B2426FFDDC5004799E8 /* SignUpState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpState.swift; sourceTree = "<group>"; };
+		A3385B26270008C0004799E8 /* BaseAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPIService.swift; sourceTree = "<group>"; };
+		A3385B2927000D32004799E8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		A3385B2B27000EE0004799E8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A3385B2D2700166A004799E8 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		A3385B2F27001F27004799E8 /* AuthenticationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationAPIService.swift; sourceTree = "<group>"; };
+		A3385B31270022E6004799E8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A3893F4E26C4D84B0004C766 /* GameMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3893F5126C4D84B0004C766 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3893F5326C4D84B0004C766 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,7 +114,6 @@
 		A39C062726DD978E00CE8DCA /* EventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		A3C6F61D26D34AD600C01549 /* GMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMTabBar.swift; sourceTree = "<group>"; };
 		A3C6F61F26D3803D00C01549 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		A3C6F62126D4D1A800C01549 /* SetupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewController.swift; sourceTree = "<group>"; };
 		A3CD34E726D76A990049C6AE /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		A3CD34E926D88C950049C6AE /* SendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
 		A3CD34EB26DAB1C20049C6AE /* GroupDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +151,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A3385B1626FFD3A6004799E8 /* DataServices */ = {
+			isa = PBXGroup;
+			children = (
+				A3385B1B26FFD54F004799E8 /* API */,
+				A3385B1726FFD3E9004799E8 /* DataService.swift */,
+				A3385B1926FFD458004799E8 /* NetworkService.swift */,
+			);
+			path = DataServices;
+			sourceTree = "<group>";
+		};
+		A3385B1B26FFD54F004799E8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A3385B2026FFDA16004799E8 /* APIRequests.swift */,
+				A3385B2F27001F27004799E8 /* AuthenticationAPIService.swift */,
+				A3385B26270008C0004799E8 /* BaseAPIService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		A3385B1C26FFD74F004799E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A3385B1E26FFD7FC004799E8 /* LoginState.swift */,
+				A3385B2426FFDDC5004799E8 /* SignUpState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A3385B1D26FFD75E004799E8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A3385B2D2700166A004799E8 /* SignInViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A3385B2827000CC2004799E8 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A3C6F61F26D3803D00C01549 /* LoginViewController.swift */,
+				A3385B2B27000EE0004799E8 /* RegisterViewController.swift */,
+				A3385B2927000D32004799E8 /* SignInViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		A3893F4526C4D84B0004C766 = {
 			isa = PBXGroup;
 			children = (
@@ -160,10 +227,13 @@
 				A3893F5126C4D84B0004C766 /* AppDelegate.swift */,
 				A3893F5326C4D84B0004C766 /* SceneDelegate.swift */,
 				A3E28A1826E3CF8000923B29 /* Assets.xcassets */,
+				A3385B1626FFD3A6004799E8 /* DataServices */,
 				A3893F9526CCCB980004C766 /* Extensions */,
 				A3893F5C26C4D84C0004C766 /* LaunchScreen.storyboard */,
 				A3893F5726C4D84B0004C766 /* Main.storyboard */,
+				A3385B1C26FFD74F004799E8 /* Models */,
 				A3893F8526C4DEF00004C766 /* Screens */,
+				A3385B1D26FFD75E004799E8 /* ViewModels */,
 				A3C6F61C26D34A8800C01549 /* Views */,
 			);
 			path = GameMatch;
@@ -191,18 +261,18 @@
 			isa = PBXGroup;
 			children = (
 				A3893F8126C4DEBA0004C766 /* ActivitiesViewController.swift */,
+				A3385B31270022E6004799E8 /* BaseViewController.swift */,
 				A3893F9326CCAD0B0004C766 /* ContactsViewController.swift */,
 				A3893F8A26C63C310004C766 /* CreateActivityViewController.swift */,
 				A3893F5526C4D84B0004C766 /* HomeViewController.swift */,
-				A3C6F61F26D3803D00C01549 /* LoginViewController.swift */,
 				A3893F9126CC8DE10004C766 /* MainTabBarController.swift */,
 				A3CD34F226DC5E500049C6AE /* NewEventViewController.swift */,
 				A3893F8326C4DED80004C766 /* ProfileViewController.swift */,
 				A3CD34E926D88C950049C6AE /* SendMessageViewController.swift */,
-				A3C6F62126D4D1A800C01549 /* SetupViewController.swift */,
 				A3893F8C26C64E5A0004C766 /* Activity Details */,
 				A39C062626DD976800CE8DCA /* Events */,
 				A3CD34ED26DB1E2C0049C6AE /* Group Details */,
+				A3385B2827000CC2004799E8 /* Login */,
 				A39C062326DD82F700CE8DCA /* Members */,
 			);
 			path = Screens;
@@ -464,27 +534,37 @@
 				A3C6F61E26D34AD600C01549 /* GMTabBar.swift in Sources */,
 				A3CD34E826D76A990049C6AE /* UIImage+.swift in Sources */,
 				A3C6F62026D3803D00C01549 /* LoginViewController.swift in Sources */,
-				A3C6F62226D4D1A800C01549 /* SetupViewController.swift in Sources */,
 				A3893F8B26C63C310004C766 /* CreateActivityViewController.swift in Sources */,
 				A39C062826DD978E00CE8DCA /* EventsViewController.swift in Sources */,
 				A3893F9226CC8DE10004C766 /* MainTabBarController.swift in Sources */,
 				A3CD34EC26DAB1C20049C6AE /* GroupDetailsViewController.swift in Sources */,
 				A3893F8226C4DEBA0004C766 /* ActivitiesViewController.swift in Sources */,
+				A3385B32270022E6004799E8 /* BaseViewController.swift in Sources */,
 				A39C062026DC986200CE8DCA /* GMPointAnnotation.swift in Sources */,
 				A39C062226DCB25B00CE8DCA /* MembersViewController.swift in Sources */,
 				A3893F9026C7A5340004C766 /* MessageTableViewCell.swift in Sources */,
+				A3385B1826FFD3E9004799E8 /* DataService.swift in Sources */,
+				A3385B2C27000EE0004799E8 /* RegisterViewController.swift in Sources */,
 				A3893F9426CCAD0B0004C766 /* ContactsViewController.swift in Sources */,
 				A3893F8E26C64EA60004C766 /* ActivityInfoTableViewCell.swift in Sources */,
 				A3893F8726C604DB0004C766 /* ActivityTableViewCell.swift in Sources */,
 				A3893F5226C4D84B0004C766 /* AppDelegate.swift in Sources */,
 				A3893F8926C633D50004C766 /* ActivityDetailsViewController.swift in Sources */,
+				A3385B2E2700166A004799E8 /* SignInViewModel.swift in Sources */,
 				A39C062526DD837000CE8DCA /* MemberTableViewCell.swift in Sources */,
+				A3385B2A27000D32004799E8 /* SignInViewController.swift in Sources */,
+				A3385B27270008C0004799E8 /* BaseAPIService.swift in Sources */,
 				A3893F8426C4DED80004C766 /* ProfileViewController.swift in Sources */,
+				A3385B2526FFDDC5004799E8 /* SignUpState.swift in Sources */,
 				A3CD34EA26D88C950049C6AE /* SendMessageViewController.swift in Sources */,
 				A3CD34F126DB46C50049C6AE /* EventTableViewCell.swift in Sources */,
 				A3893F5426C4D84B0004C766 /* SceneDelegate.swift in Sources */,
+				A3385B1A26FFD458004799E8 /* NetworkService.swift in Sources */,
 				A39C061E26DC6BB900CE8DCA /* MKMapView+.swift in Sources */,
+				A3385B1F26FFD7FC004799E8 /* LoginState.swift in Sources */,
+				A3385B2126FFDA16004799E8 /* APIRequests.swift in Sources */,
 				A3CD34EF26DB1E7B0049C6AE /* GroupInfoTableViewCell.swift in Sources */,
+				A3385B3027001F27004799E8 /* AuthenticationAPIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

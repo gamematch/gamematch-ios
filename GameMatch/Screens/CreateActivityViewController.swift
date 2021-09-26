@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateActivityViewController: UIViewController
+class CreateActivityViewController: BaseViewController
 {
     @IBOutlet weak var noteTextView: UITextView!
     
@@ -18,7 +18,6 @@ class CreateActivityViewController: UIViewController
         noteTextView.layer.borderColor = UIColor.lightGray.cgColor
         noteTextView.layer.cornerRadius = 3
 
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.title = "Create Activity"
     }
     

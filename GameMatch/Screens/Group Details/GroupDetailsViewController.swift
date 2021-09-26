@@ -7,17 +7,13 @@
 
 import UIKit
 
-class GroupDetailsViewController: UIViewController
+class GroupDetailsViewController: BaseViewController
 {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerHeight: NSLayoutConstraint!
 
     private var headerStartHeight: CGFloat = 0
-    
-    open override func awakeFromNib() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    }
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 

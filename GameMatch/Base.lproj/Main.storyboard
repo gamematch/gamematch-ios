@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b1Y-ND-2gb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b1Y-ND-2gb">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityTableViewCell" rowHeight="91" id="e23-Jv-2Xk" customClass="ActivityTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="91"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e23-Jv-2Xk" id="egY-rA-RUF">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
@@ -340,7 +340,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityInfoTableViewCell" rowHeight="510" id="YPB-8I-uqr" customClass="ActivityInfoTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="510"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="510"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YPB-8I-uqr" id="cg9-6Q-d2E">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="510"/>
@@ -550,7 +550,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageTableViewCell" rowHeight="78" id="dof-4x-iVz" customClass="MessageTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="534.5" width="414" height="78"/>
+                                        <rect key="frame" x="0.0" y="554.5" width="414" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dof-4x-iVz" id="2PZ-Kc-Un3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
@@ -737,7 +737,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityTableViewCell" rowHeight="91" id="p7P-9s-F08" customClass="ActivityTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="24.5" width="414" height="91"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="414" height="91"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p7P-9s-F08" id="XEj-x1-7jQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
@@ -869,20 +869,23 @@ Any person taking part in this group, specifically events posted on this group, 
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dpB-Cu-NZs">
-                                <rect key="frame" x="60" y="182" width="294" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEG-ac-g0N">
-                                <rect key="frame" x="60" y="246" width="294" height="30"/>
-                                <state key="normal" title="Login"/>
+                                <rect key="frame" x="60" y="360" width="294" height="30"/>
+                                <state key="normal" title="Next"/>
                                 <connections>
-                                    <action selector="loginAction:" destination="orq-pR-EgV" eventType="touchUpInside" id="MQk-bh-f6Z"/>
+                                    <action selector="nextAction" destination="orq-pR-EgV" eventType="touchUpInside" id="zUN-AT-djo"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ft-Rg-MAv">
+                                <rect key="frame" x="96" y="192" width="222" height="44"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="BYj-YI-Clo"/>
+                                    <constraint firstAttribute="width" constant="222" id="n4f-RH-D1y"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRa-og-vB5" customClass="GIDSignInButton">
-                                <rect key="frame" x="96" y="500" width="222" height="44"/>
+                                <rect key="frame" x="96" y="266" width="222" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="I4H-rH-tO8"/>
@@ -891,42 +894,21 @@ Any person taking part in this group, specifically events posted on this group, 
                                     <action selector="googleLoginAction:" destination="orq-pR-EgV" eventType="valueChanged" id="run-lu-GJ4"/>
                                 </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ft-Rg-MAv">
-                                <rect key="frame" x="96" y="426" width="222" height="44"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="BYj-YI-Clo"/>
-                                    <constraint firstAttribute="width" constant="222" id="n4f-RH-D1y"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFB-r8-9Zq">
-                                <rect key="frame" x="60" y="306" width="294" height="30"/>
-                                <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <action selector="setupAction:" destination="orq-pR-EgV" eventType="touchUpInside" id="Ujt-Vn-XuZ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HKL-Wc-5X5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PUh-Ew-XaZ" firstAttribute="top" secondItem="HKL-Wc-5X5" secondAttribute="top" constant="40" id="1Ou-Ql-g20"/>
-                            <constraint firstItem="dpB-Cu-NZs" firstAttribute="top" secondItem="PUh-Ew-XaZ" secondAttribute="bottom" constant="20" id="3De-CB-IkR"/>
-                            <constraint firstItem="HFB-r8-9Zq" firstAttribute="top" secondItem="ZEG-ac-g0N" secondAttribute="bottom" constant="30" id="8nq-Fn-DHA"/>
                             <constraint firstItem="DRa-og-vB5" firstAttribute="top" secondItem="4ft-Rg-MAv" secondAttribute="bottom" constant="30" id="ACH-wI-tFX"/>
                             <constraint firstItem="4ft-Rg-MAv" firstAttribute="centerX" secondItem="xVp-fs-pls" secondAttribute="centerX" id="I6K-gv-YlR"/>
                             <constraint firstItem="PUh-Ew-XaZ" firstAttribute="leading" secondItem="HKL-Wc-5X5" secondAttribute="leading" constant="60" id="KGR-Eb-JvK"/>
-                            <constraint firstItem="dpB-Cu-NZs" firstAttribute="trailing" secondItem="PUh-Ew-XaZ" secondAttribute="trailing" id="KTp-Qu-vvO"/>
-                            <constraint firstItem="ZEG-ac-g0N" firstAttribute="top" secondItem="dpB-Cu-NZs" secondAttribute="bottom" constant="30" id="Px9-jd-uKd"/>
+                            <constraint firstItem="4ft-Rg-MAv" firstAttribute="top" secondItem="PUh-Ew-XaZ" secondAttribute="bottom" constant="30" id="MWF-MH-vbY"/>
                             <constraint firstItem="DRa-og-vB5" firstAttribute="leading" secondItem="4ft-Rg-MAv" secondAttribute="leading" id="RuZ-ko-hKZ"/>
+                            <constraint firstItem="ZEG-ac-g0N" firstAttribute="top" secondItem="DRa-og-vB5" secondAttribute="bottom" constant="50" id="ZIu-0U-paF"/>
                             <constraint firstItem="DRa-og-vB5" firstAttribute="trailing" secondItem="4ft-Rg-MAv" secondAttribute="trailing" id="f3M-9J-qOh"/>
-                            <constraint firstItem="4ft-Rg-MAv" firstAttribute="centerY" secondItem="xVp-fs-pls" secondAttribute="centerY" id="fhT-lD-x42"/>
                             <constraint firstItem="HKL-Wc-5X5" firstAttribute="trailing" secondItem="PUh-Ew-XaZ" secondAttribute="trailing" constant="60" id="ik2-Oa-0mU"/>
-                            <constraint firstItem="ZEG-ac-g0N" firstAttribute="leading" secondItem="dpB-Cu-NZs" secondAttribute="leading" id="oVd-N5-H0G"/>
-                            <constraint firstItem="dpB-Cu-NZs" firstAttribute="leading" secondItem="PUh-Ew-XaZ" secondAttribute="leading" id="raS-tn-sCY"/>
-                            <constraint firstItem="HFB-r8-9Zq" firstAttribute="trailing" secondItem="ZEG-ac-g0N" secondAttribute="trailing" id="tnc-Fs-UgG"/>
-                            <constraint firstItem="ZEG-ac-g0N" firstAttribute="trailing" secondItem="dpB-Cu-NZs" secondAttribute="trailing" id="wVx-XE-LJW"/>
-                            <constraint firstItem="HFB-r8-9Zq" firstAttribute="leading" secondItem="ZEG-ac-g0N" secondAttribute="leading" id="x42-0q-O23"/>
+                            <constraint firstItem="ZEG-ac-g0N" firstAttribute="leading" secondItem="PUh-Ew-XaZ" secondAttribute="leading" id="sLC-yc-oM1"/>
+                            <constraint firstItem="ZEG-ac-g0N" firstAttribute="trailing" secondItem="PUh-Ew-XaZ" secondAttribute="trailing" id="wUS-Cx-v9K"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="LWr-QS-eDE">
@@ -939,64 +921,79 @@ Any person taking part in this group, specifically events posted on this group, 
                     <connections>
                         <outlet property="facebookLoginView" destination="4ft-Rg-MAv" id="xlL-86-XIQ"/>
                         <outlet property="googleLoginButton" destination="DRa-og-vB5" id="xDM-mh-MBc"/>
+                        <outlet property="identityField" destination="PUh-Ew-XaZ" id="XWR-jb-i5R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jjt-HQ-yrF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3507.2463768115945" y="77.008928571428569"/>
+            <point key="canvasLocation" x="3474" y="77"/>
         </scene>
-        <!--Setup View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="x0X-T3-9EE">
             <objects>
-                <viewController storyboardIdentifier="SetupViewController" id="sM2-QD-qjn" customClass="SetupViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="sM2-QD-qjn" customClass="RegisterViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yI0-7G-fFb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xll-ff-OZ2">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Activation Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xll-ff-OZ2">
                                 <rect key="frame" x="60" y="74" width="294" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ba-9e-GoZ">
-                                <rect key="frame" x="60" y="128" width="294" height="34"/>
+                                <rect key="frame" x="60" y="182" width="294" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sE3-zg-Rzx">
-                                <rect key="frame" x="60" y="246" width="294" height="30"/>
-                                <state key="normal" title="Set Up"/>
+                                <rect key="frame" x="60" y="300" width="294" height="30"/>
+                                <state key="normal" title="Register"/>
                                 <connections>
-                                    <action selector="setupAction:" destination="sM2-QD-qjn" eventType="touchUpInside" id="knd-vW-dEf"/>
+                                    <action selector="registerAction" destination="sM2-QD-qjn" eventType="touchUpInside" id="PSy-wn-TSf"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w4x-sg-455">
-                                <rect key="frame" x="60" y="182" width="294" height="34"/>
+                                <rect key="frame" x="60" y="236" width="294" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MIu-nD-2rc">
+                                <rect key="frame" x="60" y="128" width="294" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="44i-5K-lGm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5ba-9e-GoZ" firstAttribute="top" secondItem="Xll-ff-OZ2" secondAttribute="bottom" constant="20" id="3a9-bV-eBz"/>
+                            <constraint firstItem="MIu-nD-2rc" firstAttribute="top" secondItem="Xll-ff-OZ2" secondAttribute="bottom" constant="20" id="02q-ZG-e26"/>
                             <constraint firstItem="Xll-ff-OZ2" firstAttribute="leading" secondItem="44i-5K-lGm" secondAttribute="leading" constant="60" id="5GG-yz-oir"/>
                             <constraint firstItem="44i-5K-lGm" firstAttribute="trailing" secondItem="Xll-ff-OZ2" secondAttribute="trailing" constant="60" id="5t9-F7-weG"/>
+                            <constraint firstItem="5ba-9e-GoZ" firstAttribute="top" secondItem="MIu-nD-2rc" secondAttribute="bottom" constant="20" id="63g-U7-E8B"/>
                             <constraint firstItem="sE3-zg-Rzx" firstAttribute="trailing" secondItem="5ba-9e-GoZ" secondAttribute="trailing" id="GH3-K3-zUR"/>
                             <constraint firstItem="5ba-9e-GoZ" firstAttribute="trailing" secondItem="Xll-ff-OZ2" secondAttribute="trailing" id="MNI-eA-gFr"/>
                             <constraint firstItem="5ba-9e-GoZ" firstAttribute="leading" secondItem="Xll-ff-OZ2" secondAttribute="leading" id="Mzh-bb-gBM"/>
+                            <constraint firstItem="MIu-nD-2rc" firstAttribute="leading" secondItem="Xll-ff-OZ2" secondAttribute="leading" id="Ybs-OC-iiy"/>
                             <constraint firstItem="w4x-sg-455" firstAttribute="leading" secondItem="5ba-9e-GoZ" secondAttribute="leading" id="Ygx-kJ-fo8"/>
                             <constraint firstItem="w4x-sg-455" firstAttribute="trailing" secondItem="5ba-9e-GoZ" secondAttribute="trailing" id="ek6-3f-OP5"/>
                             <constraint firstItem="sE3-zg-Rzx" firstAttribute="leading" secondItem="5ba-9e-GoZ" secondAttribute="leading" id="fCI-hJ-nuk"/>
                             <constraint firstItem="Xll-ff-OZ2" firstAttribute="top" secondItem="44i-5K-lGm" secondAttribute="top" constant="30" id="hPs-EK-lk1"/>
+                            <constraint firstItem="MIu-nD-2rc" firstAttribute="trailing" secondItem="Xll-ff-OZ2" secondAttribute="trailing" id="ibI-25-tPf"/>
                             <constraint firstItem="sE3-zg-Rzx" firstAttribute="top" secondItem="w4x-sg-455" secondAttribute="bottom" constant="30" id="rhu-Yn-tiQ"/>
                             <constraint firstItem="w4x-sg-455" firstAttribute="top" secondItem="5ba-9e-GoZ" secondAttribute="bottom" constant="20" id="yZd-EH-x2a"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="codeField" destination="Xll-ff-OZ2" id="gL0-Zk-ZcP"/>
+                        <outlet property="confirmPasswordField" destination="w4x-sg-455" id="6df-QU-Jeg"/>
+                        <outlet property="nameField" destination="MIu-nD-2rc" id="68u-pY-ejL"/>
+                        <outlet property="passwordField" destination="5ba-9e-GoZ" id="rRW-1c-E3A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Fr-BV-3Rr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4359" y="92"/>
+            <point key="canvasLocation" x="4293" y="76"/>
         </scene>
         <!--Members View Controller-->
         <scene sceneID="7Q7-zu-L9F">
@@ -1011,7 +1008,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MemberTableViewCell" rowHeight="76" id="zaG-cb-GEH" customClass="MemberTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="76"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zaG-cb-GEH" id="tMY-vD-yVS">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
@@ -1101,7 +1098,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityTableViewCell" rowHeight="91" id="gwT-Yo-ih7" customClass="ActivityTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="91"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gwT-Yo-ih7" id="Ucc-eL-tUX">
                                             <rect key="frame" x="0.0" y="0.0" width="384.5" height="91"/>
@@ -1399,7 +1396,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupInfoTableViewCell" rowHeight="529" id="bDZ-uJ-KnG" customClass="GroupInfoTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="529"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="529"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bDZ-uJ-KnG" id="71e-q5-bTg">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="529"/>
@@ -1522,7 +1519,7 @@ This group has been super honorable and respectful for years with no known major
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventTableViewCell" rowHeight="73" id="Xvy-2t-8Hz" customClass="EventTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="553.5" width="414" height="73"/>
+                                        <rect key="frame" x="0.0" y="573.5" width="414" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xvy-2t-8Hz" id="6Ca-5h-6dJ">
                                             <rect key="frame" x="0.0" y="0.0" width="384.5" height="73"/>
@@ -1644,6 +1641,46 @@ This group has been super honorable and respectful for years with no known major
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKs-wf-AMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5260.8695652173919" y="1460.4910714285713"/>
+        </scene>
+        <!--Sign In View Controller-->
+        <scene sceneID="piM-Oq-Q8p">
+            <objects>
+                <viewController storyboardIdentifier="SignInViewController" id="Flm-rU-L2N" customClass="SignInViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Gf-va-Ef0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number / Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6g-AY-JQ8">
+                                <rect key="frame" x="60" y="74" width="294" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfP-a6-RWX">
+                                <rect key="frame" x="60" y="138" width="294" height="30"/>
+                                <state key="normal" title="Next"/>
+                                <connections>
+                                    <action selector="nextAction" destination="Flm-rU-L2N" eventType="touchUpInside" id="doq-pZ-xHN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="enU-52-brZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NfP-a6-RWX" firstAttribute="top" secondItem="z6g-AY-JQ8" secondAttribute="bottom" constant="30" id="CBv-4A-SOa"/>
+                            <constraint firstItem="NfP-a6-RWX" firstAttribute="leading" secondItem="z6g-AY-JQ8" secondAttribute="leading" id="WdP-qt-WbU"/>
+                            <constraint firstItem="z6g-AY-JQ8" firstAttribute="leading" secondItem="enU-52-brZ" secondAttribute="leading" constant="60" id="ftl-DH-V4j"/>
+                            <constraint firstItem="enU-52-brZ" firstAttribute="trailing" secondItem="z6g-AY-JQ8" secondAttribute="trailing" constant="60" id="uE4-WV-v2E"/>
+                            <constraint firstItem="z6g-AY-JQ8" firstAttribute="top" secondItem="enU-52-brZ" secondAttribute="top" constant="30" id="uHO-bB-Tza"/>
+                            <constraint firstItem="NfP-a6-RWX" firstAttribute="trailing" secondItem="z6g-AY-JQ8" secondAttribute="trailing" id="wiU-nX-pGX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="passwordField" destination="z6g-AY-JQ8" id="vRq-cF-y04"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hF3-pW-OMc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4293" y="-629"/>
         </scene>
     </scenes>
     <designables>

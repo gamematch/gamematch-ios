@@ -7,13 +7,9 @@
 
 import UIKit
 
-class ActivitiesViewController: UIViewController
+class ActivitiesViewController: BaseViewController
 {
     @IBOutlet weak var avatarView: UIImageView!
-    
-    open override func awakeFromNib() {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

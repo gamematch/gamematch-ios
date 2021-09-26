@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class HomeViewController: UIViewController
+class HomeViewController: BaseViewController
 {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
@@ -25,9 +25,7 @@ class HomeViewController: UIViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-        
+                
         searchBar.searchTextField.backgroundColor = .clear
                 
         tableView.delegate = self

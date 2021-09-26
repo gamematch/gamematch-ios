@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ActivityDetailsViewController: UIViewController
+class ActivityDetailsViewController: BaseViewController
 {    
     @IBOutlet weak var headerHeight: NSLayoutConstraint!
     
@@ -17,8 +17,6 @@ class ActivityDetailsViewController: UIViewController
         super.viewDidLoad()
         
         headerStartHeight = headerHeight.constant
-        
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
