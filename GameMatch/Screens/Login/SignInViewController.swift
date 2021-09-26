@@ -9,6 +9,7 @@ import UIKit
 
 class SignInViewController: BaseViewController
 {
+    @IBOutlet weak var identityLabel: UILabel!
     @IBOutlet weak var passwordField: UITextField!
     
     private let signinVM = SignInViewModel()
@@ -23,6 +24,8 @@ class SignInViewController: BaseViewController
         super.viewDidLoad()
 
         navigationItem.title = "Welcome Back"
+        
+        identityLabel.text = signinVM.identity
     }
     
     @IBAction func nextAction()
