@@ -10,5 +10,5 @@ import Foundation
 class LoginState: NSObject, Codable
 {
     let userId: String
-    let session_id: String
+    let sessionId: String
 }

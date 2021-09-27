@@ -48,7 +48,7 @@ class RegisterViewController: BaseViewController
                               completion: { [weak self] result in
                                 switch result {
                                 case .success(let state):
-                                    print("========= userId: \(state.userId) =========")
+                                    print("========= sessionId: \(state.sessionId) =========")
                                     self?.dismiss(animated: true,
                                                   completion: nil)
                                 case .failure(let error):

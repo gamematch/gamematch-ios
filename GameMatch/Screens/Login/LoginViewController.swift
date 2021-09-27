@@ -40,7 +40,8 @@ class LoginViewController: BaseViewController
                                                object: nil,
                                                queue: OperationQueue.main) { notification in
             print("======== notification: \(notification) =========")
-            print("FB Access Token: \(String(describing: AccessToken.current?.tokenString))")
+            let token = AccessToken.current
+            print("FB Access Token: \(String(describing: token?.tokenString))")
         }
     }
     
