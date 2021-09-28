@@ -31,7 +31,7 @@ class LoginViewController: BaseViewController
         loginButton.permissions = ["public_profile", "email"]
 
         if let token = AccessToken.current, !token.isExpired {
-            print("========= User is logged in FB - Access Token: \(String(describing: token.tokenString))")
+            printFBAccessToken(token)
         } else {
             print("========= User is NOT logged in FB =========")
         }
@@ -40,9 +40,19 @@ class LoginViewController: BaseViewController
                                                object: nil,
                                                queue: OperationQueue.main) { notification in
             print("======== notification: \(notification) =========")
-            let token = AccessToken.current
-            print("FB Access Token: \(String(describing: token?.tokenString))")
+            if let token = AccessToken.current {
+                self.printFBAccessToken(token)
+            }
         }
+    }
+    
+    private func printFBAccessToken(_ token: AccessToken)
+    {
+        print("tokenString: \(String(describing: token.tokenString))")
+        print("userID: \(String(describing: token.userID))")
+        print("appID: \(String(describing: token.appID))")
+        print("expirationDate: \(String(describing: token.expirationDate))")
+        print("permissions: \(String(describing: token.permissions))")
     }
     
     @IBAction func googleLoginAction(_ sender: Any) {
