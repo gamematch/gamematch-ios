@@ -63,7 +63,7 @@ class LoginViewController: BaseViewController
                 print("=== error \(String(describing: error))")
             } else if let result = result as? [String: String],
                       let name = result["name"], let email = result["email"] {
-                self?.showMessage(title: "Facebook User", "\(name)\n\(email)")
+                self?.showMessage(title: "Facebook User", "\(name)\n\(email)\n\(token.userID)")
             }
         }
     }
@@ -75,8 +75,9 @@ class LoginViewController: BaseViewController
                                         presenting: self) { [weak self] user, error in
             if let error = error {
                 print("=== error \(String(describing: error))")
-            } else if let name = user?.profile?.name, let email = user?.profile?.email {
-                self?.showMessage(title: "Googile User", "\(name)\n\(email)")
+            } else if let name = user?.profile?.name, let email = user?.profile?.email,
+                      let userId = user?.userID {
+                self?.showMessage(title: "Google User", "\(name)\n\(email)\n\(userId)")
             }
         }
     }
