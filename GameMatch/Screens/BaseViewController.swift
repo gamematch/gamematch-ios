@@ -14,9 +14,9 @@ class BaseViewController: UIViewController
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
-    func showMessage(_ message: String)
+    func showMessage(title: String = "", _ message: String)
     {
-        let alert = UIAlertController(title: "", message: message, preferredStyle: .alert)
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))
         present(alert, animated: true, completion: nil)
     }

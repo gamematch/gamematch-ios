@@ -53,22 +53,36 @@ class LoginViewController: BaseViewController
         print("appID: \(String(describing: token.appID))")
         print("expirationDate: \(String(describing: token.expirationDate))")
         print("permissions: \(String(describing: token.permissions))")
-    }
-    
-    @IBAction func googleLoginAction(_ sender: Any) {
-        let signInConfig = GIDConfiguration.init(clientID: "YOUR_IOS_CLIENT_ID")
-        GIDSignIn.sharedInstance.signIn(with: signInConfig,
-                                        presenting: self)
-        { user, error in
-            guard error == nil else { return }
-            guard let user = user else { return }
-
-            // Your user is signed in!
-            print("===== user: \(user) logged in ======")
+        
+        let req = GraphRequest(graphPath: "me", parameters: ["fields": "email, name"],
+                               tokenString: token.tokenString,
+                               version: nil,
+                               httpMethod: .get)
+        req.start { [weak self] connection, result, error in
+            if let error = error {
+                print("=== error \(String(describing: error))")
+            } else if let result = result as? [String: String],
+                      let name = result["name"], let email = result["email"] {
+                self?.showMessage(title: "Facebook User", "\(name)\n\(email)")
+            }
         }
     }
     
-    @IBAction func nextAction() {
+    @IBAction func googleLoginAction(_ sender: Any)
+    {
+        let signInConfig = GIDConfiguration.init(clientID: "971918164052-2866me8ce54b04tb7m2evvep0q8aftfd.apps.googleusercontent.com")
+        GIDSignIn.sharedInstance.signIn(with: signInConfig,
+                                        presenting: self) { [weak self] user, error in
+            if let error = error {
+                print("=== error \(String(describing: error))")
+            } else if let name = user?.profile?.name, let email = user?.profile?.email {
+                self?.showMessage(title: "Googile User", "\(name)\n\(email)")
+            }
+        }
+    }
+    
+    @IBAction func nextAction()
+    {
         if let identity = identityField.text {
             signinVM.signup(identity: identity,
                             completion: { [weak self] result in
@@ -89,7 +103,8 @@ class LoginViewController: BaseViewController
         }
     }
     
-    private func showSignInScreen(identity: String) {
+    private func showSignInScreen(identity: String)
+    {
         if let nextScreen = UIStoryboard(name: "Main",
                                          bundle: nil).instantiateViewController(identifier: "SignInViewController") as? SignInViewController {
             nextScreen.setup(identity: identity)
@@ -97,7 +112,8 @@ class LoginViewController: BaseViewController
         }
     }
     
-    @IBAction func closeAction(_ sender: Any) {
+    @IBAction func closeAction(_ sender: Any)
+    {
         dismiss(animated: true, completion: nil)
     }
     

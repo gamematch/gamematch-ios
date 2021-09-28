@@ -884,7 +884,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                     <constraint firstAttribute="height" constant="44" id="I4H-rH-tO8"/>
                                 </constraints>
                                 <connections>
-                                    <action selector="googleLoginAction:" destination="orq-pR-EgV" eventType="valueChanged" id="run-lu-GJ4"/>
+                                    <action selector="googleLoginAction:" destination="orq-pR-EgV" eventType="touchUpInside" id="Cj4-eM-sJ0"/>
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEG-ac-g0N">
