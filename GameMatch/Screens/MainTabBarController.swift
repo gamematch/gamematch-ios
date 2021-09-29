@@ -23,6 +23,7 @@ class MainTabBarController: UITabBarController
         self.delegate = self
         
         tabBar.tintColor = traitCollection.userInterfaceStyle == .light ? .black : .white
+        tabBar.backgroundColor = traitCollection.userInterfaceStyle == .light ? .white : .black
 
         setupPlusButton()
 
