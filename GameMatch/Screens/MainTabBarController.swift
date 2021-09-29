@@ -23,9 +23,9 @@ class MainTabBarController: UITabBarController
         self.delegate = self
         
         tabBar.tintColor = traitCollection.userInterfaceStyle == .light ? .black : .white
-    
+
         setupPlusButton()
-        
+
         tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
     }
 
