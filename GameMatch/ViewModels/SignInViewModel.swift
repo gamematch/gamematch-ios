@@ -28,7 +28,15 @@ class SignInViewModel
                                             code: code,
                                             name: name,
                                             password: password,
-                                            completion: completion)
+                                            completion: { result in
+                                                switch result {
+                                                case .success(let loginState):
+                                                    UserDefaults.standard.set(loginState.sessionId, forKey: "sessionId")
+                                                default:
+                                                    break
+                                                }
+                                                completion(result)
+                                            })
     }
     
     func login(identity: String,
@@ -37,6 +45,14 @@ class SignInViewModel
     {
         AuthenticationAPIService().login(identity: identity,
                                          password: password,
-                                         completion: completion)
+                                         completion: { result in
+                                            switch result {
+                                            case .success(let loginState):
+                                                UserDefaults.standard.set(loginState.sessionId, forKey: "sessionId")
+                                            default:
+                                                break
+                                            }
+                                            completion(result)
+                                        })
     }
 }
