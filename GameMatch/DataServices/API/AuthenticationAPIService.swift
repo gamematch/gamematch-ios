@@ -40,4 +40,18 @@ class AuthenticationAPIService: BaseAPIService
                           "password": password],
              completion: completion)
     }
+    
+    func login(socialNetwork: SocialNetwork,
+               identity: String,
+               name: String,
+               userId: String,
+               completion: @escaping (Result<LoginState, Error>) -> Void)
+    {
+        post(request: APIRequests.loginWithSocialNetwork,
+             parameters: ["identity": identity,
+                          "name": name,
+                          "userId": userId,
+                          "channel": socialNetwork.rawValue],
+             completion: completion)
+    }
 }

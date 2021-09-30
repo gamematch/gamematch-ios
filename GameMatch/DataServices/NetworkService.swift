@@ -12,7 +12,7 @@ final class NetworkService: DataService
 {
     private let headers: [String: String?] = ["x-gm-api-key": "A42114554CC31DB186DE4581413C9",
                                               "x-gm-platform": "iOS\(UIDevice.current.systemVersion)",
-                                              "x-gm-session-id": UserDefaults.standard.string(forKey: "sessionId")]
+                                              "x-gm-session-id": SessionManager.shared.sessionId]
     
     func get(request: DataRequest, completion: @escaping (Result<Data, Error>) -> Void)
     {

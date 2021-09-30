@@ -23,36 +23,33 @@ class LoginViewController: BaseViewController
         
         navigationItem.title = "Let's Get Started"
 
+        if let token = AccessToken.current, !token.isExpired {
+            loginWithFacebook(token: token)
+        }
+
         let loginButton = FBLoginButton()
         loginButton.center = CGPoint(x: facebookLoginView.bounds.width / 2,
                                      y: facebookLoginView.bounds.height / 2)
         facebookLoginView.addSubview(loginButton)
         
         loginButton.permissions = ["public_profile", "email"]
-
-        if let token = AccessToken.current, !token.isExpired {
-            printFBAccessToken(token)
-        } else {
-            print("========= User is NOT logged in FB =========")
-        }
         
         NotificationCenter.default.addObserver(forName: .AccessTokenDidChange,
                                                object: nil,
                                                queue: OperationQueue.main) { notification in
-            print("======== notification: \(notification) =========")
             if let token = AccessToken.current {
-                self.printFBAccessToken(token)
+                self.loginWithFacebook(token: token)
             }
         }
     }
     
-    private func printFBAccessToken(_ token: AccessToken)
+    private func loginWithFacebook(token: AccessToken)
     {
-        print("tokenString: \(String(describing: token.tokenString))")
-        print("userID: \(String(describing: token.userID))")
-        print("appID: \(String(describing: token.appID))")
-        print("expirationDate: \(String(describing: token.expirationDate))")
-        print("permissions: \(String(describing: token.permissions))")
+//        print("tokenString: \(String(describing: token.tokenString))")
+//        print("userID: \(String(describing: token.userID))")
+//        print("appID: \(String(describing: token.appID))")
+//        print("expirationDate: \(String(describing: token.expirationDate))")
+//        print("permissions: \(String(describing: token.permissions))")
         
         let req = GraphRequest(graphPath: "me", parameters: ["fields": "email, name"],
                                tokenString: token.tokenString,
@@ -60,10 +57,20 @@ class LoginViewController: BaseViewController
                                httpMethod: .get)
         req.start { [weak self] connection, result, error in
             if let error = error {
-                print("=== error \(String(describing: error))")
-            } else if let result = result as? [String: String],
-                      let name = result["name"], let email = result["email"] {
-                self?.showMessage(title: "Facebook User", "\(name)\n\(email)\n\(token.userID)")
+                self?.showError(error)
+            } else if let result = result as? [String: String], let name = result["name"], let email = result["email"] {
+                self?.signinVM.login(socialNetwork: .facebook,
+                                     identity: email,
+                                     name: name,
+                                     userId: token.userID,
+                                     completion: { [weak self] result in
+                                         switch result {
+                                         case .success:
+                                             self?.dismiss(animated: true, completion: nil)
+                                         case .failure(let error):
+                                             self?.showError(error)
+                                         }
+                                     })
             }
         }
     }
@@ -74,10 +81,20 @@ class LoginViewController: BaseViewController
         GIDSignIn.sharedInstance.signIn(with: signInConfig,
                                         presenting: self) { [weak self] user, error in
             if let error = error {
-                print("=== error \(String(describing: error))")
-            } else if let name = user?.profile?.name, let email = user?.profile?.email,
-                      let userId = user?.userID {
-                self?.showMessage(title: "Google User", "\(name)\n\(email)\n\(userId)")
+                self?.showError(error)
+            } else if let name = user?.profile?.name, let email = user?.profile?.email, let userId = user?.userID {
+                self?.signinVM.login(socialNetwork: .google,
+                                     identity: email,
+                                     name: name,
+                                     userId: userId,
+                                     completion: { [weak self] result in
+                                         switch result {
+                                         case .success:
+                                             self?.dismiss(animated: true, completion: nil)
+                                         case .failure(let error):
+                                             self?.showError(error)
+                                         }
+                                     })
             }
         }
     }

@@ -31,7 +31,7 @@ class SignInViewModel
                                             completion: { result in
                                                 switch result {
                                                 case .success(let loginState):
-                                                    UserDefaults.standard.set(loginState.sessionId, forKey: "sessionId")
+                                                    SessionManager.shared.saveSession(loginState.sessionId)
                                                 default:
                                                     break
                                                 }
@@ -48,11 +48,37 @@ class SignInViewModel
                                          completion: { result in
                                             switch result {
                                             case .success(let loginState):
-                                                UserDefaults.standard.set(loginState.sessionId, forKey: "sessionId")
+                                                SessionManager.shared.saveSession(loginState.sessionId)
                                             default:
                                                 break
                                             }
                                             completion(result)
                                         })
     }
+    
+    func login(socialNetwork: SocialNetwork,
+               identity: String,
+               name: String,
+               userId: String,
+               completion: @escaping (Result<LoginState, Error>) -> Void)
+    {
+        AuthenticationAPIService().login(socialNetwork: socialNetwork,
+                                         identity: identity,
+                                         name: name,
+                                         userId: userId,
+                                         completion: { result in
+                                             switch result {
+                                             case .success(let loginState):
+                                                 SessionManager.shared.saveSession(loginState.sessionId)
+                                             default:
+                                                 break
+                                             }
+                                             completion(result)
+                                         })
+    }
+}
+
+enum SocialNetwork: String
+{
+    case facebook, google
 }
