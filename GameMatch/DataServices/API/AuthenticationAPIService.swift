@@ -41,17 +41,18 @@ class AuthenticationAPIService: BaseAPIService
              completion: completion)
     }
     
-    func login(socialNetwork: SocialNetwork,
-               identity: String,
-               name: String,
-               userId: String,
-               completion: @escaping (Result<LoginState, Error>) -> Void)
+    func signup(socialNetwork: SocialNetwork,
+                identity: String,
+                name: String,
+                userId: String,
+                completion: @escaping (Result<LoginState, Error>) -> Void)
     {
-        post(request: APIRequests.loginWithSocialNetwork,
+        let rquest = socialNetwork == .facebook ? APIRequests.signupWithFacebook
+                                                : APIRequests.signupWithGoogle
+        post(request: rquest,
              parameters: ["identity": identity,
                           "name": name,
-                          "userId": userId,
-                          "channel": socialNetwork.rawValue],
+                          "userId": userId],
              completion: completion)
     }
 }

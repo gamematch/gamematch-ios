@@ -56,25 +56,25 @@ class SignInViewModel
                                         })
     }
     
-    func login(socialNetwork: SocialNetwork,
-               identity: String,
-               name: String,
-               userId: String,
-               completion: @escaping (Result<LoginState, Error>) -> Void)
+    func signup(socialNetwork: SocialNetwork,
+                identity: String,
+                name: String,
+                userId: String,
+                completion: @escaping (Result<LoginState, Error>) -> Void)
     {
-        AuthenticationAPIService().login(socialNetwork: socialNetwork,
-                                         identity: identity,
-                                         name: name,
-                                         userId: userId,
-                                         completion: { result in
-                                             switch result {
-                                             case .success(let loginState):
-                                                 SessionManager.shared.saveSession(loginState.sessionId)
-                                             default:
-                                                 break
-                                             }
-                                             completion(result)
-                                         })
+        AuthenticationAPIService().signup(socialNetwork: socialNetwork,
+                                          identity: identity,
+                                          name: name,
+                                          userId: userId,
+                                          completion: { result in
+                                              switch result {
+                                              case .success(let loginState):
+                                                  SessionManager.shared.saveSession(loginState.sessionId)
+                                              default:
+                                                  break
+                                              }
+                                              completion(result)
+                                          })
     }
 }
 

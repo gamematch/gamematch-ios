@@ -59,42 +59,43 @@ class LoginViewController: BaseViewController
             if let error = error {
                 self?.showError(error)
             } else if let result = result as? [String: String], let name = result["name"], let email = result["email"] {
-                self?.signinVM.login(socialNetwork: .facebook,
-                                     identity: email,
-                                     name: name,
-                                     userId: token.userID,
-                                     completion: { [weak self] result in
-                                         switch result {
-                                         case .success:
-                                             self?.dismiss(animated: true, completion: nil)
-                                         case .failure(let error):
-                                             self?.showError(error)
-                                         }
-                                     })
+                self?.signinVM.signup(socialNetwork: .facebook,
+                                      identity: email,
+                                      name: name,
+                                      userId: token.userID,
+                                      completion: { [weak self] result in
+                                          switch result {
+                                          case .success:
+                                              self?.dismiss(animated: true, completion: nil)
+                                          case .failure(let error):
+                                              self?.showError(error)
+                                          }
+                                      })
             }
         }
     }
     
     @IBAction func googleLoginAction(_ sender: Any)
     {
-        let signInConfig = GIDConfiguration.init(clientID: "971918164052-2866me8ce54b04tb7m2evvep0q8aftfd.apps.googleusercontent.com")
+        let googleClientId = "971918164052-2866me8ce54b04tb7m2evvep0q8aftfd.apps.googleusercontent.com"
+        let signInConfig = GIDConfiguration.init(clientID: googleClientId)
         GIDSignIn.sharedInstance.signIn(with: signInConfig,
                                         presenting: self) { [weak self] user, error in
             if let error = error {
                 self?.showError(error)
             } else if let name = user?.profile?.name, let email = user?.profile?.email, let userId = user?.userID {
-                self?.signinVM.login(socialNetwork: .google,
-                                     identity: email,
-                                     name: name,
-                                     userId: userId,
-                                     completion: { [weak self] result in
-                                         switch result {
-                                         case .success:
-                                             self?.dismiss(animated: true, completion: nil)
-                                         case .failure(let error):
-                                             self?.showError(error)
-                                         }
-                                     })
+                self?.signinVM.signup(socialNetwork: .google,
+                                      identity: email,
+                                      name: name,
+                                      userId: userId,
+                                      completion: { [weak self] result in
+                                          switch result {
+                                          case .success:
+                                              self?.dismiss(animated: true, completion: nil)
+                                          case .failure(let error):
+                                              self?.showError(error)
+                                          }
+                                      })
             }
         }
     }
