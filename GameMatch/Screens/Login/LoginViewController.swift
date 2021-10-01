@@ -8,12 +8,14 @@
 import UIKit
 import FBSDKLoginKit
 import GoogleSignIn
+import AuthenticationServices
 
 class LoginViewController: BaseViewController
 {
     @IBOutlet weak var identityField: UITextField!
     @IBOutlet weak var facebookLoginView: UIView!
     @IBOutlet weak var googleLoginButton: GIDSignInButton!
+    @IBOutlet weak var appleLoginView: UIView!
     
     private let signinVM = SignInViewModel()
     
@@ -23,16 +25,22 @@ class LoginViewController: BaseViewController
         
         navigationItem.title = "Let's Get Started"
 
-        if let token = AccessToken.current, !token.isExpired {
-            loginWithFacebook(token: token)
+        // Check Facebook login status
+        if let faceBookAccessToken = AccessToken.current, !faceBookAccessToken.isExpired {
+            loginWithFacebook(token: faceBookAccessToken)
         }
 
-        let loginButton = FBLoginButton()
-        loginButton.center = CGPoint(x: facebookLoginView.bounds.width / 2,
-                                     y: facebookLoginView.bounds.height / 2)
-        facebookLoginView.addSubview(loginButton)
+        addFacebookLoginButton()
+        addAppleLoginButton()
+    }
         
-        loginButton.permissions = ["public_profile", "email"]
+    private func addFacebookLoginButton()
+    {
+        let facebookLoginButton = FBLoginButton()
+        facebookLoginButton.frame = CGRect(x: 0, y: 0, width: facebookLoginView.bounds.width, height: facebookLoginView.bounds.height)
+        facebookLoginView.addSubview(facebookLoginButton)
+        
+        facebookLoginButton.permissions = ["public_profile", "email"]
         
         NotificationCenter.default.addObserver(forName: .AccessTokenDidChange,
                                                object: nil,
@@ -43,6 +51,15 @@ class LoginViewController: BaseViewController
         }
     }
     
+    private func addAppleLoginButton()
+    {
+        let appleButton = ASAuthorizationAppleIDButton(type: .signIn,
+                                                       style: traitCollection.userInterfaceStyle == .light ? .black : .white)
+        appleButton.frame = CGRect(x: 0, y: 0, width: appleLoginView.bounds.width, height: appleLoginView.bounds.height)
+        appleButton.addTarget(self, action: #selector(appleLoginAction), for: .touchUpInside)
+        appleLoginView.addSubview(appleButton)
+    }
+
     private func loginWithFacebook(token: AccessToken)
     {
 //        print("tokenString: \(String(describing: token.tokenString))")
@@ -100,6 +117,17 @@ class LoginViewController: BaseViewController
         }
     }
     
+    @IBAction func appleLoginAction()
+    {
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.email, .fullName]
+        
+        let controller = ASAuthorizationController(authorizationRequests: [request])
+        controller.delegate = self
+        controller.presentationContextProvider = self
+        controller.performRequests()
+    }
+    
     @IBAction func nextAction()
     {
         if let identity = identityField.text {
@@ -143,5 +171,46 @@ class LoginViewController: BaseViewController
             nextScreen.setup(identity: identity)
             navigationController?.pushViewController(nextScreen, animated: true)
         }
+    }
+}
+
+// For Apple Login
+
+extension LoginViewController: ASAuthorizationControllerDelegate
+{
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization)
+    {
+        if let credential = authorization.credential as? ASAuthorizationAppleIDCredential
+        {
+            var name: String?
+            if let fullname = credential.fullName {
+                name = (fullname.givenName ?? "") + " " + (fullname.familyName ?? "")
+            }
+            signinVM.signup(socialNetwork: .apple,
+                            identity: credential.email,
+                            name: name,
+                            userId: credential.user,
+                            completion: { [weak self] result in
+                                switch result {
+                                case .success:
+                                    self?.dismiss(animated: true, completion: nil)
+                                case .failure(let error):
+                                    self?.showError(error)
+                                }
+                            })
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error)
+    {
+        showError(error)
+    }
+}
+
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding
+{
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor
+    {
+        return view.window!
     }
 }

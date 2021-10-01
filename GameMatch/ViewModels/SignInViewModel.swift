@@ -57,8 +57,8 @@ class SignInViewModel
     }
     
     func signup(socialNetwork: SocialNetwork,
-                identity: String,
-                name: String,
+                identity: String?,
+                name: String?,
                 userId: String,
                 completion: @escaping (Result<LoginState, Error>) -> Void)
     {
@@ -80,5 +80,5 @@ class SignInViewModel
 
 enum SocialNetwork: String
 {
-    case facebook, google
+    case facebook, google, apple
 }

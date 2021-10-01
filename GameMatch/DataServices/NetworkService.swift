@@ -37,7 +37,7 @@ final class NetworkService: DataService
         }.resume()
     }
     
-    func post(request: DataRequest, parameters: [String: Any]?, completion: @escaping (Result<Data, Error>) -> Void)
+    func post(request: DataRequest, parameters: [String: Any?]?, completion: @escaping (Result<Data, Error>) -> Void)
     {
         let url = request.url
         var urlRequest = URLRequest(url: url)

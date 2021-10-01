@@ -76,6 +76,8 @@
 		419A5AE2B8D53ECE0F9FAE5C /* Pods-Game Match.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game Match.debug.xcconfig"; path = "Target Support Files/Pods-Game Match/Pods-Game Match.debug.xcconfig"; sourceTree = "<group>"; };
 		9B74BD069D913280A93D4EF8 /* Pods-GameMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameMatch.release.xcconfig"; path = "Target Support Files/Pods-GameMatch/Pods-GameMatch.release.xcconfig"; sourceTree = "<group>"; };
 		A30D49A02705776700D34702 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		A30D49A427078EDB00D34702 /* GameMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GameMatch.entitlements; sourceTree = "<group>"; };
+		A30D49A527078F0A00D34702 /* GameMatchRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GameMatchRelease.entitlements; sourceTree = "<group>"; };
 		A3385B1726FFD3E9004799E8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		A3385B1926FFD458004799E8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A3385B1E26FFD7FC004799E8 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
@@ -163,6 +165,24 @@
 			path = DataManager;
 			sourceTree = "<group>";
 		};
+		A30D49A2270769BD00D34702 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A3893F5C26C4D84C0004C766 /* LaunchScreen.storyboard */,
+				A3893F5726C4D84B0004C766 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		A30D49A327078E6900D34702 /* AppDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				A3893F5126C4D84B0004C766 /* AppDelegate.swift */,
+				A3893F5326C4D84B0004C766 /* SceneDelegate.swift */,
+			);
+			path = AppDelegates;
+			sourceTree = "<group>";
+		};
 		A3385B1626FFD3A6004799E8 /* DataServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,18 +255,18 @@
 		A3893F5026C4D84B0004C766 /* GameMatch */ = {
 			isa = PBXGroup;
 			children = (
+				A30D49A527078F0A00D34702 /* GameMatchRelease.entitlements */,
+				A30D49A427078EDB00D34702 /* GameMatch.entitlements */,
 				A3893F5F26C4D84C0004C766 /* Info.plist */,
-				A3893F5126C4D84B0004C766 /* AppDelegate.swift */,
-				A3893F5326C4D84B0004C766 /* SceneDelegate.swift */,
 				A3E28A1826E3CF8000923B29 /* Assets.xcassets */,
+				A30D49A327078E6900D34702 /* AppDelegates */,
 				A30D499F2705773900D34702 /* DataManager */,
 				A3385B1626FFD3A6004799E8 /* DataServices */,
 				A3D3B3C12700CB2F00E1D8A0 /* ErrorHandling */,
 				A3893F9526CCCB980004C766 /* Extensions */,
-				A3893F5C26C4D84C0004C766 /* LaunchScreen.storyboard */,
-				A3893F5726C4D84B0004C766 /* Main.storyboard */,
 				A3385B1C26FFD74F004799E8 /* Models */,
 				A3893F8526C4DEF00004C766 /* Screens */,
+				A30D49A2270769BD00D34702 /* Storyboards */,
 				A3385B1D26FFD75E004799E8 /* ViewModels */,
 				A3C6F61C26D34A8800C01549 /* Views */,
 			);
@@ -765,6 +785,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GameMatch/GameMatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2F48UN9H99;
 				INFOPLIST_FILE = GameMatch/Info.plist;
@@ -785,6 +806,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GameMatch/GameMatchRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2F48UN9H99;
 				INFOPLIST_FILE = GameMatch/Info.plist;

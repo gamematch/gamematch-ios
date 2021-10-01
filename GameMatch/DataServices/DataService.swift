@@ -10,7 +10,7 @@ import Foundation
 protocol DataService
 {
     func get(request: DataRequest, completion: @escaping (Result<Data, Error>) -> Void)
-    func post(request: DataRequest, parameters: [String: Any]?, completion: @escaping (Result<Data, Error>) -> Void)
+    func post(request: DataRequest, parameters: [String: Any?]?, completion: @escaping (Result<Data, Error>) -> Void)
 }
 
 protocol DataRequest

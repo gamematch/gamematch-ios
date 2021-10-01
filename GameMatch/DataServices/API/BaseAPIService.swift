@@ -10,7 +10,7 @@ import Foundation
 class BaseAPIService
 {
     internal func post<T: Decodable>(request: DataRequest,
-                                     parameters: [String: Any]?,
+                                     parameters: [String: Any?]?,
                                      completion: @escaping (Result<T, Error>) -> Void)
     {
         NetworkService().post(request: request,

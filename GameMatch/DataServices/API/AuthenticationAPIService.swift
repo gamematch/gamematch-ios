@@ -42,8 +42,8 @@ class AuthenticationAPIService: BaseAPIService
     }
     
     func signup(socialNetwork: SocialNetwork,
-                identity: String,
-                name: String,
+                identity: String?,
+                name: String?,
                 userId: String,
                 completion: @escaping (Result<LoginState, Error>) -> Void)
     {
