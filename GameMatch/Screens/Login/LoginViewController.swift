@@ -32,9 +32,9 @@ class LoginViewController: BaseViewController
         googleLoginButton.clipsToBounds = true
 
         // Check Facebook login status
-        if let faceBookAccessToken = AccessToken.current, !faceBookAccessToken.isExpired {
-            loginWithFacebook(token: faceBookAccessToken)
-        }
+//        if let faceBookAccessToken = AccessToken.current, !faceBookAccessToken.isExpired {
+//            loginWithFacebook(token: faceBookAccessToken)
+//        }
 
         addFacebookLoginButton()
         addAppleLoginButton()
