@@ -7,6 +7,7 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class HomeViewController: BaseViewController
 {
@@ -17,6 +18,8 @@ class HomeViewController: BaseViewController
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchViewTop: NSLayoutConstraint!
     @IBOutlet weak var searchViewLeft: NSLayoutConstraint!
+    
+    private var locationManager: CLLocationManager?
     
     private var startPosition: CGFloat = 0
     private var currentPosition: CGFloat = 0
@@ -44,6 +47,15 @@ class HomeViewController: BaseViewController
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(mapTapped))
         mapView.addGestureRecognizer(tap)
+        
+        setupLocationService()
+    }
+    
+    private func setupLocationService()
+    {
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        locationManager?.requestWhenInUseAuthorization()
     }
     
     @objc private func mapTapped() {
@@ -184,6 +196,50 @@ extension HomeViewController: MKMapViewDelegate
         if let annotation = view.annotation as? GMPointAnnotation {
             print("========= \(annotation.pinImageName) ========")
             showActivityDetails()
+        }
+    }
+}
+
+extension HomeViewController: CLLocationManagerDelegate
+{
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
+    {
+        switch status {
+        case .denied: // Setting option: Never
+            print("LocationManager didChangeAuthorization denied")
+        case .notDetermined: // Setting option: Ask Next Time
+            print("LocationManager didChangeAuthorization notDetermined")
+        case .authorizedWhenInUse: // Setting option: While Using the App
+            print("LocationManager didChangeAuthorization authorizedWhenInUse")
+            locationManager?.requestLocation()
+        case .authorizedAlways: // Setting option: Always
+            print("LocationManager didChangeAuthorization authorizedAlways")
+            locationManager?.requestLocation()
+        case .restricted: // Restricted by parental control
+            print("LocationManager didChangeAuthorization restricted")
+        default:
+            print("LocationManager didChangeAuthorization")
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+    {
+        print("LocationManager didUpdateLocations: numberOfLocation: \(locations.count)")
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        locations.forEach { (location) in
+            print("LocationManager didUpdateLocations: \(dateFormatter.string(from: location.timestamp)); \(location.coordinate.latitude), \(location.coordinate.longitude)")
+        }
+    }
+  
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    {
+        print("LocationManager didFailWithError \(error.localizedDescription)")
+        if let error = error as? CLError, error.code == .denied {
+            // Location updates are not authorized.
+            // To prevent forever looping of `didFailWithError` callback
+            locationManager?.stopMonitoringSignificantLocationChanges()
         }
     }
 }

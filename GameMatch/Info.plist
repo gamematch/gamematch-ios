@@ -68,6 +68,10 @@
 	</dict>
 	<key>NSContactsUsageDescription</key>
 	<string>To invite friends</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>GameMatch uses your location to find the activites near you</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>GameMatch needs your location to find the activites near you</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -89,6 +93,10 @@
 	</dict>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
