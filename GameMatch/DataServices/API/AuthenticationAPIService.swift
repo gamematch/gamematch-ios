@@ -47,9 +47,17 @@ class AuthenticationAPIService: BaseAPIService
                 userId: String,
                 completion: @escaping (Result<LoginState, Error>) -> Void)
     {
-        let rquest = socialNetwork == .facebook ? APIRequests.signupWithFacebook
-                                                : APIRequests.signupWithGoogle
-        post(request: rquest,
+        let request: APIRequests
+        switch socialNetwork {
+        case .facebook:
+            request = .signupWithFacebook
+        case .google:
+            request = .signupWithGoogle
+        case .apple:
+            request = .signupWithApple
+        }
+        
+        post(request: request,
              parameters: ["identity": identity,
                           "name": name,
                           "userId": userId],

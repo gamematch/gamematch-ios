@@ -16,6 +16,7 @@ enum APIRequests: String, DataRequest
     case login = "/api/v1/user/login"
     case signupWithFacebook = "/api/v1/provision/facebook"
     case signupWithGoogle = "/api/v1/provision/google"
+    case signupWithApple = "/api/v1/provision/apple"
 
     var url: URL {
         return URL(string: hostname + rawValue)!

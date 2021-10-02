@@ -24,6 +24,12 @@ class LoginViewController: BaseViewController
         super.viewDidLoad()
         
         navigationItem.title = "Let's Get Started"
+        
+        facebookLoginView.layer.cornerRadius = 6
+        facebookLoginView.clipsToBounds = true
+        
+        googleLoginButton.layer.cornerRadius = 6
+        googleLoginButton.clipsToBounds = true
 
         // Check Facebook login status
         if let faceBookAccessToken = AccessToken.current, !faceBookAccessToken.isExpired {
