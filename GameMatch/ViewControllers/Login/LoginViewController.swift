@@ -68,12 +68,6 @@ class LoginViewController: BaseViewController
 
     private func loginWithFacebook(token: AccessToken)
     {
-//        print("tokenString: \(String(describing: token.tokenString))")
-//        print("userID: \(String(describing: token.userID))")
-//        print("appID: \(String(describing: token.appID))")
-//        print("expirationDate: \(String(describing: token.expirationDate))")
-//        print("permissions: \(String(describing: token.permissions))")
-        
         let req = GraphRequest(graphPath: "me", parameters: ["fields": "email, name"],
                                tokenString: token.tokenString,
                                version: nil,
@@ -137,8 +131,10 @@ class LoginViewController: BaseViewController
     @IBAction func nextAction()
     {
         if let identity = identityField.text {
+            startSpinner()
             signinVM.signup(identity: identity,
                             completion: { [weak self] result in
+                                self?.stopSpinner()
                                 switch result {
                                 case .success(let state):
                                     print("========= status: \(state.status) =========")

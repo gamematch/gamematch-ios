@@ -41,17 +41,19 @@ class RegisterViewController: BaseViewController
                 return
             }
             
+            startSpinner()
             signinVM.register(identity: identity,
                               code: code,
                               name: name,
                               password: password,
                               completion: { [weak self] result in
-                                switch result {
-                                case .success:
-                                    self?.dismiss(animated: true, completion: nil)
-                                case .failure(let error):
-                                    self?.showError(error)
-                                }
+                                  self?.stopSpinner()
+                                  switch result {
+                                  case .success:
+                                      self?.dismiss(animated: true, completion: nil)
+                                  case .failure(let error):
+                                      self?.showError(error)
+                                  }
                              })
         }
     }

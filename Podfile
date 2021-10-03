@@ -1,7 +1,7 @@
 # source 'https://github.com/CocoaPods/Specs.git'
 
 # Uncomment this line to define a global platform for your project
-# platform :ios, '13.0'
+# platform :ios, '13.4'
 
 inhibit_all_warnings!
 
@@ -11,4 +11,5 @@ target 'GameMatch' do
     pod 'SwiftIcons'
     pod 'FBSDKLoginKit'
     pod 'GoogleSignIn'
+    pod 'NVActivityIndicatorView'
 end

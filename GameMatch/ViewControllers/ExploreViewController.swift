@@ -18,7 +18,7 @@ class ExploreViewController: BaseViewController
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchViewTop: NSLayoutConstraint!
     @IBOutlet weak var searchViewLeft: NSLayoutConstraint!
-    
+        
     private let exploreVM = ExploreViewModel()
     
     private var locationManager: CLLocationManager?
@@ -157,9 +157,11 @@ extension ExploreViewController: UISearchBarDelegate
         if let latitude = locationManager?.location?.coordinate.latitude,
            let longitude = locationManager?.location?.coordinate.longitude
         {
+            startSpinner()
             exploreVM.activities(latitude: latitude,
                                  longitude: longitude,
                                  completion: { [weak self] result in
+                                     self?.stopSpinner()
                                      switch result {
                                      case .success():
                                          self?.showSearchResult()

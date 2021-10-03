@@ -33,9 +33,11 @@ class SignInViewController: BaseViewController
         if let identity = signinVM.identity,
            let password = passwordField.text
         {
+            startSpinner()
             signinVM.login(identity: identity,
                            password: password,
                            completion: { [weak self] result in
+                               self?.stopSpinner()
                                switch result {
                                case .success:
                                    self?.dismiss(animated: true, completion: nil)

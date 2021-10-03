@@ -77,7 +77,6 @@
 
 /* Begin PBXFileReference section */
 		3D1B527AB8B6AF812AFE57F2 /* Pods_GameMatch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GameMatch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		419A5AE2B8D53ECE0F9FAE5C /* Pods-Game Match.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game Match.debug.xcconfig"; path = "Target Support Files/Pods-Game Match/Pods-Game Match.debug.xcconfig"; sourceTree = "<group>"; };
 		9B74BD069D913280A93D4EF8 /* Pods-GameMatch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameMatch.release.xcconfig"; path = "Target Support Files/Pods-GameMatch/Pods-GameMatch.release.xcconfig"; sourceTree = "<group>"; };
 		A30D49A02705776700D34702 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		A30D49A427078EDB00D34702 /* GameMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GameMatch.entitlements; sourceTree = "<group>"; };
@@ -136,7 +135,6 @@
 		A3D3B3C22700CB5400E1D8A0 /* GMError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMError.swift; sourceTree = "<group>"; };
 		A3E28A1826E3CF8000923B29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD67621A0D27D42D3AA9A122 /* Pods-GameMatch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GameMatch.debug.xcconfig"; path = "Target Support Files/Pods-GameMatch/Pods-GameMatch.debug.xcconfig"; sourceTree = "<group>"; };
-		BD5227EB512060CA818B630A /* Pods-Game Match.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Game Match.release.xcconfig"; path = "Target Support Files/Pods-Game Match/Pods-Game Match.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -408,8 +406,6 @@
 		F4C28124B774A28A595E0351 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				419A5AE2B8D53ECE0F9FAE5C /* Pods-Game Match.debug.xcconfig */,
-				BD5227EB512060CA818B630A /* Pods-Game Match.release.xcconfig */,
 				AD67621A0D27D42D3AA9A122 /* Pods-GameMatch.debug.xcconfig */,
 				9B74BD069D913280A93D4EF8 /* Pods-GameMatch.release.xcconfig */,
 			);

@@ -29,11 +29,15 @@ PODS:
     - AppAuth/Core (~> 1.4)
     - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.6.1)
+  - NVActivityIndicatorView (5.1.1):
+    - NVActivityIndicatorView/Base (= 5.1.1)
+  - NVActivityIndicatorView/Base (5.1.1)
   - SwiftIcons (3.0)
 
 DEPENDENCIES:
   - FBSDKLoginKit
   - GoogleSignIn
+  - NVActivityIndicatorView
   - SwiftIcons
 
 SPEC REPOS:
@@ -46,6 +50,7 @@ SPEC REPOS:
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
+    - NVActivityIndicatorView
     - SwiftIcons
 
 SPEC CHECKSUMS:
@@ -57,8 +62,9 @@ SPEC CHECKSUMS:
   GoogleSignIn: fd381840dbe7c1137aa6dc30849a5c3e070c034a
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: 36689134877faeb055b27dfa4ccc9ceaa42e029e
+  NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SwiftIcons: 3b748e57d9eee0c7c8d3bdbf2d742c0b1b4c6172
 
-PODFILE CHECKSUM: 53f87a20f15b65694fba9c990d0733a799c39f56
+PODFILE CHECKSUM: 1b054267c35060197b8fcdcc377dbfbdf3045ce7
 
 COCOAPODS: 1.10.2

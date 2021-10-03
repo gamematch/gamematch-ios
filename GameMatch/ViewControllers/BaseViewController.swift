@@ -6,12 +6,29 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class BaseViewController: UIViewController
 {
+    private var spinner = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+
     open override func awakeFromNib()
     {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        spinner.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
+        spinner.color = traitCollection.userInterfaceStyle == .light ? .gray : .white
+        view.addSubview(spinner)
+    }
+    
+    func startSpinner()
+    {
+        spinner.startAnimating()
+    }
+    
+    func stopSpinner()
+    {
+        spinner.stopAnimating()
     }
 
     func showMessage(title: String = "",
