@@ -13,10 +13,13 @@ enum APIRequests: String, DataRequest
 {
     case signup = "/api/v1/provision/signup"
     case register = "/api/v1/provision/register"
-    case login = "/api/v1/user/login"
+    
     case signupWithFacebook = "/api/v1/provision/facebook"
     case signupWithGoogle = "/api/v1/provision/google"
     case signupWithApple = "/api/v1/provision/apple"
+
+    case login = "/api/v1/user/login"
+    case logout = "/api/v1/user/logout"
     
     case activities = "/api/v1/activities"
 

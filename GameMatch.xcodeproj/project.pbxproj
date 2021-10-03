@@ -45,6 +45,7 @@
 		A3B6B493270925E100309925 /* ActivityAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6B492270925E100309925 /* ActivityAPIService.swift */; };
 		A3B6B4952709301C00309925 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6B4942709301C00309925 /* ExploreViewModel.swift */; };
 		A3B6B4972709318800309925 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6B4962709318800309925 /* Activity.swift */; };
+		A3B6B49B270960BD00309925 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6B49A270960BD00309925 /* Date+.swift */; };
 		A3C6F61E26D34AD600C01549 /* GMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61D26D34AD600C01549 /* GMTabBar.swift */; };
 		A3C6F62026D3803D00C01549 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61F26D3803D00C01549 /* LoginViewController.swift */; };
 		A3CD34E826D76A990049C6AE /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34E726D76A990049C6AE /* UIImage+.swift */; };
@@ -123,6 +124,7 @@
 		A3B6B492270925E100309925 /* ActivityAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityAPIService.swift; sourceTree = "<group>"; };
 		A3B6B4942709301C00309925 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		A3B6B4962709318800309925 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		A3B6B49A270960BD00309925 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A3C6F61D26D34AD600C01549 /* GMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMTabBar.swift; sourceTree = "<group>"; };
 		A3C6F61F26D3803D00C01549 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A3CD34E726D76A990049C6AE /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
@@ -264,16 +266,16 @@
 		A3893F5026C4D84B0004C766 /* GameMatch */ = {
 			isa = PBXGroup;
 			children = (
-				A30D49A527078F0A00D34702 /* GameMatchRelease.entitlements */,
 				A30D49A427078EDB00D34702 /* GameMatch.entitlements */,
+				A30D49A527078F0A00D34702 /* GameMatchRelease.entitlements */,
 				A3893F5F26C4D84C0004C766 /* Info.plist */,
-				A3E28A1826E3CF8000923B29 /* Assets.xcassets */,
 				A30D49A327078E6900D34702 /* AppDelegates */,
 				A30D499F2705773900D34702 /* DataManager */,
 				A3385B1626FFD3A6004799E8 /* DataServices */,
 				A3D3B3C12700CB2F00E1D8A0 /* ErrorHandling */,
 				A3893F9526CCCB980004C766 /* Extensions */,
 				A3385B1C26FFD74F004799E8 /* Models */,
+				A3B6B4992709408000309925 /* Resources */,
 				A3893F8526C4DEF00004C766 /* Screens */,
 				A30D49A2270769BD00D34702 /* Storyboards */,
 				A3385B1D26FFD75E004799E8 /* ViewModels */,
@@ -334,9 +336,10 @@
 		A3893F9526CCCB980004C766 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A3893F9626CCCBC10004C766 /* UIImageView+.swift */,
-				A3CD34E726D76A990049C6AE /* UIImage+.swift */,
+				A3B6B49A270960BD00309925 /* Date+.swift */,
 				A39C061D26DC6BB900CE8DCA /* MKMapView+.swift */,
+				A3CD34E726D76A990049C6AE /* UIImage+.swift */,
+				A3893F9626CCCBC10004C766 /* UIImageView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -356,6 +359,14 @@
 				A39C062726DD978E00CE8DCA /* EventsViewController.swift */,
 			);
 			path = Events;
+			sourceTree = "<group>";
+		};
+		A3B6B4992709408000309925 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A3E28A1826E3CF8000923B29 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		A3C6F61C26D34A8800C01549 /* Views */ = {
@@ -590,6 +601,7 @@
 				A3893F9226CC8DE10004C766 /* MainTabBarController.swift in Sources */,
 				A3CD34EC26DAB1C20049C6AE /* GroupDetailsViewController.swift in Sources */,
 				A3893F8226C4DEBA0004C766 /* ActivitiesViewController.swift in Sources */,
+				A3B6B49B270960BD00309925 /* Date+.swift in Sources */,
 				A3385B32270022E6004799E8 /* BaseViewController.swift in Sources */,
 				A39C062026DC986200CE8DCA /* GMPointAnnotation.swift in Sources */,
 				A39C062226DCB25B00CE8DCA /* MembersViewController.swift in Sources */,

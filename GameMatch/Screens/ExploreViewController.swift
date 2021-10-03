@@ -42,12 +42,11 @@ class ExploreViewController: BaseViewController
         resultView.addGestureRecognizer(pan)
                 
         startPosition = resultViewPositionY.constant
+        resultViewPositionY.constant = 700
         
         mapView.delegate = self
         setupMapView()
-        
-        showActivityLocations()
-        
+                
         let tap = UITapGestureRecognizer(target: self, action: #selector(mapTapped))
         mapView.addGestureRecognizer(tap)
         
@@ -68,7 +67,7 @@ class ExploreViewController: BaseViewController
     
     private func setupMapView()
     {
-        let initialLocation = CLLocation(latitude: 37.734501728760144, longitude: -121.92823118854375)
+        let initialLocation = CLLocation(latitude: 37.5585465, longitude: -122.2710788)
         mapView.centerToLocation(initialLocation)
     }
     
@@ -119,10 +118,15 @@ class ExploreViewController: BaseViewController
     
     private func showActivityLocations()
     {
-        addAnnotation(title: "Soccer Game", name: "soccer-pin", latitude: 37.750603682221815, longitude: -121.91890945029355)
-        addAnnotation(title: "Soccer Pickup", name: "soccer-pin", latitude: 37.76680, longitude: -121.95440)
-        addAnnotation(title: "Volleyball Game", name: "volleyball-pin", latitude: 37.753040, longitude: -121.895874)
-        addAnnotation(title: "Fun Golf", name: "golf-pin", latitude: 37.77166179714824, longitude: -121.93415058834861)
+        let pins = ["soccer-pin", "volleyball-pin", "golf-pin"]
+        if let activities = exploreVM.activities {
+            for activity in activities {
+                addAnnotation(title: "Soccer Game",
+                              name: pins.randomElement() ?? "golf-pin",
+                              latitude: activity.latitude,
+                              longitude: activity.longitude)
+            }
+        }
     }
     
     private func addAnnotation(title: String, name: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees)
@@ -151,8 +155,8 @@ extension ExploreViewController: UISearchBarDelegate
                                  longitude: longitude,
                                  completion: { [weak self] result in
                 switch result {
-                case .success(let activities):
-                    self?.showSearchResult(activities: activities)
+                case .success():
+                    self?.showSearchResult()
                 case .failure(let error):
                     self?.showError(error)
                 }
@@ -160,15 +164,17 @@ extension ExploreViewController: UISearchBarDelegate
         }
     }
     
-    private func showSearchResult(activities: [Activity])
+    private func showSearchResult()
     {
-        showMessage("Found \(activities.count) activities", completion: {
-            UIView.animate(withDuration: 0.6,
-                           animations: { [weak self] in
-                               self?.resultViewPositionY.constant = self?.startPosition ?? 0
-                               self?.view.layoutIfNeeded()
-                           })
-        })
+        showActivityLocations()
+        
+        tableView.reloadData()
+        
+        UIView.animate(withDuration: 0.6,
+                       animations: { [weak self] in
+                           self?.resultViewPositionY.constant = self?.startPosition ?? 0
+                           self?.view.layoutIfNeeded()
+                       })
     }
 }
 
@@ -176,21 +182,24 @@ extension ExploreViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 10
+        return exploreVM.activities?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityTableViewCell", for: indexPath)
-        if let cell = cell as? ActivityTableViewCell {
+        if let cell = cell as? ActivityTableViewCell,
+           let activities = exploreVM.activities
+        {
+            let activity = activities[indexPath.row]
             if indexPath.row % 2 == 0 {
                 cell.config(icon: UIImage(named: "soccerball"),
-                            title: "Soccer Pickup Game - Today 12:30pm",
-                            details: "Rancho Sports Park, San Ramon")
+                            title: "Soccer Pickup Game - " + activity.startTime.display(),
+                            details: activity.address)
             } else {
                 cell.config(icon: UIImage(named: "hiking"),
-                            title: "Weekend Hiking - Saturday 8/14/2021",
-                            details: "Mt. Dana, Yosemite")
+                            title: "Weekend Hiking - " + activity.startTime.display(),
+                            details: activity.address)
             }
         }
         return cell

@@ -20,6 +20,14 @@ class Activity: NSObject, Codable
     let activityEndTime: TimeInterval
     let notes: String
     let activityUrl: String
+    
+    var startTime: Date {
+        Date(timeIntervalSince1970: activityStartTime)
+    }
+    
+    var endTime: Date {
+        Date(timeIntervalSince1970: activityEndTime)
+    }
 }
 
 class Activities: NSObject, Codable

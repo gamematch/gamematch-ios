@@ -11,13 +11,30 @@ class ActivitiesViewController: BaseViewController
 {
     @IBOutlet weak var avatarView: UIImageView!
     
-    override func viewDidLoad() {
+    private var profileButtonItem: UIBarButtonItem?
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         navigationItem.title = "Groups & Activities"
+        
+        profileButtonItem = navigationItem.rightBarButtonItem
     }
     
-    @IBAction func showProfile(_ sender: UIBarButtonItem) {
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        if SessionManager.shared.sessionId == nil {
+            navigationItem.rightBarButtonItem = nil
+        } else {
+            navigationItem.rightBarButtonItem = profileButtonItem
+        }
+    }
+    
+    @IBAction func showProfile(_ sender: UIBarButtonItem)
+    {
         if let nextScreen = UIStoryboard(name: "Main",
                                          bundle: nil).instantiateViewController(identifier: "ProfileNavController") as? UINavigationController {
             nextScreen.modalPresentationStyle = .fullScreen
@@ -25,14 +42,16 @@ class ActivitiesViewController: BaseViewController
         }
     }
             
-    func showGroupDetails() {
+    func showGroupDetails()
+    {
         if let nextScreen = UIStoryboard(name: "Main",
                                          bundle: nil).instantiateViewController(identifier: "GroupDetailsViewController") as? GroupDetailsViewController {
             navigationController?.pushViewController(nextScreen, animated: true)
         }
     }
     
-    func showActivityDetails() {
+    func showActivityDetails()
+    {
         if let activityScreen = UIStoryboard(name: "Main",
                                              bundle: nil).instantiateViewController(identifier: "ActivityDetailsViewController") as? ActivityDetailsViewController {
             navigationController?.pushViewController(activityScreen, animated: true)
@@ -42,15 +61,18 @@ class ActivitiesViewController: BaseViewController
 
 extension ActivitiesViewController: UITableViewDataSource
 {
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
         return 2
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return section == 0 ? 2 : 6
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityTableViewCell", for: indexPath)
         if let cell = cell as? ActivityTableViewCell {
             if indexPath.row % 2 == 0 {
@@ -70,14 +92,16 @@ extension ActivitiesViewController: UITableViewDataSource
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
         return section == 0 ? "My Groups" : "My Activities"
     }
 }
 
 extension ActivitiesViewController: UITableViewDelegate
 {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if indexPath.section == 0 {

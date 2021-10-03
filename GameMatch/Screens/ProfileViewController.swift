@@ -9,13 +9,22 @@ import UIKit
 
 class ProfileViewController: UIViewController
 {
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         navigationItem.title = "Profile"
     }
     
-    @IBAction func closeAction(_ sender: Any) {
+    @IBAction func closeAction(_ sender: Any)
+    {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func logoutAction(_ sender: UIBarButtonItem)
+    {
+        SessionManager.shared.clear()
+        
+        closeAction(sender)
     }
 }
