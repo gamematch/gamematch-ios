@@ -33,6 +33,8 @@ class ExploreViewController: BaseViewController
         super.viewDidLoad()
                 
         searchBar.searchTextField.backgroundColor = .clear
+        searchBar.layer.cornerRadius = 5
+        searchBar.clipsToBounds = true
                 
         tableView.delegate = self
         tableView.dataSource = self
@@ -42,7 +44,7 @@ class ExploreViewController: BaseViewController
         resultView.addGestureRecognizer(pan)
                 
         startPosition = resultViewPositionY.constant
-        resultViewPositionY.constant = 700
+        resultViewPositionY.constant = 800
         
         mapView.delegate = self
         setupMapView()
@@ -67,8 +69,12 @@ class ExploreViewController: BaseViewController
     
     private func setupMapView()
     {
-        let initialLocation = CLLocation(latitude: 37.5585465, longitude: -122.2710788)
+        let initialLocation = CLLocation(latitude: 37.505368, longitude: -122.264192)
         mapView.centerToLocation(initialLocation)
+        
+        let region = MKCoordinateRegion(center: mapView.centerCoordinate,
+                                        span: MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3))
+        mapView.setRegion(region, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -154,13 +160,13 @@ extension ExploreViewController: UISearchBarDelegate
             exploreVM.activities(latitude: latitude,
                                  longitude: longitude,
                                  completion: { [weak self] result in
-                switch result {
-                case .success():
-                    self?.showSearchResult()
-                case .failure(let error):
-                    self?.showError(error)
-                }
-            })
+                                     switch result {
+                                     case .success():
+                                         self?.showSearchResult()
+                                     case .failure(let error):
+                                         self?.showError(error)
+                                     }
+                                 })
         }
     }
     

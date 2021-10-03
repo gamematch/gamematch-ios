@@ -276,8 +276,8 @@
 				A3893F9526CCCB980004C766 /* Extensions */,
 				A3385B1C26FFD74F004799E8 /* Models */,
 				A3B6B4992709408000309925 /* Resources */,
-				A3893F8526C4DEF00004C766 /* Screens */,
 				A30D49A2270769BD00D34702 /* Storyboards */,
+				A3893F8526C4DEF00004C766 /* ViewControllers */,
 				A3385B1D26FFD75E004799E8 /* ViewModels */,
 				A3C6F61C26D34A8800C01549 /* Views */,
 			);
@@ -302,7 +302,7 @@
 			path = GameMatchUITests;
 			sourceTree = "<group>";
 		};
-		A3893F8526C4DEF00004C766 /* Screens */ = {
+		A3893F8526C4DEF00004C766 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				A3893F8126C4DEBA0004C766 /* ActivitiesViewController.swift */,
@@ -320,7 +320,7 @@
 				A3385B2827000CC2004799E8 /* Login */,
 				A39C062326DD82F700CE8DCA /* Members */,
 			);
-			path = Screens;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		A3893F8C26C64E5A0004C766 /* Activity Details */ = {

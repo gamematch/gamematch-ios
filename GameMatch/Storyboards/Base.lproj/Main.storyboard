@@ -802,7 +802,7 @@ Any person taking part in this group, specifically events posted on this group, 
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6O-eG-UDO">
                                 <rect key="frame" x="20" y="88" width="374" height="44"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sXW-3k-ayz">
+                                    <searchBar contentMode="redraw" placeholder="Sports" translatesAutoresizingMaskIntoConstraints="NO" id="sXW-3k-ayz">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
