@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b1Y-ND-2gb">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,18 +12,18 @@
             <objects>
                 <viewController storyboardIdentifier="ActivitiesViewController" id="6Rh-zG-h1d" customClass="ActivitiesViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JZH-FJ-oj5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qQF-Q8-mHY">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityTableViewCell" rowHeight="91" id="e23-Jv-2Xk" customClass="ActivityTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="91"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="600" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="e23-Jv-2Xk" id="egY-rA-RUF">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccerball" translatesAutoresizingMaskIntoConstraints="NO" id="T9D-Ho-TNO">
@@ -36,13 +34,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Soccer Pickup - Today 12:30pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwZ-9v-pQI">
-                                                    <rect key="frame" x="85" y="20" width="309" height="17"/>
+                                                    <rect key="frame" x="85" y="20" width="495" height="17"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Ramon Central Park" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzM-gY-hzp">
-                                                    <rect key="frame" x="85" y="43" width="309" height="28"/>
+                                                    <rect key="frame" x="85" y="43" width="495" height="28"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -99,21 +97,21 @@
             <objects>
                 <viewController storyboardIdentifier="CreateActivityViewController" id="JN7-YM-loW" customClass="CreateActivityViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qZJ-Ty-49p">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V8S-nH-NmV">
-                                <rect key="frame" x="20" y="108" width="374" height="34"/>
+                                <rect key="frame" x="20" y="64" width="560" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zOr-BF-bF8">
-                                <rect key="frame" x="20" y="157" width="374" height="34"/>
+                                <rect key="frame" x="20" y="113" width="560" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date &amp; Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jl8-QR-yiR">
-                                <rect key="frame" x="20" y="206" width="240" height="34"/>
+                                <rect key="frame" x="20" y="162" width="240" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="UmR-sk-GQs"/>
                                 </constraints>
@@ -121,7 +119,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Notes" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g0b-8j-ZD5">
-                                <rect key="frame" x="20" y="358" width="374" height="128"/>
+                                <rect key="frame" x="20" y="314" width="560" height="128"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="374" id="vkn-aX-1kK"/>
@@ -132,36 +130,36 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ml0-tZ-640">
-                                <rect key="frame" x="161" y="516" width="92" height="30"/>
+                                <rect key="frame" x="254" y="472" width="92" height="30"/>
                                 <state key="normal" title="Invite Friends"/>
                                 <connections>
                                     <action selector="inviteAction:" destination="JN7-YM-loW" eventType="touchUpInside" id="xvG-NM-lA0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91B-nH-eQn">
-                                <rect key="frame" x="20" y="262.5" width="40.5" height="19.5"/>
+                                <rect key="frame" x="20" y="218.5" width="40.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Soccer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8te-wd-DSG">
-                                <rect key="frame" x="80.5" y="255" width="313.5" height="34"/>
+                                <rect key="frame" x="80.5" y="211" width="499.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skills" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufG-PM-I1r">
-                                <rect key="frame" x="20" y="311.5" width="37.5" height="19.5"/>
+                                <rect key="frame" x="20" y="267.5" width="37.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="All Levels" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMq-eD-cr3">
-                                <rect key="frame" x="80.5" y="304" width="313.5" height="34"/>
+                                <rect key="frame" x="80.5" y="260" width="499.5" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Weekly" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="C5x-oG-1sx">
-                                <rect key="frame" x="280" y="206" width="114" height="34"/>
+                                <rect key="frame" x="280" y="162" width="300" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -222,11 +220,11 @@
             <objects>
                 <viewController storyboardIdentifier="ContactsViewController" id="YxP-Zb-hsf" customClass="ContactsViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mg5-m1-C1D">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="MJL-rV-0FJ">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="YxP-Zb-hsf" id="R9H-zZ-WMK"/>
@@ -263,27 +261,27 @@
             <objects>
                 <viewController storyboardIdentifier="NewEventViewController" id="xv7-fH-8G1" customClass="NewEventViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Io3-Id-ObO">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Date &amp; Time" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KDU-4q-fMW">
-                                <rect key="frame" x="20" y="108" width="374" height="34"/>
+                                <rect key="frame" x="20" y="64" width="560" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="POR-ou-4uJ">
-                                <rect key="frame" x="20" y="162" width="374" height="34"/>
+                                <rect key="frame" x="20" y="118" width="560" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Oht-Uk-nJk">
-                                <rect key="frame" x="20" y="206" width="374" height="200"/>
+                                <rect key="frame" x="20" y="162" width="560" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="0UB-qK-xwO"/>
                                 </constraints>
                             </mapView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iGJ-Ix-iC4">
-                                <rect key="frame" x="20" y="426" width="374" height="200"/>
+                                <rect key="frame" x="20" y="382" width="560" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="pTD-1e-95m"/>
@@ -332,18 +330,18 @@
             <objects>
                 <viewController storyboardIdentifier="ActivityDetailsViewController" hidesBottomBarWhenPushed="YES" id="05h-i5-Gnv" customClass="ActivityDetailsViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UjB-QI-XcW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vR2-Tx-yzU">
-                                <rect key="frame" x="0.0" y="190" width="414" height="706"/>
+                                <rect key="frame" x="0.0" y="190" width="600" height="410"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityInfoTableViewCell" rowHeight="510" id="YPB-8I-uqr" customClass="ActivityInfoTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="510"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="600" height="510"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YPB-8I-uqr" id="cg9-6Q-d2E">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="510"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="510"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday, August 20, 2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPN-rl-BDJ">
@@ -376,7 +374,7 @@
                                                     <state key="normal" title="Add to calendar"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asi-wj-dBP">
-                                                    <rect key="frame" x="299" y="321" width="95" height="29"/>
+                                                    <rect key="frame" x="485" y="321" width="95" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="Send message"/>
                                                     <connections>
@@ -384,7 +382,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQh-Oe-go4">
-                                                    <rect key="frame" x="335" y="103.5" width="59" height="29"/>
+                                                    <rect key="frame" x="521" y="103.5" width="59" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="Direction"/>
                                                     <connections>
@@ -400,7 +398,7 @@
                                                     <state key="normal" title="More"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbl-y3-jvS">
-                                                    <rect key="frame" x="353" y="5" width="41" height="33"/>
+                                                    <rect key="frame" x="539" y="5" width="41" height="33"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <state key="normal" title="JOIN">
                                                         <color key="titleColor" systemColor="systemRedColor"/>
@@ -434,7 +432,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4l4-gf-SIV">
-                                                    <rect key="frame" x="311" y="6.5" width="30" height="30"/>
+                                                    <rect key="frame" x="497" y="6.5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="6Gy-qh-e6D"/>
                                                         <constraint firstAttribute="width" constant="30" id="pXQ-MI-pQU"/>
@@ -445,7 +443,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esT-gH-Lb4">
-                                                    <rect key="frame" x="271" y="6.5" width="30" height="30"/>
+                                                    <rect key="frame" x="457" y="6.5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="4it-V4-FFv"/>
                                                         <constraint firstAttribute="height" constant="30" id="6PB-7K-z3D"/>
@@ -458,7 +456,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5J-w7-XO4">
-                                                    <rect key="frame" x="20" y="137.5" width="374" height="120"/>
+                                                    <rect key="frame" x="20" y="137.5" width="560" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="120" id="eK9-CQ-Rec"/>
                                                     </constraints>
@@ -493,7 +491,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                                     <viewLayoutGuide key="frameLayoutGuide" id="4Li-f7-SDA"/>
                                                 </scrollView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xWe-2p-jqt">
-                                                    <rect key="frame" x="322" y="401" width="72" height="29"/>
+                                                    <rect key="frame" x="508" y="401" width="72" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="Invite more"/>
                                                     <connections>
@@ -550,14 +548,14 @@ Any person taking part in this group, specifically events posted on this group, 
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageTableViewCell" rowHeight="78" id="dof-4x-iVz" customClass="MessageTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="554.5" width="414" height="78"/>
+                                        <rect key="frame" x="0.0" y="554.5" width="600" height="78"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dof-4x-iVz" id="2PZ-Kc-Un3">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="78"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="platini" translatesAutoresizingMaskIntoConstraints="NO" id="mIB-W2-brD">
-                                                    <rect key="frame" x="20" y="14" width="50" height="50"/>
+                                                    <rect key="frame" x="16" y="14" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" priority="900" constant="50" id="6nj-Ud-pCq"/>
                                                         <constraint firstAttribute="width" secondItem="mIB-W2-brD" secondAttribute="height" multiplier="1:1" id="eRs-5Y-Fvg"/>
@@ -569,7 +567,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Platini" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBN-rk-Z1n">
-                                                    <rect key="frame" x="80" y="14" width="43.5" height="17"/>
+                                                    <rect key="frame" x="76" y="14" width="43.5" height="17"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -581,7 +579,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game on! Friday noon time. Same place." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxf-O5-rSF">
-                                                    <rect key="frame" x="80" y="37" width="314" height="17"/>
+                                                    <rect key="frame" x="76" y="37" width="318" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -615,10 +613,10 @@ Any person taking part in this group, specifically events posted on this group, 
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HC2-qA-bQy">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="190"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccergame" translatesAutoresizingMaskIntoConstraints="NO" id="okj-Gs-CCR">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="190"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soccer Pickup Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fs-1M-U1V">
                                         <rect key="frame" x="20" y="146" width="195" height="24"/>
@@ -665,11 +663,11 @@ Any person taking part in this group, specifically events posted on this group, 
             <objects>
                 <viewController storyboardIdentifier="SendMessageViewController" id="MoP-Tf-1vL" customClass="SendMessageViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KjL-JG-Q7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Message" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CTe-E0-bmq">
-                                <rect key="frame" x="20" y="98" width="374" height="744"/>
+                                <rect key="frame" x="20" y="54" width="560" height="526"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -705,22 +703,22 @@ Any person taking part in this group, specifically events posted on this group, 
             </objects>
             <point key="canvasLocation" x="6044.9275362318849" y="756.69642857142856"/>
         </scene>
-        <!--Home View Controller-->
+        <!--Explore View Controller-->
         <scene sceneID="7sM-zc-F4s">
             <objects>
-                <viewController id="oUE-EE-NqP" customClass="HomeViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oUE-EE-NqP" customClass="ExploreViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sfz-g8-lai">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="hoK-V2-zbf">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HF9-v6-LXd">
-                                <rect key="frame" x="0.0" y="458" width="414" height="355"/>
+                                <rect key="frame" x="0.0" y="414" width="600" height="137"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5C-Hp-vjg">
-                                        <rect key="frame" x="192" y="6" width="30" height="4"/>
+                                        <rect key="frame" x="285" y="6" width="30" height="4"/>
                                         <color key="backgroundColor" systemColor="systemGray2Color"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="4RY-t6-syD"/>
@@ -733,14 +731,14 @@ Any person taking part in this group, specifically events posted on this group, 
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="elf-8R-prK">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="327"/>
+                                        <rect key="frame" x="0.0" y="28" width="600" height="109"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityTableViewCell" rowHeight="91" id="p7P-9s-F08" customClass="ActivityTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="44.5" width="414" height="91"/>
+                                                <rect key="frame" x="0.0" y="44.5" width="600" height="91"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p7P-9s-F08" id="XEj-x1-7jQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="91"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="91"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccerball" translatesAutoresizingMaskIntoConstraints="NO" id="8eY-oe-tCS">
@@ -751,13 +749,13 @@ Any person taking part in this group, specifically events posted on this group, 
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Soccer Pickup - Today 12:30pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ea-8p-enX">
-                                                            <rect key="frame" x="85" y="20" width="309" height="17"/>
+                                                            <rect key="frame" x="85" y="20" width="495" height="17"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="San Ramon Central Park" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvS-87-SAj">
-                                                            <rect key="frame" x="85" y="43" width="309" height="28"/>
+                                                            <rect key="frame" x="85" y="43" width="495" height="28"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -800,10 +798,10 @@ Any person taking part in this group, specifically events posted on this group, 
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6O-eG-UDO">
-                                <rect key="frame" x="20" y="88" width="374" height="44"/>
+                                <rect key="frame" x="20" y="44" width="560" height="44"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="sXW-3k-ayz">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="44"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="oUE-EE-NqP" id="hzf-Oy-0B0"/>
@@ -861,16 +859,16 @@ Any person taking part in this group, specifically events posted on this group, 
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="orq-pR-EgV" customClass="LoginViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xVp-fs-pls">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PUh-Ew-XaZ">
-                                <rect key="frame" x="60" y="128" width="294" height="34"/>
+                                <rect key="frame" x="60" y="84" width="480" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ft-Rg-MAv">
-                                <rect key="frame" x="87" y="316" width="240" height="44"/>
+                                <rect key="frame" x="180" y="272" width="240" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="BYj-YI-Clo"/>
@@ -878,7 +876,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRa-og-vB5" customClass="GIDSignInButton">
-                                <rect key="frame" x="82" y="390" width="250" height="44"/>
+                                <rect key="frame" x="175" y="346" width="250" height="44"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="I4H-rH-tO8"/>
@@ -888,7 +886,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEG-ac-g0N">
-                                <rect key="frame" x="60" y="192" width="294" height="44"/>
+                                <rect key="frame" x="60" y="148" width="480" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="JXf-AU-VFa"/>
                                 </constraints>
@@ -898,7 +896,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gqZ-R8-QaB">
-                                <rect key="frame" x="87" y="464" width="240" height="44"/>
+                                <rect key="frame" x="180" y="420" width="240" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="5jd-NK-Cyl"/>
@@ -947,33 +945,33 @@ Any person taking part in this group, specifically events posted on this group, 
             <objects>
                 <viewController storyboardIdentifier="RegisterViewController" id="sM2-QD-qjn" customClass="RegisterViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yI0-7G-fFb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Activation Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xll-ff-OZ2">
-                                <rect key="frame" x="60" y="74" width="294" height="34"/>
+                                <rect key="frame" x="60" y="30" width="480" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ba-9e-GoZ">
-                                <rect key="frame" x="60" y="182" width="294" height="34"/>
+                                <rect key="frame" x="60" y="138" width="480" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sE3-zg-Rzx">
-                                <rect key="frame" x="60" y="300" width="294" height="30"/>
+                                <rect key="frame" x="60" y="256" width="480" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="registerAction" destination="sM2-QD-qjn" eventType="touchUpInside" id="PSy-wn-TSf"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w4x-sg-455">
-                                <rect key="frame" x="60" y="236" width="294" height="34"/>
+                                <rect key="frame" x="60" y="192" width="480" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MIu-nD-2rc">
-                                <rect key="frame" x="60" y="128" width="294" height="34"/>
+                                <rect key="frame" x="60" y="84" width="480" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="username"/>
                             </textField>
@@ -1014,18 +1012,18 @@ Any person taking part in this group, specifically events posted on this group, 
             <objects>
                 <viewController storyboardIdentifier="MembersViewController" id="ucx-Yf-scW" customClass="MembersViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="z3F-NN-ova">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="lRa-cx-uXU">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MemberTableViewCell" rowHeight="76" id="zaG-cb-GEH" customClass="MemberTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="76"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="600" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zaG-cb-GEH" id="tMY-vD-yVS">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fuQ-Vw-J91">
@@ -1048,7 +1046,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08/12/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HKg-eO-tgE">
-                                                    <rect key="frame" x="322" y="15" width="72" height="17"/>
+                                                    <rect key="frame" x="508" y="15" width="72" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1104,18 +1102,18 @@ Any person taking part in this group, specifically events posted on this group, 
             <objects>
                 <viewController storyboardIdentifier="EventsViewController" id="CXZ-g7-Sip" customClass="EventsViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="68W-qt-LWT">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5dy-Bb-XIc">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ActivityTableViewCell" rowHeight="91" id="gwT-Yo-ih7" customClass="ActivityTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="91"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="600" height="91"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gwT-Yo-ih7" id="Ucc-eL-tUX">
-                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="91"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="574.5" height="91"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Central Park, San Ramon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJO-Sc-Te2">
@@ -1125,7 +1123,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTO-7o-bUr">
-                                                    <rect key="frame" x="344.5" y="15" width="20" height="20"/>
+                                                    <rect key="frame" x="534.5" y="15" width="20" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1207,17 +1205,17 @@ Any person taking part in this group, specifically events posted on this group, 
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="0lb-iH-JIJ" customClass="ProfileViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ArG-e2-G6A">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Michel Platini" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZH-Og-fFn">
-                                <rect key="frame" x="149.5" y="128" width="115" height="22"/>
+                                <rect key="frame" x="242.5" y="84" width="115" height="22"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="platini" translatesAutoresizingMaskIntoConstraints="NO" id="O5B-pc-zsS">
-                                <rect key="frame" x="147" y="190" width="120" height="120"/>
+                                <rect key="frame" x="240" y="146" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="2oH-UL-ghL"/>
                                     <constraint firstAttribute="width" constant="120" id="Xwd-1t-UBx"/>
@@ -1229,7 +1227,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="415-999-8989" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DC-sV-y5y">
-                                <rect key="frame" x="149" y="390" width="116" height="21"/>
+                                <rect key="frame" x="242" y="346" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1402,40 +1400,40 @@ Any person taking part in this group, specifically events posted on this group, 
             <objects>
                 <viewController storyboardIdentifier="GroupDetailsViewController" hidesBottomBarWhenPushed="YES" id="jM3-ht-XUn" customClass="GroupDetailsViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BVs-VH-go3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KuX-bb-QCW">
-                                <rect key="frame" x="0.0" y="190" width="414" height="706"/>
+                                <rect key="frame" x="0.0" y="190" width="600" height="410"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GroupInfoTableViewCell" rowHeight="529" id="bDZ-uJ-KnG" customClass="GroupInfoTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="529"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="600" height="529"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bDZ-uJ-KnG" id="71e-q5-bTg">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="529"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="529"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weekly - Sunday 9am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pa-iz-F01">
-                                                    <rect key="frame" x="20" y="10" width="159" height="18"/>
+                                                    <rect key="frame" x="16" y="10" width="159" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members (56)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zBo-xH-Sy6">
-                                                    <rect key="frame" x="20" y="393" width="104.5" height="18"/>
+                                                    <rect key="frame" x="16" y="393" width="104.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rancho Sports Park, San Ramon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNq-Ae-bPo">
-                                                    <rect key="frame" x="20" y="48" width="236" height="18"/>
+                                                    <rect key="frame" x="16" y="48" width="236" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mo-jt-6Ws">
-                                                    <rect key="frame" x="335" y="20.5" width="59" height="73"/>
+                                                    <rect key="frame" x="521" y="3.5" width="59" height="107"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="Direction"/>
                                                     <connections>
@@ -1443,7 +1441,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4v-c4-Ilg">
-                                                    <rect key="frame" x="349" y="387.5" width="45" height="29"/>
+                                                    <rect key="frame" x="535" y="387.5" width="45" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="See All"/>
                                                     <connections>
@@ -1451,7 +1449,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sP-Ja-V1x">
-                                                    <rect key="frame" x="20" y="98.5" width="374" height="284.5"/>
+                                                    <rect key="frame" x="16" y="115.5" width="564" height="267.5"/>
                                                     <string key="text">GENERAL GAME RULES:
 Rule #1: BE SAFE and RESPECTFUL
 But more specifically...
@@ -1472,13 +1470,13 @@ This group has been super honorable and respectful for years with no known major
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events (12)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etG-hp-ZSP">
-                                                    <rect key="frame" x="20" y="501" width="82.5" height="18"/>
+                                                    <rect key="frame" x="16" y="501" width="82.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHW-13-Xmj">
-                                                    <rect key="frame" x="349" y="495.5" width="45" height="29"/>
+                                                    <rect key="frame" x="535" y="495.5" width="45" height="29"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <state key="normal" title="See All"/>
                                                     <connections>
@@ -1486,7 +1484,7 @@ This group has been super honorable and respectful for years with no known major
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Noi-ee-QfR">
-                                                    <rect key="frame" x="307" y="4" width="87" height="30"/>
+                                                    <rect key="frame" x="493" y="4" width="87" height="30"/>
                                                     <state key="normal" title="+ New Event"/>
                                                     <connections>
                                                         <action selector="newEventAction:" destination="bDZ-uJ-KnG" eventType="touchUpInside" id="Ype-77-aua"/>
@@ -1533,26 +1531,26 @@ This group has been super honorable and respectful for years with no known major
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventTableViewCell" rowHeight="73" id="Xvy-2t-8Hz" customClass="EventTableViewCell" customModule="GameMatch" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="573.5" width="414" height="73"/>
+                                        <rect key="frame" x="0.0" y="573.5" width="600" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xvy-2t-8Hz" id="6Ca-5h-6dJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="384.5" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="388.5" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="08/29/2021 Sunday 9am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BqY-I9-ghd">
-                                                    <rect key="frame" x="20" y="10" width="168.5" height="18"/>
+                                                    <rect key="frame" x="16" y="10" width="168.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rancho Sports Park, San Ramon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cmn-Ug-HAo">
-                                                    <rect key="frame" x="20" y="38" width="221.5" height="25"/>
+                                                    <rect key="frame" x="16" y="38" width="221.5" height="25"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16 Attendees" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AYm-1w-fTb">
-                                                    <rect key="frame" x="279.5" y="10" width="90" height="18"/>
+                                                    <rect key="frame" x="283.5" y="10" width="90" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1576,10 +1574,10 @@ This group has been super honorable and respectful for years with no known major
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="elt-0m-huq">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="190"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccergame" translatesAutoresizingMaskIntoConstraints="NO" id="Weu-UG-Bb3">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="190"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="190"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Soccer Sunday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vw2-WN-5Fd">
                                         <rect key="frame" x="20" y="146" width="141.5" height="24"/>
@@ -1588,7 +1586,7 @@ This group has been super honorable and respectful for years with no known major
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fNY-k9-uDQ">
-                                        <rect key="frame" x="334" y="136" width="60" height="44"/>
+                                        <rect key="frame" x="520" y="136" width="60" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="sya-7k-LCZ"/>
                                             <constraint firstAttribute="height" constant="44" id="xnV-CS-UO6"/>
@@ -1661,23 +1659,23 @@ This group has been super honorable and respectful for years with no known major
             <objects>
                 <viewController storyboardIdentifier="SignInViewController" id="Flm-rU-L2N" customClass="SignInViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0Gf-va-Ef0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6g-AY-JQ8">
-                                <rect key="frame" x="60" y="123.5" width="294" height="34"/>
+                                <rect key="frame" x="60" y="79.5" width="480" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" secureTextEntry="YES" textContentType="username"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfP-a6-RWX">
-                                <rect key="frame" x="60" y="187.5" width="294" height="30"/>
+                                <rect key="frame" x="60" y="143.5" width="480" height="30"/>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <action selector="nextAction" destination="Flm-rU-L2N" eventType="touchUpInside" id="doq-pZ-xHN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHv-0S-n9l">
-                                <rect key="frame" x="187.5" y="74" width="39.5" height="19.5"/>
+                                <rect key="frame" x="280.5" y="30" width="39.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1706,11 +1704,6 @@ This group has been super honorable and respectful for years with no known major
             <point key="canvasLocation" x="4293" y="-629"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="4Zh-v5-zFv">
-            <size key="intrinsicContentSize" width="-1" height="83"/>
-        </designable>
-    </designables>
     <resources>
         <image name="favorites-fill-icon" width="25" height="25"/>
         <image name="favorites-icon" width="25" height="25"/>

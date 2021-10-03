@@ -22,4 +22,9 @@ class SessionManager
     {
         UserDefaults.standard.set(sessionId, forKey: sessionKey)
     }
+    
+    func clear()
+    {
+        UserDefaults.standard.removeObject(forKey: sessionKey)
+    }
 }

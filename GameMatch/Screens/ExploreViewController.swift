@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  ExploreViewController.swift
 //  Game Match
 //
 //  Created by Luke Shi on 8/11/21.
@@ -9,7 +9,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class HomeViewController: BaseViewController
+class ExploreViewController: BaseViewController
 {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
@@ -19,6 +19,8 @@ class HomeViewController: BaseViewController
     @IBOutlet weak var searchViewTop: NSLayoutConstraint!
     @IBOutlet weak var searchViewLeft: NSLayoutConstraint!
     
+    private let exploreVM = ExploreViewModel()
+    
     private var locationManager: CLLocationManager?
     
     private var startPosition: CGFloat = 0
@@ -26,7 +28,8 @@ class HomeViewController: BaseViewController
     
     private let pinIdentifier = "pin"
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
                 
         searchBar.searchTextField.backgroundColor = .clear
@@ -58,28 +61,33 @@ class HomeViewController: BaseViewController
         locationManager?.requestWhenInUseAuthorization()
     }
     
-    @objc private func mapTapped() {
+    @objc private func mapTapped()
+    {
         searchBar.resignFirstResponder()
     }
     
-    private func setupMapView() {
+    private func setupMapView()
+    {
         let initialLocation = CLLocation(latitude: 37.734501728760144, longitude: -121.92823118854375)
         mapView.centerToLocation(initialLocation)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool)
+    {
         super.viewWillAppear(animated)
         
         navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool)
+    {
         super.viewWillDisappear(animated)
         
         navigationController?.isNavigationBarHidden = false
     }
         
-    @objc func panAction(_ pan: UIPanGestureRecognizer) {
+    @objc func panAction(_ pan: UIPanGestureRecognizer)
+    {
         switch pan.state {
         case .began:
             currentPosition = resultViewPositionY.constant
@@ -101,21 +109,24 @@ class HomeViewController: BaseViewController
         }
     }
     
-    func showActivityDetails() {
+    func showActivityDetails()
+    {
         if let activityScreen = UIStoryboard(name: "Main",
                                              bundle: nil).instantiateViewController(identifier: "ActivityDetailsViewController") as? ActivityDetailsViewController {
             navigationController?.pushViewController(activityScreen, animated: true)
         }
     }
     
-    private func showActivityLocations() {
+    private func showActivityLocations()
+    {
         addAnnotation(title: "Soccer Game", name: "soccer-pin", latitude: 37.750603682221815, longitude: -121.91890945029355)
         addAnnotation(title: "Soccer Pickup", name: "soccer-pin", latitude: 37.76680, longitude: -121.95440)
         addAnnotation(title: "Volleyball Game", name: "volleyball-pin", latitude: 37.753040, longitude: -121.895874)
         addAnnotation(title: "Fun Golf", name: "golf-pin", latitude: 37.77166179714824, longitude: -121.93415058834861)
     }
     
-    private func addAnnotation(title: String, name: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+    private func addAnnotation(title: String, name: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees)
+    {
         let annotation = GMPointAnnotation(named: name)
         annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         annotation.title = title
@@ -127,11 +138,32 @@ class HomeViewController: BaseViewController
     }
 }
 
-extension HomeViewController: UISearchBarDelegate
+extension ExploreViewController: UISearchBarDelegate
 {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
         searchBar.resignFirstResponder()
         
+        if let latitude = locationManager?.location?.coordinate.latitude,
+           let longitude = locationManager?.location?.coordinate.longitude
+        {
+            exploreVM.activities(latitude: latitude,
+                                 longitude: longitude,
+                                 completion: { [weak self] result in
+                switch result {
+                case .success(let activities):
+                    self?.showSearchResult(activities: activities)
+                case .failure(let error):
+                    self?.showError(error)
+                }
+            })
+        }
+    }
+    
+    private func showSearchResult(activities: [Activity])
+    {
+        showMessage("Found \(activities.count) activities")
+
         UIView.animate(withDuration: 0.6,
                        animations: { [weak self] in
                            self?.resultViewPositionY.constant = self?.startPosition ?? 0
@@ -140,13 +172,15 @@ extension HomeViewController: UISearchBarDelegate
     }
 }
 
-extension HomeViewController: UITableViewDataSource
+extension ExploreViewController: UITableViewDataSource
 {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return 10
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityTableViewCell", for: indexPath)
         if let cell = cell as? ActivityTableViewCell {
             if indexPath.row % 2 == 0 {
@@ -163,18 +197,19 @@ extension HomeViewController: UITableViewDataSource
     }
 }
 
-extension HomeViewController: UITableViewDelegate
+extension ExploreViewController: UITableViewDelegate
 {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         showActivityDetails()
     }
 }
 
-extension HomeViewController: MKMapViewDelegate
+extension ExploreViewController: MKMapViewDelegate
 {
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+    {
         guard annotation is MKPointAnnotation else { return nil }
 
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: pinIdentifier)
@@ -192,7 +227,8 @@ extension HomeViewController: MKMapViewDelegate
         return annotationView
     }
     
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
+    {
         if let annotation = view.annotation as? GMPointAnnotation {
             print("========= \(annotation.pinImageName) ========")
             showActivityDetails()
@@ -200,7 +236,7 @@ extension HomeViewController: MKMapViewDelegate
     }
 }
 
-extension HomeViewController: CLLocationManagerDelegate
+extension ExploreViewController: CLLocationManagerDelegate
 {
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
     {

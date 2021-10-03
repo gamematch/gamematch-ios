@@ -14,30 +14,43 @@ final class NetworkService: DataService
                                               "x-gm-platform": "iOS\(UIDevice.current.systemVersion)",
                                               "x-gm-session-id": SessionManager.shared.sessionId]
     
-    func get(request: DataRequest, completion: @escaping (Result<Data, Error>) -> Void)
+    func get(request: DataRequest,
+             parameters: [String: String]?,
+             completion: @escaping (Result<Data, Error>) -> Void)
     {
-        let url = request.url
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-
-        for header in headers {
-            urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
+        var components = URLComponents(string: request.url.absoluteString)
+        components?.queryItems = parameters?.map { (key, value) in
+            URLQueryItem(name: key, value: value)
         }
         
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            if let error = error {
-                completion(.failure(error))
-                return
+        if let url = components?.url {
+            var urlRequest = URLRequest(url: url)
+            
+    //        let url = request.url
+    //        var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "GET"
+
+            for header in headers {
+                urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
             }
-            guard let data = data else {
-                completion(.failure(ServiceError.invalidData))
-                return
-            }
-            completion(.success(data))
-        }.resume()
+            
+            URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+                if let error = error {
+                    completion(.failure(error))
+                    return
+                }
+                guard let data = data else {
+                    completion(.failure(ServiceError.invalidData))
+                    return
+                }
+                completion(.success(data))
+            }.resume()
+        }
     }
     
-    func post(request: DataRequest, parameters: [String: Any?]?, completion: @escaping (Result<Data, Error>) -> Void)
+    func post(request: DataRequest,
+              parameters: [String: Any?]?,
+              completion: @escaping (Result<Data, Error>) -> Void)
     {
         let url = request.url
         var urlRequest = URLRequest(url: url)
