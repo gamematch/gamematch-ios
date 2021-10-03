@@ -43,6 +43,8 @@ final class NetworkService: DataService
                 }
                 completion(.success(data))
             }.resume()
+        } else {
+            completion(.failure(ServiceError.invalidData))
         }
     }
     

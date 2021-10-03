@@ -162,13 +162,13 @@ extension ExploreViewController: UISearchBarDelegate
     
     private func showSearchResult(activities: [Activity])
     {
-        showMessage("Found \(activities.count) activities")
-
-        UIView.animate(withDuration: 0.6,
-                       animations: { [weak self] in
-                           self?.resultViewPositionY.constant = self?.startPosition ?? 0
-                           self?.view.layoutIfNeeded()
-                       })
+        showMessage("Found \(activities.count) activities", completion: {
+            UIView.animate(withDuration: 0.6,
+                           animations: { [weak self] in
+                               self?.resultViewPositionY.constant = self?.startPosition ?? 0
+                               self?.view.layoutIfNeeded()
+                           })
+        })
     }
 }
 

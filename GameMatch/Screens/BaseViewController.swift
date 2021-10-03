@@ -14,10 +14,18 @@ class BaseViewController: UIViewController
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
 
-    func showMessage(title: String = "", _ message: String)
+    func showMessage(title: String = "",
+                     _ message: String,
+                     completion: (() -> Void)? = nil)
     {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+        let alert = UIAlertController(title: title,
+                                      message: message,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK",
+                                      style: .cancel,
+                                      handler: { _ in
+                                          completion?()
+                                      }))
         present(alert, animated: true, completion: nil)
     }
     
