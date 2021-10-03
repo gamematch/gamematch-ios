@@ -18,16 +18,14 @@ final class NetworkService: DataService
              parameters: [String: String]?,
              completion: @escaping (Result<Data, Error>) -> Void)
     {
-        var components = URLComponents(string: request.url.absoluteString)
+        var components = URLComponents(url: request.url,
+                                       resolvingAgainstBaseURL: false)
         components?.queryItems = parameters?.map { (key, value) in
             URLQueryItem(name: key, value: value)
         }
         
         if let url = components?.url {
             var urlRequest = URLRequest(url: url)
-            
-    //        let url = request.url
-    //        var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = "GET"
 
             for header in headers {
