@@ -124,6 +124,8 @@ class ExploreViewController: BaseViewController
     
     private func showActivityLocations()
     {
+        mapView.removeAnnotations(mapView.annotations)
+        
         let pins = ["soccer-pin", "volleyball-pin", "golf-pin"]
         if let activities = exploreVM.activities {
             for activity in activities {
@@ -200,15 +202,13 @@ extension ExploreViewController: UITableViewDataSource
            let activities = exploreVM.activities
         {
             let activity = activities[indexPath.row]
-            if indexPath.row % 2 == 0 {
-                cell.config(icon: UIImage(named: "soccerball"),
-                            title: "Soccer Pickup Game - " + activity.startTime.display(),
-                            details: activity.address)
-            } else {
-                cell.config(icon: UIImage(named: "hiking"),
-                            title: "Weekend Hiking - " + activity.startTime.display(),
-                            details: activity.address)
-            }
+            
+            let icon = indexPath.row % 2 == 0 ? UIImage(named: "soccerball") : UIImage(named: "hiking")
+            let name = indexPath.row % 2 == 0 ? "Soccer Pickup Game" : "Weekend Hiking"
+
+            cell.config(icon: icon,
+                        title: name + " - " + activity.startTime.display(),
+                        details: activity.address)
         }
         return cell
     }
