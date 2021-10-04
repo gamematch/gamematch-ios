@@ -17,7 +17,7 @@ class ActivitiesViewController: BaseViewController
     {
         super.viewDidLoad()
         
-        navigationItem.title = "Groups & Activities"
+        navigationItem.title = "Activities & Events"
         
         profileButtonItem = navigationItem.rightBarButtonItem
     }
@@ -94,7 +94,7 @@ extension ActivitiesViewController: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
     {
-        return section == 0 ? "My Groups" : "My Activities"
+        return section == 0 ? "My Activities" : "My Events"
     }
 }
 

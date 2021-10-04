@@ -812,7 +812,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                             <outlet property="delegate" destination="oUE-EE-NqP" id="hzf-Oy-0B0"/>
                                         </connections>
                                     </searchBar>
-                                    <searchBar contentMode="redraw" placeholder="Current location" translatesAutoresizingMaskIntoConstraints="NO" id="goK-df-ZIc">
+                                    <searchBar contentMode="redraw" placeholder="Current Location" translatesAutoresizingMaskIntoConstraints="NO" id="goK-df-ZIc">
                                         <rect key="frame" x="0.0" y="47" width="374" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="zgN-Mi-nSM"/>

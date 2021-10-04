@@ -63,4 +63,10 @@ class AuthenticationAPIService: BaseAPIService
                           "userId": userId],
              completion: completion)
     }
+    
+    func logout(completion: @escaping (Result<Void, Error>) -> Void)
+    {
+        post(request: APIRequests.logout,
+             completion: completion)
+    }
 }

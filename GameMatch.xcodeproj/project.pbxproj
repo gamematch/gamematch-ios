@@ -46,6 +46,7 @@
 		A3B6B4952709301C00309925 /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6B4942709301C00309925 /* ExploreViewModel.swift */; };
 		A3B6B4972709318800309925 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6B4962709318800309925 /* Activity.swift */; };
 		A3B6B49B270960BD00309925 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6B49A270960BD00309925 /* Date+.swift */; };
+		A3B6B49D270AD37600309925 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6B49C270AD37600309925 /* ProfileViewModel.swift */; };
 		A3C6F61E26D34AD600C01549 /* GMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61D26D34AD600C01549 /* GMTabBar.swift */; };
 		A3C6F62026D3803D00C01549 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61F26D3803D00C01549 /* LoginViewController.swift */; };
 		A3CD34E826D76A990049C6AE /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34E726D76A990049C6AE /* UIImage+.swift */; };
@@ -124,6 +125,7 @@
 		A3B6B4942709301C00309925 /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
 		A3B6B4962709318800309925 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		A3B6B49A270960BD00309925 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		A3B6B49C270AD37600309925 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A3C6F61D26D34AD600C01549 /* GMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMTabBar.swift; sourceTree = "<group>"; };
 		A3C6F61F26D3803D00C01549 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A3CD34E726D76A990049C6AE /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				A3B6B4942709301C00309925 /* ExploreViewModel.swift */,
+				A3B6B49C270AD37600309925 /* ProfileViewModel.swift */,
 				A3385B2D2700166A004799E8 /* SignInViewModel.swift */,
 			);
 			path = ViewModels;
@@ -604,6 +607,7 @@
 				A3D3B3C32700CB5400E1D8A0 /* GMError.swift in Sources */,
 				A3893F9026C7A5340004C766 /* MessageTableViewCell.swift in Sources */,
 				A3385B1826FFD3E9004799E8 /* DataService.swift in Sources */,
+				A3B6B49D270AD37600309925 /* ProfileViewModel.swift in Sources */,
 				A3385B2C27000EE0004799E8 /* RegisterViewController.swift in Sources */,
 				A3893F9426CCAD0B0004C766 /* ContactsViewController.swift in Sources */,
 				A3893F8E26C64EA60004C766 /* ActivityInfoTableViewCell.swift in Sources */,

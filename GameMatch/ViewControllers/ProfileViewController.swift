@@ -9,6 +9,8 @@ import UIKit
 
 class ProfileViewController: UIViewController
 {
+    private let profileVM = ProfileViewModel()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -24,6 +26,8 @@ class ProfileViewController: UIViewController
     @IBAction func logoutAction(_ sender: UIBarButtonItem)
     {
         SessionManager.shared.clear()
+        
+        profileVM.logout()
         
         closeAction(sender)
     }
