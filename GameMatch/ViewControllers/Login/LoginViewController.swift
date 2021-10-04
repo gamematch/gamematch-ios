@@ -130,25 +130,46 @@ class LoginViewController: BaseViewController
     
     @IBAction func nextAction()
     {
-        if let identity = identityField.text {
+        if let identity = identityField.text, !identity.isEmpty {
             startSpinner()
-            signinVM.signup(identity: identity,
-                            completion: { [weak self] result in
-                                self?.stopSpinner()
-                                switch result {
-                                case .success(let state):
-                                    print("========= status: \(state.status) =========")
-                                    if state.status == "ACTIVATION_CODE_SENT" {
-                                        self?.showRegisterScreen(identity: identity)
-                                    } else if state.status == "USER_ALREADY_EXISTED" {
-                                        self?.showSignInScreen(identity: identity)
-                                    } else {
-                                        self?.showMessage("Data Error")
-                                    }
-                                case .failure(let error):
-                                    self?.showError(error)
-                                }
-                            })
+            signinVM.signup(identity: identity) { [weak self] result in
+                self?.stopSpinner()
+                switch result {
+                case .success(let state):
+                    print("========= status: \(state.status) =========")
+                    if state.status == "ACTIVATION_CODE_SENT" {
+                        self?.showRegisterScreen(identity: identity)
+                    } else if state.status == "USER_ALREADY_EXISTED" {
+                        self?.showSignInScreen(identity: identity)
+                    } else {
+                        self?.showMessage("Data Error")
+                    }
+                case .failure(let error):
+                    self?.showError(error)
+                }
+            }
+        }
+    }
+    
+    @IBAction func forgotPasswordActioon()
+    {
+        if let identity = identityField.text, !identity.isEmpty {
+            startSpinner()
+            signinVM.forgotPassword(identity: identity) { [weak self] result in
+                self?.stopSpinner()
+                switch result {
+                case .success(let state):
+                    if state.status == "PASSWORD_EMAIL_SENT" {
+                        self?.showMessage("Password has been sent to you email")
+                    } else if state.status == "IDENTITY_NOT_FOUND" {
+                        self?.showMessage("Identity not found")
+                    } else {
+                        self?.showMessage("Data Error")
+                    }
+                case .failure(let error):
+                    self?.showError(error)
+                }
+            }
         }
     }
     
