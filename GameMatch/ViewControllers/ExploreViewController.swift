@@ -11,13 +11,12 @@ import CoreLocation
 
 class ExploreViewController: BaseViewController
 {
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var activitySearchBar: UISearchBar!
+    @IBOutlet weak var locationSearchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var resultView: UIView!
     @IBOutlet weak var resultViewPositionY: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchViewTop: NSLayoutConstraint!
-    @IBOutlet weak var searchViewLeft: NSLayoutConstraint!
         
     private let exploreVM = ExploreViewModel()
     
@@ -32,9 +31,15 @@ class ExploreViewController: BaseViewController
     {
         super.viewDidLoad()
                 
-        searchBar.searchTextField.backgroundColor = .clear
-        searchBar.layer.cornerRadius = 5
-        searchBar.clipsToBounds = true
+        activitySearchBar.searchTextField.backgroundColor = .clear
+        activitySearchBar.layer.cornerRadius = 5
+        activitySearchBar.clipsToBounds = true
+        
+        locationSearchBar.searchTextField.backgroundColor = .clear
+        locationSearchBar.layer.cornerRadius = 5
+        locationSearchBar.clipsToBounds = true
+        locationSearchBar.isHidden = true
+        locationSearchBar.setImage(UIImage(systemName: "location.north"), for: .search, state: .normal)
                 
         tableView.delegate = self
         tableView.dataSource = self
@@ -47,7 +52,7 @@ class ExploreViewController: BaseViewController
         resultViewPositionY.constant = 800
         
         mapView.delegate = self
-        setupMapView()
+        setupMapView(latitude: 37.505368, longitude: -122.264192, scale: 0.3)
                 
         let tap = UITapGestureRecognizer(target: self, action: #selector(mapTapped))
         mapView.addGestureRecognizer(tap)
@@ -69,16 +74,18 @@ class ExploreViewController: BaseViewController
     
     @objc private func mapTapped()
     {
-        searchBar.resignFirstResponder()
+        activitySearchBar.resignFirstResponder()
     }
     
-    private func setupMapView()
+    private func setupMapView(latitude: CLLocationDegrees,
+                              longitude: CLLocationDegrees,
+                              scale: CLLocationDegrees)
     {
-        let initialLocation = CLLocation(latitude: 37.505368, longitude: -122.264192)
+        let initialLocation = CLLocation(latitude: latitude, longitude: longitude)
         mapView.centerToLocation(initialLocation)
         
         let region = MKCoordinateRegion(center: mapView.centerCoordinate,
-                                        span: MKCoordinateSpan(latitudeDelta: 0.3, longitudeDelta: 0.3))
+                                        span: MKCoordinateSpan(latitudeDelta: scale, longitudeDelta: scale))
         mapView.setRegion(region, animated: true)
     }
     
@@ -139,6 +146,10 @@ class ExploreViewController: BaseViewController
                               latitude: activity.latitude,
                               longitude: activity.longitude)
             }
+            
+            if let firstActivity = activities.first {
+                setupMapView(latitude: firstActivity.latitude, longitude: firstActivity.longitude, scale: 0.2)
+            }
         }
     }
     
@@ -171,12 +182,17 @@ extension ExploreViewController: UISearchBarDelegate
                                      self?.stopSpinner()
                                      switch result {
                                      case .success():
+                                         self?.locationSearchBar.isHidden = true
                                          self?.showSearchResult()
                                      case .failure(let error):
                                          self?.showError(error)
                                      }
                                  })
         }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        locationSearchBar.isHidden = false
     }
     
     private func showSearchResult()

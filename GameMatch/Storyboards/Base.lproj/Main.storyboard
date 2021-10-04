@@ -800,23 +800,38 @@ Any person taking part in this group, specifically events posted on this group, 
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6O-eG-UDO">
-                                <rect key="frame" x="20" y="88" width="374" height="44"/>
+                                <rect key="frame" x="20" y="88" width="374" height="91"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" placeholder="Sports" translatesAutoresizingMaskIntoConstraints="NO" id="sXW-3k-ayz">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="DtP-c0-Zam"/>
+                                        </constraints>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="oUE-EE-NqP" id="hzf-Oy-0B0"/>
                                         </connections>
                                     </searchBar>
+                                    <searchBar contentMode="redraw" placeholder="Current location" translatesAutoresizingMaskIntoConstraints="NO" id="goK-df-ZIc">
+                                        <rect key="frame" x="0.0" y="47" width="374" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="zgN-Mi-nSM"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="oUE-EE-NqP" id="5MK-Rj-o3t"/>
+                                        </connections>
+                                    </searchBar>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="sXW-3k-ayz" firstAttribute="top" secondItem="f6O-eG-UDO" secondAttribute="top" id="0FT-la-Pbk"/>
                                     <constraint firstItem="sXW-3k-ayz" firstAttribute="leading" secondItem="f6O-eG-UDO" secondAttribute="leading" id="3sx-bl-4gB"/>
-                                    <constraint firstAttribute="height" constant="44" id="9n5-ma-uYJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="goK-df-ZIc" secondAttribute="trailing" id="9GJ-YO-6ZO"/>
                                     <constraint firstAttribute="trailing" secondItem="sXW-3k-ayz" secondAttribute="trailing" id="IOi-75-NAi"/>
-                                    <constraint firstAttribute="bottom" secondItem="sXW-3k-ayz" secondAttribute="bottom" id="MBL-m2-nX9"/>
+                                    <constraint firstAttribute="bottom" secondItem="goK-df-ZIc" secondAttribute="bottom" id="nbQ-Bb-aTt"/>
+                                    <constraint firstItem="goK-df-ZIc" firstAttribute="top" secondItem="sXW-3k-ayz" secondAttribute="bottom" constant="3" id="p0h-m3-t1Z"/>
+                                    <constraint firstItem="goK-df-ZIc" firstAttribute="leading" secondItem="f6O-eG-UDO" secondAttribute="leading" id="tzI-RP-g5j"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -843,12 +858,11 @@ Any person taking part in this group, specifically events posted on this group, 
                     </view>
                     <navigationItem key="navigationItem" id="XeU-ha-411"/>
                     <connections>
+                        <outlet property="activitySearchBar" destination="sXW-3k-ayz" id="Peo-mz-Mkz"/>
+                        <outlet property="locationSearchBar" destination="goK-df-ZIc" id="8PA-q2-aYc"/>
                         <outlet property="mapView" destination="hoK-V2-zbf" id="GlX-OB-jnS"/>
                         <outlet property="resultView" destination="HF9-v6-LXd" id="kM3-Oh-4lM"/>
                         <outlet property="resultViewPositionY" destination="bWY-pa-PBo" id="rx6-Hm-upu"/>
-                        <outlet property="searchBar" destination="sXW-3k-ayz" id="Peo-mz-Mkz"/>
-                        <outlet property="searchViewLeft" destination="4LN-Nz-IEz" id="Q15-aX-a4O"/>
-                        <outlet property="searchViewTop" destination="07r-iI-n2z" id="CJC-3F-EJz"/>
                         <outlet property="tableView" destination="elf-8R-prK" id="jpb-Sb-ybM"/>
                     </connections>
                 </viewController>
