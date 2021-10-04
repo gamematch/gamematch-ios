@@ -247,8 +247,21 @@ extension ExploreViewController: MKMapViewDelegate
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView)
     {
         if let annotation = view.annotation as? GMPointAnnotation {
-            print("========= \(annotation.pinImageName) ========")
-            showActivityDetails()
+            showDirection(name: annotation.title ?? "",
+                          latitude: annotation.coordinate.latitude,
+                          longitude: annotation.coordinate.longitude)
+        }
+    }
+    
+    private func showDirection(name: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees)
+    {
+        if let url = URL(string: "comgooglemaps://?saddr=&daddr=\(latitude),\(longitude)&directionsmode=driving") {
+            UIApplication.shared.open(url, options: [:])
+        } else {
+            let coordinate = CLLocationCoordinate2DMake(latitude,longitude)
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+            mapItem.name = name
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey: MKLaunchOptionsDirectionsModeDriving])
         }
     }
 }
