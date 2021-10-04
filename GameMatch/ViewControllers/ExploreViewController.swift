@@ -255,9 +255,12 @@ extension ExploreViewController: MKMapViewDelegate
     
     private func showDirection(name: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees)
     {
-        if let url = URL(string: "comgooglemaps://?saddr=&daddr=\(latitude),\(longitude)&directionsmode=driving") {
+        if let url = URL(string: "comgooglemaps://?saddr=&daddr=\(latitude),\(longitude)&directionsmode=driving"),
+           UIApplication.shared.canOpenURL(url)
+        {
             UIApplication.shared.open(url, options: [:])
-        } else {
+        }
+        else {
             let coordinate = CLLocationCoordinate2DMake(latitude,longitude)
             let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
             mapItem.name = name
