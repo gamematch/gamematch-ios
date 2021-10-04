@@ -20,6 +20,7 @@ enum APIRequests: String, DataRequest
 
     case login = "/api/v1/user/login"
     case logout = "/api/v1/user/logout"
+    case forgotPassword = "/api/v1/user/forgot/password"
     
     case activities = "/api/v1/activities"
 

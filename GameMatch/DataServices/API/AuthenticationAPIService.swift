@@ -69,4 +69,12 @@ class AuthenticationAPIService: BaseAPIService
         post(request: APIRequests.logout,
              completion: completion)
     }
+    
+    func forgotPassword(identity: String,
+                        completion: @escaping (Result<SignUpState, Error>) -> Void)
+    {
+        post(request: APIRequests.forgotPassword,
+             parameters: ["identity": identity],
+             completion: completion)
+    }
 }

@@ -76,6 +76,13 @@ class SignInViewModel
                                               completion(result)
                                           })
     }
+    
+    func forgotPassword(identity: String,
+                        completion: @escaping (Result<SignUpState, Error>) -> Void)
+    {
+        AuthenticationAPIService().forgotPassword(identity: identity,
+                                                  completion: completion)
+    }
 }
 
 enum SocialNetwork: String
