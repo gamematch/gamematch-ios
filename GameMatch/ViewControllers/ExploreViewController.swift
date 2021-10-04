@@ -53,6 +53,11 @@ class ExploreViewController: BaseViewController
         mapView.addGestureRecognizer(tap)
         
         setupLocationService()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(showActivityLocations),
+                                               name: UIApplication.willEnterForegroundNotification,
+                                               object: nil)
     }
     
     private func setupLocationService()
@@ -122,7 +127,7 @@ class ExploreViewController: BaseViewController
         }
     }
     
-    private func showActivityLocations()
+    @objc private func showActivityLocations()
     {
         mapView.removeAnnotations(mapView.annotations)
         
