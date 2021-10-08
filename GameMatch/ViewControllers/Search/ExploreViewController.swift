@@ -126,6 +126,23 @@ class ExploreViewController: BaseViewController
         
         navigationController?.isNavigationBarHidden = false
     }
+    
+    private func searchActivities(location: CLLocation)
+    {
+        startSpinner()
+        exploreVM.activities(latitude: location.coordinate.latitude,
+                             longitude: location.coordinate.longitude,
+                             completion: { [weak self] result in
+                                 self?.stopSpinner()
+                                 switch result {
+                                 case .success():
+                                     self?.locationSearchBar.isHidden = true
+                                     self?.showSearchResult()
+                                 case .failure(let error):
+                                     self?.showError(error)
+                                 }
+                             })
+    }
         
     @objc func panAction(_ pan: UIPanGestureRecognizer)
     {
@@ -197,22 +214,15 @@ extension ExploreViewController: UISearchBarDelegate
     {
         searchBar.resignFirstResponder()
         
-        if let latitude = locationManager?.location?.coordinate.latitude,
-           let longitude = locationManager?.location?.coordinate.longitude
+        if let address = locationSearchBar.text, !address.isEmpty {
+            CLGeocoder().geocodeAddressString(address) { [weak self] placemarks, error in
+                if let location = placemarks?.first?.location {
+                    self?.searchActivities(location: location)
+                }
+            }
+        } else if let location = locationManager?.location
         {
-            startSpinner()
-            exploreVM.activities(latitude: latitude,
-                                 longitude: longitude,
-                                 completion: { [weak self] result in
-                                     self?.stopSpinner()
-                                     switch result {
-                                     case .success():
-                                         self?.locationSearchBar.isHidden = true
-                                         self?.showSearchResult()
-                                     case .failure(let error):
-                                         self?.showError(error)
-                                     }
-                                 })
+            searchActivities(location: location)
         }
     }
     
@@ -274,11 +284,16 @@ extension ExploreViewController: UITableViewDataSource
         if tableView == eventsTableView {
             return activityCell(indexPath: indexPath)
         }
-        
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "locationCell")
+        return locationCell(indexPath: indexPath)
+    }
+    
+    private func locationCell(indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "locationCell")
         cell.imageView?.image = UIImage(systemName: "location")
         let location = locationSearchResults[indexPath.row]
-        cell.textLabel?.text = location.title + ", " + location.subtitle
+        cell.textLabel?.text = location.title
+        cell.detailTextLabel?.text = location.subtitle
         return cell
     }
     
