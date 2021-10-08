@@ -800,10 +800,10 @@ Any person taking part in this group, specifically events posted on this group, 
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6O-eG-UDO">
-                                <rect key="frame" x="20" y="88" width="374" height="91"/>
+                                <rect key="frame" x="10" y="88" width="394" height="91"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" placeholder="Sports" translatesAutoresizingMaskIntoConstraints="NO" id="sXW-3k-ayz">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="DtP-c0-Zam"/>
                                         </constraints>
@@ -813,7 +813,7 @@ Any person taking part in this group, specifically events posted on this group, 
                                         </connections>
                                     </searchBar>
                                     <searchBar contentMode="redraw" placeholder="Current Location" translatesAutoresizingMaskIntoConstraints="NO" id="goK-df-ZIc">
-                                        <rect key="frame" x="0.0" y="47" width="374" height="44"/>
+                                        <rect key="frame" x="0.0" y="47" width="394" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="zgN-Mi-nSM"/>
                                         </constraints>
@@ -839,31 +839,41 @@ Any person taking part in this group, specifically events posted on this group, 
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Q7p-tI-tbS">
+                                <rect key="frame" x="10" y="181" width="394" height="432"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bYK-qx-xmP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="f6O-eG-UDO" firstAttribute="top" secondItem="bYK-qx-xmP" secondAttribute="top" id="07r-iI-n2z"/>
-                            <constraint firstItem="f6O-eG-UDO" firstAttribute="leading" secondItem="bYK-qx-xmP" secondAttribute="leading" constant="20" id="4LN-Nz-IEz"/>
+                            <constraint firstItem="f6O-eG-UDO" firstAttribute="leading" secondItem="bYK-qx-xmP" secondAttribute="leading" constant="10" id="4LN-Nz-IEz"/>
                             <constraint firstItem="hoK-V2-zbf" firstAttribute="bottom" secondItem="bYK-qx-xmP" secondAttribute="bottom" id="Dzt-aW-cZ2"/>
                             <constraint firstItem="HF9-v6-LXd" firstAttribute="leading" secondItem="bYK-qx-xmP" secondAttribute="leading" id="HSe-Mg-Owe"/>
                             <constraint firstAttribute="bottom" secondItem="HF9-v6-LXd" secondAttribute="bottom" id="JeO-g1-Ito"/>
+                            <constraint firstItem="bYK-qx-xmP" firstAttribute="bottom" secondItem="Q7p-tI-tbS" secondAttribute="bottom" constant="200" id="Q6p-y6-AXR"/>
                             <constraint firstItem="f6O-eG-UDO" firstAttribute="centerX" secondItem="sfz-g8-lai" secondAttribute="centerX" id="V7t-g5-gPu"/>
+                            <constraint firstItem="Q7p-tI-tbS" firstAttribute="leading" secondItem="bYK-qx-xmP" secondAttribute="leading" constant="10" id="VTh-kz-GYl"/>
                             <constraint firstItem="hoK-V2-zbf" firstAttribute="leading" secondItem="bYK-qx-xmP" secondAttribute="leading" id="axr-S3-OQo"/>
                             <constraint firstItem="HF9-v6-LXd" firstAttribute="top" secondItem="bYK-qx-xmP" secondAttribute="top" constant="370" id="bWY-pa-PBo"/>
                             <constraint firstItem="hoK-V2-zbf" firstAttribute="top" secondItem="sfz-g8-lai" secondAttribute="top" id="dUh-Ft-YZT"/>
+                            <constraint firstItem="bYK-qx-xmP" firstAttribute="trailing" secondItem="Q7p-tI-tbS" secondAttribute="trailing" constant="10" id="dsg-Nu-OQt"/>
                             <constraint firstItem="HF9-v6-LXd" firstAttribute="trailing" secondItem="bYK-qx-xmP" secondAttribute="trailing" id="fj7-8R-h8t"/>
                             <constraint firstAttribute="trailing" secondItem="hoK-V2-zbf" secondAttribute="trailing" id="kbg-Ef-58K"/>
+                            <constraint firstItem="Q7p-tI-tbS" firstAttribute="top" secondItem="f6O-eG-UDO" secondAttribute="bottom" constant="2" id="xbD-BK-a4g"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XeU-ha-411"/>
                     <connections>
                         <outlet property="activitySearchBar" destination="sXW-3k-ayz" id="Peo-mz-Mkz"/>
+                        <outlet property="eventsTableView" destination="elf-8R-prK" id="jpb-Sb-ybM"/>
                         <outlet property="locationSearchBar" destination="goK-df-ZIc" id="8PA-q2-aYc"/>
+                        <outlet property="locationTableBottom" destination="Q6p-y6-AXR" id="t8P-Vr-7i1"/>
+                        <outlet property="locationTableView" destination="Q7p-tI-tbS" id="w97-P3-0jC"/>
                         <outlet property="mapView" destination="hoK-V2-zbf" id="GlX-OB-jnS"/>
                         <outlet property="resultView" destination="HF9-v6-LXd" id="kM3-Oh-4lM"/>
                         <outlet property="resultViewPositionY" destination="bWY-pa-PBo" id="rx6-Hm-upu"/>
-                        <outlet property="tableView" destination="elf-8R-prK" id="jpb-Sb-ybM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXG-db-9DH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -191,6 +191,14 @@
 			path = AppDelegates;
 			sourceTree = "<group>";
 		};
+		A311A162270FCE4F0013E498 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				A3893F5526C4D84B0004C766 /* ExploreViewController.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 		A3385B1626FFD3A6004799E8 /* DataServices */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,7 +318,6 @@
 				A3385B31270022E6004799E8 /* BaseViewController.swift */,
 				A3893F9326CCAD0B0004C766 /* ContactsViewController.swift */,
 				A3893F8A26C63C310004C766 /* CreateActivityViewController.swift */,
-				A3893F5526C4D84B0004C766 /* ExploreViewController.swift */,
 				A3893F9126CC8DE10004C766 /* MainTabBarController.swift */,
 				A3CD34F226DC5E500049C6AE /* NewEventViewController.swift */,
 				A3893F8326C4DED80004C766 /* ProfileViewController.swift */,
@@ -320,6 +327,7 @@
 				A3CD34ED26DB1E2C0049C6AE /* Group Details */,
 				A3385B2827000CC2004799E8 /* Login */,
 				A39C062326DD82F700CE8DCA /* Members */,
+				A311A162270FCE4F0013E498 /* Search */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

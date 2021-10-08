@@ -16,11 +16,15 @@ class ExploreViewController: BaseViewController
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var resultView: UIView!
     @IBOutlet weak var resultViewPositionY: NSLayoutConstraint!
-    @IBOutlet weak var tableView: UITableView!
-        
+    @IBOutlet weak var eventsTableView: UITableView!
+    @IBOutlet weak var locationTableView: UITableView!
+    @IBOutlet weak var locationTableBottom: NSLayoutConstraint!
+    
     private let exploreVM = ExploreViewModel()
     
     private var locationManager: CLLocationManager?
+    private var searchCompleter = MKLocalSearchCompleter()
+    private var locationSearchResults = [MKLocalSearchCompletion]()
     
     private var startPosition: CGFloat = 0
     private var currentPosition: CGFloat = 0
@@ -41,8 +45,12 @@ class ExploreViewController: BaseViewController
         locationSearchBar.isHidden = true
         locationSearchBar.setImage(UIImage(systemName: "location.north"), for: .search, state: .normal)
                 
-        tableView.delegate = self
-        tableView.dataSource = self
+        eventsTableView.delegate = self
+        eventsTableView.dataSource = self
+        
+        locationTableView.delegate = self
+        locationTableView.dataSource = self
+        locationTableView.isHidden = true
         
         let pan = UIPanGestureRecognizer()
         pan.addTarget(self, action: #selector(panAction))
@@ -63,6 +71,20 @@ class ExploreViewController: BaseViewController
                                                selector: #selector(showActivityLocations),
                                                name: UIApplication.willEnterForegroundNotification,
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow(_:)),
+                                               name: UIResponder.keyboardWillShowNotification,
+                                               object: nil)
+    }
+        
+    @objc private func keyboardWillShow(_ notification: Notification)
+    {
+        if let info = notification.userInfo,
+           let infoValue = info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue
+        {
+            let kbdFrame = infoValue.cgRectValue
+            locationTableBottom.constant = view.bounds.height - kbdFrame.origin.y + 2
+        }
     }
     
     private func setupLocationService()
@@ -70,6 +92,8 @@ class ExploreViewController: BaseViewController
         locationManager = CLLocationManager()
         locationManager?.delegate = self
         locationManager?.requestWhenInUseAuthorization()
+        
+        searchCompleter.delegate = self
     }
     
     @objc private func mapTapped()
@@ -143,12 +167,13 @@ class ExploreViewController: BaseViewController
             for activity in activities {
                 addAnnotation(title: "Soccer Game",
                               name: pins.randomElement() ?? "golf-pin",
-                              latitude: activity.latitude,
-                              longitude: activity.longitude)
+                              latitude: activity.location.latitude,
+                              longitude: activity.location.longitude)
             }
             
             if let firstActivity = activities.first {
-                setupMapView(latitude: firstActivity.latitude, longitude: firstActivity.longitude, scale: 0.2)
+                setupMapView(latitude: firstActivity.location.latitude,
+                             longitude: firstActivity.location.longitude, scale: 0.2)
             }
         }
     }
@@ -191,15 +216,23 @@ extension ExploreViewController: UISearchBarDelegate
         }
     }
     
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar)
+    {
         locationSearchBar.isHidden = false
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        if searchBar == locationSearchBar {
+            searchCompleter.queryFragment = searchText
+        }
     }
     
     private func showSearchResult()
     {
         showActivityLocations()
         
-        tableView.reloadData()
+        eventsTableView.reloadData()
         
         UIView.animate(withDuration: 0.6,
                        animations: { [weak self] in
@@ -209,27 +242,58 @@ extension ExploreViewController: UISearchBarDelegate
     }
 }
 
+extension ExploreViewController: MKLocalSearchCompleterDelegate
+{
+    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter)
+    {
+        // Setting our searchResults variable to the results that the searchCompleter returned
+        locationSearchResults = completer.results
+        locationTableView.reloadData()
+        locationTableView.isHidden = false
+    }
+
+    // This method is called when there was an error with the searchCompleter
+    func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error)
+    {
+        // Error
+    }
+}
+
 extension ExploreViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return exploreVM.activities?.count ?? 0
+        if tableView == eventsTableView {
+            return exploreVM.activities?.count ?? 0
+        }
+        return locationSearchResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityTableViewCell", for: indexPath)
+        if tableView == eventsTableView {
+            return activityCell(indexPath: indexPath)
+        }
+        
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "locationCell")
+        cell.imageView?.image = UIImage(systemName: "location")
+        let location = locationSearchResults[indexPath.row]
+        cell.textLabel?.text = location.title + ", " + location.subtitle
+        return cell
+    }
+    
+    private func activityCell(indexPath: IndexPath) -> UITableViewCell
+    {
+        let cell = eventsTableView.dequeueReusableCell(withIdentifier: "ActivityTableViewCell", for: indexPath)
         if let cell = cell as? ActivityTableViewCell,
            let activities = exploreVM.activities
         {
             let activity = activities[indexPath.row]
-            
             let icon = indexPath.row % 2 == 0 ? UIImage(named: "soccerball") : UIImage(named: "hiking")
-            let name = indexPath.row % 2 == 0 ? "Soccer Pickup Game" : "Weekend Hiking"
 
             cell.config(icon: icon,
-                        title: name + " - " + activity.startTime.display(),
-                        details: activity.address)
+                        title: activity.name + " - " + activity.eventStartTime.display(),
+                        details: activity.location.name)
         }
         return cell
     }
@@ -240,7 +304,14 @@ extension ExploreViewController: UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         tableView.deselectRow(at: indexPath, animated: true)
-        showActivityDetails()
+        
+        if tableView == eventsTableView {
+            showActivityDetails()
+        } else {
+            let location = locationSearchResults[indexPath.row]
+            locationSearchBar.text = location.title + ", " + location.subtitle
+            locationTableView.isHidden = true
+        }
     }
 }
 
