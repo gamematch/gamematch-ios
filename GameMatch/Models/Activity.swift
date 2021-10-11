@@ -15,7 +15,7 @@ class Activity: NSObject, Codable
     let location: Location
     let startTime: TimeInterval
     let endTime: TimeInterval
-    let createTime: TimeInterval
+    let createdTime: TimeInterval
     let activityType: String
 
     var eventStartTime: Date {
