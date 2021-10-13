@@ -12,11 +12,13 @@ class ActivityAPIService: BaseAPIService
 {
     func activities(latitude: CLLocationDegrees,
                     longitude: CLLocationDegrees,
+                    name: String,
                     completion: @escaping (Result<[Activity], Error>) -> Void)
     {
         post(request: APIRequests.activities,
              parameters: ["latitude": latitude,
-                          "longitude": longitude],
+                          "longitude": longitude,
+                          "sport": ["name": name]],
              completion: { (result: Result<Activities, Error>) in
                             switch result {
                             case .success(let activities):

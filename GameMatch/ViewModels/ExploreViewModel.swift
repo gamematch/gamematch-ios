@@ -14,10 +14,12 @@ class ExploreViewModel
     
     func activities(latitude: CLLocationDegrees,
                     longitude: CLLocationDegrees,
+                    name: String,
                     completion: @escaping (Result<Void, Error>) -> Void)
     {
         ActivityAPIService().activities(latitude: latitude,
                                         longitude: longitude,
+                                        name: name,
                                         completion: { [weak self] result in
                                             switch result {
                                             case .success(let activities):

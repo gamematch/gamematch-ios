@@ -127,11 +127,12 @@ class ExploreViewController: BaseViewController
         navigationController?.isNavigationBarHidden = false
     }
     
-    private func searchActivities(location: CLLocation)
+    private func searchActivities(location: CLLocation, name: String)
     {
         startSpinner()
         exploreVM.activities(latitude: location.coordinate.latitude,
                              longitude: location.coordinate.longitude,
+                             name: name,
                              completion: { [weak self] result in
                                  self?.stopSpinner()
                                  switch result {
@@ -214,15 +215,19 @@ extension ExploreViewController: UISearchBarDelegate
     {
         searchBar.resignFirstResponder()
         
+        let name = activitySearchBar.text ?? ""
+        
         if let address = locationSearchBar.text, !address.isEmpty {
             CLGeocoder().geocodeAddressString(address) { [weak self] placemarks, error in
                 if let location = placemarks?.first?.location {
-                    self?.searchActivities(location: location)
+                    self?.searchActivities(location: location,
+                                           name: name)
                 }
             }
         } else if let location = locationManager?.location
         {
-            searchActivities(location: location)
+            searchActivities(location: location,
+                             name: name)
         }
     }
     
