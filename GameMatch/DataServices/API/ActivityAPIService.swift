@@ -12,13 +12,18 @@ class ActivityAPIService: BaseAPIService
 {
     func activities(latitude: CLLocationDegrees,
                     longitude: CLLocationDegrees,
-                    name: String,
+                    name: String?,
                     completion: @escaping (Result<[Activity], Error>) -> Void)
     {
+        let locationInfo = ["latitude": latitude,
+                            "longitude": longitude]
+        var parameters: [String: Any] = ["location": locationInfo]
+
+        if let name = name, !name.isEmpty {
+            parameters["sport"] = ["name": name]
+        }
         post(request: APIRequests.activities,
-             parameters: ["latitude": latitude,
-                          "longitude": longitude,
-                          "sport": ["name": name]],
+             parameters: parameters,
              completion: { (result: Result<Activities, Error>) in
                             switch result {
                             case .success(let activities):

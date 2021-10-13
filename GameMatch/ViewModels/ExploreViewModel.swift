@@ -14,7 +14,7 @@ class ExploreViewModel
     
     func activities(latitude: CLLocationDegrees,
                     longitude: CLLocationDegrees,
-                    name: String,
+                    name: String?,
                     completion: @escaping (Result<Void, Error>) -> Void)
     {
         ActivityAPIService().activities(latitude: latitude,
