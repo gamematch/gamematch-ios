@@ -9,7 +9,7 @@ import Foundation
 
 class Activity: NSObject, Codable
 {
-    let id: Int
+    let id: String
     let sportId: Int
     let name: String
     let location: Location
