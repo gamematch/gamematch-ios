@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		480506069FC21677AE2CB80F /* Pods_GameMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1B527AB8B6AF812AFE57F2 /* Pods_GameMatch.framework */; };
 		A30D49A12705776700D34702 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D49A02705776700D34702 /* SessionManager.swift */; };
+		A311A164271BA8230013E498 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A163271BA8230013E498 /* PushNotificationManager.swift */; };
 		A3385B1826FFD3E9004799E8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1726FFD3E9004799E8 /* DataService.swift */; };
 		A3385B1A26FFD458004799E8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1926FFD458004799E8 /* NetworkService.swift */; };
 		A3385B1F26FFD7FC004799E8 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1E26FFD7FC004799E8 /* LoginState.swift */; };
@@ -82,6 +83,7 @@
 		A30D49A02705776700D34702 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		A30D49A427078EDB00D34702 /* GameMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GameMatch.entitlements; sourceTree = "<group>"; };
 		A30D49A527078F0A00D34702 /* GameMatchRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GameMatchRelease.entitlements; sourceTree = "<group>"; };
+		A311A163271BA8230013E498 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		A3385B1726FFD3E9004799E8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		A3385B1926FFD458004799E8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A3385B1E26FFD7FC004799E8 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
@@ -165,14 +167,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A30D499F2705773900D34702 /* DataManager */ = {
-			isa = PBXGroup;
-			children = (
-				A30D49A02705776700D34702 /* SessionManager.swift */,
-			);
-			path = DataManager;
-			sourceTree = "<group>";
-		};
 		A30D49A2270769BD00D34702 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,13 +176,15 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		A30D49A327078E6900D34702 /* AppDelegates */ = {
+		A30D49A327078E6900D34702 /* AppManagers */ = {
 			isa = PBXGroup;
 			children = (
 				A3893F5126C4D84B0004C766 /* AppDelegate.swift */,
+				A311A163271BA8230013E498 /* PushNotificationManager.swift */,
 				A3893F5326C4D84B0004C766 /* SceneDelegate.swift */,
+				A30D49A02705776700D34702 /* SessionManager.swift */,
 			);
-			path = AppDelegates;
+			path = AppManagers;
 			sourceTree = "<group>";
 		};
 		A311A162270FCE4F0013E498 /* Search */ = {
@@ -278,8 +274,7 @@
 				A30D49A427078EDB00D34702 /* GameMatch.entitlements */,
 				A30D49A527078F0A00D34702 /* GameMatchRelease.entitlements */,
 				A3893F5F26C4D84C0004C766 /* Info.plist */,
-				A30D49A327078E6900D34702 /* AppDelegates */,
-				A30D499F2705773900D34702 /* DataManager */,
+				A30D49A327078E6900D34702 /* AppManagers */,
 				A3385B1626FFD3A6004799E8 /* DataServices */,
 				A3D3B3C12700CB2F00E1D8A0 /* ErrorHandling */,
 				A3893F9526CCCB980004C766 /* Extensions */,
@@ -639,6 +634,7 @@
 				A3B6B493270925E100309925 /* ActivityAPIService.swift in Sources */,
 				A3385B2126FFDA16004799E8 /* APIRequests.swift in Sources */,
 				A3CD34EF26DB1E7B0049C6AE /* GroupInfoTableViewCell.swift in Sources */,
+				A311A164271BA8230013E498 /* PushNotificationManager.swift in Sources */,
 				A3385B3027001F27004799E8 /* AuthenticationAPIService.swift in Sources */,
 				A30D49A12705776700D34702 /* SessionManager.swift in Sources */,
 			);
