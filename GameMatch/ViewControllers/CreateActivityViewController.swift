@@ -12,6 +12,8 @@ class CreateActivityViewController: BaseViewController
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var noteTextView: UITextView!
+    @IBOutlet weak var latitudeField: UITextField!
+    @IBOutlet weak var longitudeField: UITextField!
     
     private let createActivityVM = CreateActivityViewModel()
     
@@ -33,8 +35,11 @@ class CreateActivityViewController: BaseViewController
     
     @IBAction func doneAction(_ sender: Any)
     {
-        if let latitude = LocationService.shared.locationManager?.location?.coordinate.latitude,
-           let longitude = LocationService.shared.locationManager?.location?.coordinate.longitude,
+        let latitudeInput = Double(latitudeField.text ?? "")
+        let longitudeInput = Double(longitudeField.text ?? "")
+        
+        if let latitude = latitudeInput ?? LocationService.shared.locationManager?.location?.coordinate.latitude,
+           let longitude = longitudeInput ?? LocationService.shared.locationManager?.location?.coordinate.longitude,
            let name = nameField.text,
            let address = addressField.text
         {
@@ -46,7 +51,7 @@ class CreateActivityViewController: BaseViewController
                                                 self?.stopSpinner()
                                                 switch result {
                                                 case .success(let activity):
-                                                    print("======== New Activity ID: \(activity.id) =========")
+                                                    print("======== New Activity ID: \(String(describing: activity.id)) =========")
                                                     self?.dismiss(animated: true, completion: nil)
                                                 case .failure(let error):
                                                     self?.showError(error)
