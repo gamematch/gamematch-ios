@@ -14,6 +14,7 @@
 		A311A168271BF7360013E498 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A167271BF7360013E498 /* DeviceInfo.swift */; };
 		A311A16A271FBD5D0013E498 /* CreateActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A169271FBD5D0013E498 /* CreateActivityViewModel.swift */; };
 		A311A16C271FBE2B0013E498 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A16B271FBE2B0013E498 /* LocationService.swift */; };
+		A311A16E271FDD530013E498 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A16D271FDD530013E498 /* Encodable+.swift */; };
 		A3385B1826FFD3E9004799E8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1726FFD3E9004799E8 /* DataService.swift */; };
 		A3385B1A26FFD458004799E8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1926FFD458004799E8 /* NetworkService.swift */; };
 		A3385B1F26FFD7FC004799E8 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1E26FFD7FC004799E8 /* LoginState.swift */; };
@@ -92,6 +93,7 @@
 		A311A167271BF7360013E498 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		A311A169271FBD5D0013E498 /* CreateActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityViewModel.swift; sourceTree = "<group>"; };
 		A311A16B271FBE2B0013E498 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		A311A16D271FDD530013E498 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		A3385B1726FFD3E9004799E8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		A3385B1926FFD458004799E8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A3385B1E26FFD7FC004799E8 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				A3B6B49A270960BD00309925 /* Date+.swift */,
+				A311A16D271FDD530013E498 /* Encodable+.swift */,
 				A39C061D26DC6BB900CE8DCA /* MKMapView+.swift */,
 				A3CD34E726D76A990049C6AE /* UIImage+.swift */,
 				A3893F9626CCCBC10004C766 /* UIImageView+.swift */,
@@ -611,6 +614,7 @@
 				A3CD34E826D76A990049C6AE /* UIImage+.swift in Sources */,
 				A3C6F62026D3803D00C01549 /* LoginViewController.swift in Sources */,
 				A3893F8B26C63C310004C766 /* CreateActivityViewController.swift in Sources */,
+				A311A16E271FDD530013E498 /* Encodable+.swift in Sources */,
 				A39C062826DD978E00CE8DCA /* EventsViewController.swift in Sources */,
 				A3893F9226CC8DE10004C766 /* MainTabBarController.swift in Sources */,
 				A3CD34EC26DAB1C20049C6AE /* GroupDetailsViewController.swift in Sources */,

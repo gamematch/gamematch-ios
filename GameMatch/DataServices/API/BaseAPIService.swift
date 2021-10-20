@@ -67,7 +67,7 @@ class BaseAPIService
             }
         }
     }
-    
+        
     private func parseResult<T: Decodable>(_ result: Result<Data, Error>,
                                            completion: @escaping (Result<T, Error>) -> Void)
     {

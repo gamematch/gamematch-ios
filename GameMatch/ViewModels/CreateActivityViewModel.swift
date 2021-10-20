@@ -13,11 +13,21 @@ class CreateActivityViewModel
     func createActivity(latitude: CLLocationDegrees,
                         longitude: CLLocationDegrees,
                         name: String,
+                        address: String,
                         completion: @escaping (Result<Activity, Error>) -> Void)
     {
-        ActivityAPIService().activity(latitude: latitude,
-                                      longitude: longitude,
-                                      name: name,
+        let location = Location(name: address,
+                                latitude: latitude,
+                                longitude: longitude,
+                                address: address)
+        
+        let now = Date()
+        let activity = Activity(name: name,
+                                location: location,
+                                startTime: now.addingTimeInterval(24 * 3600).timeIntervalSince1970,
+                                endTime: now.addingTimeInterval(26 * 3600).timeIntervalSince1970)
+        
+        ActivityAPIService().activity(activity,
                                       completion: completion)
     }
 }

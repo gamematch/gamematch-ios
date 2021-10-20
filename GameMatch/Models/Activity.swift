@@ -9,7 +9,7 @@ import Foundation
 
 class Activity: NSObject, Codable
 {
-    let id: String
+    let id: String?
     let sportId: Int?
     let name: String?
     let location: Location?
@@ -31,6 +31,20 @@ class Activity: NSObject, Codable
         }
         return nil
     }
+    
+    init(name: String, location: Location, startTime: TimeInterval, endTime: TimeInterval?)
+    {
+        self.id = nil
+        self.name = name
+        self.location = location
+        self.startTime = startTime
+        self.endTime = endTime
+        self.createdTime = Date().timeIntervalSince1970
+        self.sportId = 1
+        self.activityType = "public"
+        
+        super.init()
+    }
 }
 
 class Activities: NSObject, Codable
@@ -44,4 +58,14 @@ class Location: NSObject, Codable
     let latitude: Double
     let longitude: Double
     let address: String
+    
+    init(name: String, latitude: Double, longitude: Double, address: String)
+    {
+        self.name = name
+        self.latitude = latitude
+        self.longitude = longitude
+        self.address = address
+        
+        super.init()
+    }
 }

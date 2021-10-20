@@ -210,6 +210,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addressField" destination="zOr-BF-bF8" id="nUz-Qk-W91"/>
+                        <outlet property="nameField" destination="V8S-nH-NmV" id="SQP-tn-d9U"/>
                         <outlet property="noteTextView" destination="g0b-8j-ZD5" id="6Sc-9V-XVa"/>
                     </connections>
                 </viewController>

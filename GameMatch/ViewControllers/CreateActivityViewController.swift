@@ -9,6 +9,8 @@ import UIKit
 
 class CreateActivityViewController: BaseViewController
 {
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var noteTextView: UITextView!
     
     private let createActivityVM = CreateActivityViewModel()
@@ -32,12 +34,15 @@ class CreateActivityViewController: BaseViewController
     @IBAction func doneAction(_ sender: Any)
     {
         if let latitude = LocationService.shared.locationManager?.location?.coordinate.latitude,
-           let longitude = LocationService.shared.locationManager?.location?.coordinate.longitude
+           let longitude = LocationService.shared.locationManager?.location?.coordinate.longitude,
+           let name = nameField.text,
+           let address = addressField.text
         {
             startSpinner()
             createActivityVM.createActivity(latitude: latitude,
                                             longitude: longitude,
-                                            name: "San Ramon Central Park") { [weak self] result in
+                                            name: name,
+                                            address: address) { [weak self] result in
                                                 self?.stopSpinner()
                                                 switch result {
                                                 case .success(let activity):
