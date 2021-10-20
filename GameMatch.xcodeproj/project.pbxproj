@@ -10,6 +10,8 @@
 		480506069FC21677AE2CB80F /* Pods_GameMatch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1B527AB8B6AF812AFE57F2 /* Pods_GameMatch.framework */; };
 		A30D49A12705776700D34702 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30D49A02705776700D34702 /* SessionManager.swift */; };
 		A311A164271BA8230013E498 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A163271BA8230013E498 /* PushNotificationManager.swift */; };
+		A311A166271BF66E0013E498 /* DeviceAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A165271BF66E0013E498 /* DeviceAPIService.swift */; };
+		A311A168271BF7360013E498 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A167271BF7360013E498 /* DeviceInfo.swift */; };
 		A3385B1826FFD3E9004799E8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1726FFD3E9004799E8 /* DataService.swift */; };
 		A3385B1A26FFD458004799E8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1926FFD458004799E8 /* NetworkService.swift */; };
 		A3385B1F26FFD7FC004799E8 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1E26FFD7FC004799E8 /* LoginState.swift */; };
@@ -84,6 +86,8 @@
 		A30D49A427078EDB00D34702 /* GameMatch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GameMatch.entitlements; sourceTree = "<group>"; };
 		A30D49A527078F0A00D34702 /* GameMatchRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GameMatchRelease.entitlements; sourceTree = "<group>"; };
 		A311A163271BA8230013E498 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
+		A311A165271BF66E0013E498 /* DeviceAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAPIService.swift; sourceTree = "<group>"; };
+		A311A167271BF7360013E498 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
 		A3385B1726FFD3E9004799E8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		A3385B1926FFD458004799E8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A3385B1E26FFD7FC004799E8 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 				A3385B2026FFDA16004799E8 /* APIRequests.swift */,
 				A3385B2F27001F27004799E8 /* AuthenticationAPIService.swift */,
 				A3385B26270008C0004799E8 /* BaseAPIService.swift */,
+				A311A165271BF66E0013E498 /* DeviceAPIService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				A3B6B4962709318800309925 /* Activity.swift */,
+				A311A167271BF7360013E498 /* DeviceInfo.swift */,
 				A3385B1E26FFD7FC004799E8 /* LoginState.swift */,
 				A3385B2426FFDDC5004799E8 /* SignUpState.swift */,
 			);
@@ -614,6 +620,7 @@
 				A3385B2C27000EE0004799E8 /* RegisterViewController.swift in Sources */,
 				A3893F9426CCAD0B0004C766 /* ContactsViewController.swift in Sources */,
 				A3893F8E26C64EA60004C766 /* ActivityInfoTableViewCell.swift in Sources */,
+				A311A168271BF7360013E498 /* DeviceInfo.swift in Sources */,
 				A3893F8726C604DB0004C766 /* ActivityTableViewCell.swift in Sources */,
 				A3893F5226C4D84B0004C766 /* AppDelegate.swift in Sources */,
 				A3893F8926C633D50004C766 /* ActivityDetailsViewController.swift in Sources */,
@@ -624,6 +631,7 @@
 				A3385B27270008C0004799E8 /* BaseAPIService.swift in Sources */,
 				A3893F8426C4DED80004C766 /* ProfileViewController.swift in Sources */,
 				A3385B2526FFDDC5004799E8 /* SignUpState.swift in Sources */,
+				A311A166271BF66E0013E498 /* DeviceAPIService.swift in Sources */,
 				A3B6B4972709318800309925 /* Activity.swift in Sources */,
 				A3CD34EA26D88C950049C6AE /* SendMessageViewController.swift in Sources */,
 				A3CD34F126DB46C50049C6AE /* EventTableViewCell.swift in Sources */,

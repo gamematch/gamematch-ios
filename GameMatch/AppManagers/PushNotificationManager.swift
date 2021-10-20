@@ -12,6 +12,30 @@ class PushNotificationManager
 {
     static let shared = PushNotificationManager()
     
+    private let deviceIdKey = "deviceId"
+    
+    var deviceId: String?
+    {
+        UserDefaults.standard.string(forKey: deviceIdKey)
+    }
+    
+    var deviceToken: String?
+    {
+        didSet {
+            if let deviceToken = deviceToken {
+                print("======= register \(deviceToken) =========")
+                DeviceAPIService().register(deviceToken: deviceToken) { [weak self] result in
+                    switch result {
+                    case .success(let deviceInfo):
+                        UserDefaults.standard.set(deviceInfo.deviceId, forKey: self?.deviceIdKey ?? "")
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            }
+        }
+    }
+    
     func registerForPushNotifications() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { [weak self] granted, _ in
             print("Permission granted: \(granted)")

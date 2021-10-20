@@ -15,10 +15,17 @@ final class NetworkService: DataService
                                               "x-gm-session-id": SessionManager.shared.sessionId]
     
     func get(request: DataRequest,
+             pathParams: String? = nil,
              parameters: [String: String]?,
              completion: @escaping (Result<Data, Error>) -> Void)
     {
-        var components = URLComponents(url: request.url,
+        var url = request.url
+        if let pathParams = pathParams {
+            let path = "\(url.path)/\(pathParams)"
+            url = URL(string: path)!
+        }
+        
+        var components = URLComponents(url: url,
                                        resolvingAgainstBaseURL: false)
         components?.queryItems = parameters?.map { (key, value) in
             URLQueryItem(name: key, value: value)
@@ -46,6 +53,47 @@ final class NetworkService: DataService
         } else {
             completion(.failure(ServiceError.invalidData))
         }
+    }
+    
+    func put(request: DataRequest,
+             pathParams: String? = nil,
+             parameters: [String: Any?]?,
+             completion: @escaping (Result<Data, Error>) -> Void)
+    {
+        var url = request.url
+        if let pathParams = pathParams {
+            let path = "\(url.path)/\(pathParams)"
+            url = URL(string: path)!
+        }
+        
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "PUT"
+        urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        
+        for header in headers {
+            urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
+        }
+        
+        if let parameters = parameters {
+            if let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
+                urlRequest.httpBody = httpBody
+            } else {
+                completion(.failure(ServiceError.invalidData))
+                return
+            }
+        }
+        
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+            guard let data = data else {
+                completion(.failure(ServiceError.invalidData))
+                return
+            }
+            completion(.success(data))
+        }.resume()
     }
     
     func post(request: DataRequest,

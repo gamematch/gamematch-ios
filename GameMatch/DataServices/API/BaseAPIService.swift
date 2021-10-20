@@ -18,6 +18,27 @@ class BaseAPIService
             self.parseResult(result, completion: completion)
         }
     }
+    
+    internal func put(request: DataRequest,
+                      pathParams: String?,
+                      parameters: [String: Any?]?,
+                      completion: @escaping (Result<Void, Error>) -> Void)
+    {
+        NetworkService().put(request: request,
+                             pathParams: pathParams,
+                             parameters: parameters) { result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    completion(.success(()))
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
 
     internal func post<T: Decodable>(request: DataRequest,
                                      parameters: [String: Any?]?,

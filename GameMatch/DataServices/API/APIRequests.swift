@@ -22,9 +22,12 @@ enum APIRequests: String, DataRequest
     case logout = "/api/v1/user/logout"
     case forgotPassword = "/api/v1/user/forgot/password"
     
+    case device = "/api/v1/device"
+    
     case activities = "/api/v1/activities"
 
-    var url: URL {
+    var url: URL
+    {
         return URL(string: hostname + rawValue)!
     }
 }
