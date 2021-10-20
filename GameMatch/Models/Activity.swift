@@ -10,20 +10,26 @@ import Foundation
 class Activity: NSObject, Codable
 {
     let id: String
-    let sportId: Int
-    let name: String
-    let location: Location
-    let startTime: TimeInterval
-    let endTime: TimeInterval
-    let createdTime: TimeInterval
-    let activityType: String
+    let sportId: Int?
+    let name: String?
+    let location: Location?
+    let startTime: TimeInterval?
+    let endTime: TimeInterval?
+    let createdTime: TimeInterval?
+    let activityType: String?
 
-    var eventStartTime: Date {
-        Date(timeIntervalSince1970: startTime)
+    var eventStartTime: Date? {
+        if let startTime = startTime {
+            return Date(timeIntervalSince1970: startTime)
+        }
+        return nil
     }
     
-    var eventEndTime: Date {
-        Date(timeIntervalSince1970: endTime)
+    var eventEndTime: Date? {
+        if let endTime = endTime {
+            return Date(timeIntervalSince1970: endTime)
+        }
+        return nil
     }
 }
 

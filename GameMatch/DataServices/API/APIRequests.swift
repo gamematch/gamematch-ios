@@ -25,6 +25,7 @@ enum APIRequests: String, DataRequest
     case device = "/api/v1/device"
     
     case activities = "/api/v1/activities"
+    case activity = "/api/v1/activity"
 
     var url: URL
     {

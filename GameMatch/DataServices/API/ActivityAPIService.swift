@@ -33,4 +33,33 @@ class ActivityAPIService: BaseAPIService
                             }
                          })
     }
+    
+    func activity(latitude: CLLocationDegrees,
+                  longitude: CLLocationDegrees,
+                  name: String,
+                  completion: @escaping (Result<Activity, Error>) -> Void)
+    {
+        let locationInfo: [String: Any] = ["latitude": latitude,
+                                           "longitude": longitude,
+                                           "name": name,
+                                           "address": "San Ramon, CA 94582"]
+        var parameters: [String: Any] = ["location": locationInfo]
+        parameters["startTime"] = 1634130150060
+        parameters["endTime"] = 1634151355924
+        parameters["createdTime"] = 1634018779000
+        parameters["activityType"] = "public"
+        parameters["sportId"] = 4
+        parameters["name"] = "Volleyball Pickup Game Weekly"
+        
+        post(request: APIRequests.activity,
+             parameters: parameters,
+             completion: { (result: Result<Activity, Error>) in
+                            switch result {
+                            case .success(let activity):
+                                completion(.success(activity))
+                            case .failure(let error):
+                                completion(.failure(error))
+                            }
+                         })
+    }
 }

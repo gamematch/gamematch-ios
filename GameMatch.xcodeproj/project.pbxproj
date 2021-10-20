@@ -12,6 +12,8 @@
 		A311A164271BA8230013E498 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A163271BA8230013E498 /* PushNotificationManager.swift */; };
 		A311A166271BF66E0013E498 /* DeviceAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A165271BF66E0013E498 /* DeviceAPIService.swift */; };
 		A311A168271BF7360013E498 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A167271BF7360013E498 /* DeviceInfo.swift */; };
+		A311A16A271FBD5D0013E498 /* CreateActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A169271FBD5D0013E498 /* CreateActivityViewModel.swift */; };
+		A311A16C271FBE2B0013E498 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A16B271FBE2B0013E498 /* LocationService.swift */; };
 		A3385B1826FFD3E9004799E8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1726FFD3E9004799E8 /* DataService.swift */; };
 		A3385B1A26FFD458004799E8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1926FFD458004799E8 /* NetworkService.swift */; };
 		A3385B1F26FFD7FC004799E8 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1E26FFD7FC004799E8 /* LoginState.swift */; };
@@ -88,6 +90,8 @@
 		A311A163271BA8230013E498 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		A311A165271BF66E0013E498 /* DeviceAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAPIService.swift; sourceTree = "<group>"; };
 		A311A167271BF7360013E498 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		A311A169271FBD5D0013E498 /* CreateActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityViewModel.swift; sourceTree = "<group>"; };
+		A311A16B271FBE2B0013E498 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		A3385B1726FFD3E9004799E8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		A3385B1926FFD458004799E8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A3385B1E26FFD7FC004799E8 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
@@ -184,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				A3893F5126C4D84B0004C766 /* AppDelegate.swift */,
+				A311A16B271FBE2B0013E498 /* LocationService.swift */,
 				A311A163271BA8230013E498 /* PushNotificationManager.swift */,
 				A3893F5326C4D84B0004C766 /* SceneDelegate.swift */,
 				A30D49A02705776700D34702 /* SessionManager.swift */,
@@ -235,6 +240,7 @@
 		A3385B1D26FFD75E004799E8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A311A169271FBD5D0013E498 /* CreateActivityViewModel.swift */,
 				A3B6B4942709301C00309925 /* ExploreViewModel.swift */,
 				A3B6B49C270AD37600309925 /* ProfileViewModel.swift */,
 				A3385B2D2700166A004799E8 /* SignInViewModel.swift */,
@@ -619,6 +625,7 @@
 				A3B6B49D270AD37600309925 /* ProfileViewModel.swift in Sources */,
 				A3385B2C27000EE0004799E8 /* RegisterViewController.swift in Sources */,
 				A3893F9426CCAD0B0004C766 /* ContactsViewController.swift in Sources */,
+				A311A16A271FBD5D0013E498 /* CreateActivityViewModel.swift in Sources */,
 				A3893F8E26C64EA60004C766 /* ActivityInfoTableViewCell.swift in Sources */,
 				A311A168271BF7360013E498 /* DeviceInfo.swift in Sources */,
 				A3893F8726C604DB0004C766 /* ActivityTableViewCell.swift in Sources */,
@@ -628,6 +635,7 @@
 				A39C062526DD837000CE8DCA /* MemberTableViewCell.swift in Sources */,
 				A3B6B4952709301C00309925 /* ExploreViewModel.swift in Sources */,
 				A3385B2A27000D32004799E8 /* SignInViewController.swift in Sources */,
+				A311A16C271FBE2B0013E498 /* LocationService.swift in Sources */,
 				A3385B27270008C0004799E8 /* BaseAPIService.swift in Sources */,
 				A3893F8426C4DED80004C766 /* ProfileViewController.swift in Sources */,
 				A3385B2526FFDDC5004799E8 /* SignUpState.swift in Sources */,

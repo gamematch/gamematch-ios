@@ -22,7 +22,7 @@ class ExploreViewController: BaseViewController
     
     private let exploreVM = ExploreViewModel()
     
-    private var locationManager: CLLocationManager?
+//    private var locationManager: CLLocationManager?
     private var searchCompleter = MKLocalSearchCompleter()
     private var locationSearchResults = [MKLocalSearchCompletion]()
     
@@ -89,9 +89,11 @@ class ExploreViewController: BaseViewController
     
     private func setupLocationService()
     {
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.requestWhenInUseAuthorization()
+        LocationService.shared.setupLocationManager()
+        
+//        locationManager = CLLocationManager()
+//        locationManager?.delegate = self
+//        locationManager?.requestWhenInUseAuthorization()
         
         searchCompleter.delegate = self
     }
@@ -183,16 +185,20 @@ class ExploreViewController: BaseViewController
         let pins = ["soccer-pin", "volleyball-pin", "golf-pin"]
         if let activities = exploreVM.activities {
             for activity in activities {
-                addAnnotation(title: "Soccer Game",
-                              name: pins.randomElement() ?? "golf-pin",
-                              latitude: activity.location.latitude,
-                              longitude: activity.location.longitude)
+                if let latitude = activity.location?.latitude,
+                   let longitude = activity.location?.longitude
+                {
+                    addAnnotation(title: "Soccer Game",
+                                  name: pins.randomElement() ?? "golf-pin",
+                                  latitude: latitude,
+                                  longitude: longitude)
+                }
             }
             
-            if let firstActivity = activities.first {
-                setupMapView(latitude: firstActivity.location.latitude,
-                             longitude: firstActivity.location.longitude, scale: 0.2)
-            }
+//            if let firstActivity = activities.first {
+//                setupMapView(latitude: firstActivity.location.latitude,
+//                             longitude: firstActivity.location.longitude, scale: 0.2)
+//            }
         }
     }
     
@@ -224,7 +230,7 @@ extension ExploreViewController: UISearchBarDelegate
                                            name: name)
                 }
             }
-        } else if let location = locationManager?.location {
+        } else if let location = LocationService.shared.locationManager?.location {
             searchActivities(location: location,
                              name: name)
         }
@@ -310,9 +316,14 @@ extension ExploreViewController: UITableViewDataSource
             let activity = activities[indexPath.row]
             let icon = indexPath.row % 2 == 0 ? UIImage(named: "soccerball") : UIImage(named: "hiking")
 
-            cell.config(icon: icon,
-                        title: activity.name + " - " + activity.eventStartTime.display(),
-                        details: activity.location.name)
+            if let name = activity.name,
+               let eventStartTime = activity.eventStartTime,
+               let locationName = activity.location?.name
+            {
+                cell.config(icon: icon,
+                            title: name + " - " + eventStartTime.display(),
+                            details: locationName)
+            }
         }
         return cell
     }
@@ -380,46 +391,46 @@ extension ExploreViewController: MKMapViewDelegate
     }
 }
 
-extension ExploreViewController: CLLocationManagerDelegate
-{
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
-    {
-        switch status {
-        case .denied: // Setting option: Never
-            print("LocationManager didChangeAuthorization denied")
-        case .notDetermined: // Setting option: Ask Next Time
-            print("LocationManager didChangeAuthorization notDetermined")
-        case .authorizedWhenInUse: // Setting option: While Using the App
-            print("LocationManager didChangeAuthorization authorizedWhenInUse")
-            locationManager?.requestLocation()
-        case .authorizedAlways: // Setting option: Always
-            print("LocationManager didChangeAuthorization authorizedAlways")
-            locationManager?.requestLocation()
-        case .restricted: // Restricted by parental control
-            print("LocationManager didChangeAuthorization restricted")
-        default:
-            print("LocationManager didChangeAuthorization")
-        }
-    }
-
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
-    {
-        print("LocationManager didUpdateLocations: numberOfLocation: \(locations.count)")
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        locations.forEach { (location) in
-            print("LocationManager didUpdateLocations: \(dateFormatter.string(from: location.timestamp)); \(location.coordinate.latitude), \(location.coordinate.longitude)")
-        }
-    }
-  
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
-    {
-        print("LocationManager didFailWithError \(error.localizedDescription)")
-        if let error = error as? CLError, error.code == .denied {
-            // Location updates are not authorized.
-            // To prevent forever looping of `didFailWithError` callback
-            locationManager?.stopMonitoringSignificantLocationChanges()
-        }
-    }
-}
+//extension ExploreViewController: CLLocationManagerDelegate
+//{
+//    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
+//    {
+//        switch status {
+//        case .denied: // Setting option: Never
+//            print("LocationManager didChangeAuthorization denied")
+//        case .notDetermined: // Setting option: Ask Next Time
+//            print("LocationManager didChangeAuthorization notDetermined")
+//        case .authorizedWhenInUse: // Setting option: While Using the App
+//            print("LocationManager didChangeAuthorization authorizedWhenInUse")
+//            locationManager?.requestLocation()
+//        case .authorizedAlways: // Setting option: Always
+//            print("LocationManager didChangeAuthorization authorizedAlways")
+//            locationManager?.requestLocation()
+//        case .restricted: // Restricted by parental control
+//            print("LocationManager didChangeAuthorization restricted")
+//        default:
+//            print("LocationManager didChangeAuthorization")
+//        }
+//    }
+//
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
+//    {
+//        print("LocationManager didUpdateLocations: numberOfLocation: \(locations.count)")
+//        let dateFormatter = DateFormatter()
+//        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+//
+//        locations.forEach { (location) in
+//            print("LocationManager didUpdateLocations: \(dateFormatter.string(from: location.timestamp)); \(location.coordinate.latitude), \(location.coordinate.longitude)")
+//        }
+//    }
+//
+//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+//    {
+//        print("LocationManager didFailWithError \(error.localizedDescription)")
+//        if let error = error as? CLError, error.code == .denied {
+//            // Location updates are not authorized.
+//            // To prevent forever looping of `didFailWithError` callback
+//            locationManager?.stopMonitoringSignificantLocationChanges()
+//        }
+//    }
+//}
