@@ -24,8 +24,8 @@ class CreateActivityViewModel
         let now = Date()
         let activity = Activity(name: name,
                                 location: location,
-                                startTime: now.addingTimeInterval(24 * 3600).timeIntervalSince1970,
-                                endTime: now.addingTimeInterval(26 * 3600).timeIntervalSince1970)
+                                startTime: Int(now.addingTimeInterval(24 * 3600).timeIntervalSince1970),
+                                endTime: Int(now.addingTimeInterval(26 * 3600).timeIntervalSince1970))
         
         ActivityAPIService().activity(activity,
                                       completion: completion)

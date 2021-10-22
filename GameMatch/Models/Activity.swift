@@ -13,33 +13,33 @@ class Activity: NSObject, Codable
     let sportId: Int?
     let name: String?
     let location: Location?
-    let startTime: TimeInterval?
-    let endTime: TimeInterval?
-    let createdTime: TimeInterval?
+    let startTime: Int?
+    let endTime: Int?
+    let createdTime: Int?
     let activityType: String?
 
     var eventStartTime: Date? {
         if let startTime = startTime {
-            return Date(timeIntervalSince1970: startTime)
+            return Date(timeIntervalSince1970: TimeInterval(startTime))
         }
         return nil
     }
     
     var eventEndTime: Date? {
         if let endTime = endTime {
-            return Date(timeIntervalSince1970: endTime)
+            return Date(timeIntervalSince1970: TimeInterval(endTime))
         }
         return nil
     }
     
-    init(name: String, location: Location, startTime: TimeInterval, endTime: TimeInterval?)
+    init(name: String, location: Location, startTime: Int, endTime: Int?)
     {
         self.id = nil
         self.name = name
         self.location = location
         self.startTime = startTime
         self.endTime = endTime
-        self.createdTime = Date().timeIntervalSince1970
+        self.createdTime = Int(Date().timeIntervalSince1970)
         self.sportId = 1
         self.activityType = "public"
         
