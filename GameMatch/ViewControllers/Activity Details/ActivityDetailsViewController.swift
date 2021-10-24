@@ -9,6 +9,7 @@ import UIKit
 
 class ActivityDetailsViewController: BaseViewController
 {    
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerHeight: NSLayoutConstraint!
     
@@ -54,6 +55,7 @@ class ActivityDetailsViewController: BaseViewController
                 self?.stopSpinner()
                 switch result {
                 case .success():
+                    self?.nameLabel.text = activityDetailsVM.activity?.name
                     self?.tableView.reloadData()
                 case .failure(let error):
                     self?.showError(error)
@@ -115,8 +117,17 @@ extension ActivityDetailsViewController: UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         if let cell = cell as? ActivityInfoTableViewCell {
+            if let startTime = activityDetailsVM?.activity?.eventStartTime,
+               let endTime = activityDetailsVM?.activity?.eventEndTime,
+               let location = activityDetailsVM?.activity?.location?.name
+            {
+                cell.config(startTime: startTime,
+                            endTime: endTime,
+                            location: location)
+            }
+            
             cell.shareActivity = { [weak self] in
-                let textToShare = "Soccer Pickup Game"
+                let textToShare = self?.activityDetailsVM?.activity?.name ?? ""
 
                 if let myWebsite = URL(string: "http://www.codingexplorer.com/") {
                     let objectsToShare: [Any] = [textToShare, myWebsite]
@@ -138,9 +149,7 @@ extension ActivityDetailsViewController: UITableViewDataSource
             cell.sendMessage = { [weak self] in
                 self?.sendMessage()
             }
-        }
-        
-        if let cell = cell as? MessageTableViewCell {
+        } else if let cell = cell as? MessageTableViewCell {
             cell.config(icon: "soccerplayer\(indexPath.row % 4)",
                         name: "Player\(indexPath.row + 1)",
                         time: "8/10 10:3\(indexPath.row)",

@@ -526,10 +526,10 @@ Any person taking part in this group, specifically events posted on this group, 
                                             <constraints>
                                                 <constraint firstItem="Kbl-y3-jvS" firstAttribute="leading" secondItem="4l4-gf-SIV" secondAttribute="trailing" constant="12" id="0He-tX-AsW"/>
                                                 <constraint firstItem="asi-wj-dBP" firstAttribute="centerY" secondItem="iVY-Vi-FT6" secondAttribute="centerY" id="1fY-U1-CLs"/>
+                                                <constraint firstItem="zxl-LJ-EVW" firstAttribute="top" secondItem="xWe-2p-jqt" secondAttribute="bottom" constant="10" id="3ZU-MC-31x"/>
                                                 <constraint firstItem="esT-gH-Lb4" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZPN-rl-BDJ" secondAttribute="trailing" constant="8" symbolic="YES" id="6YT-3j-Khl"/>
                                                 <constraint firstItem="Xxr-al-wVx" firstAttribute="leading" secondItem="N6Q-m2-f70" secondAttribute="leading" id="6ou-6o-jjq"/>
                                                 <constraint firstItem="xWe-2p-jqt" firstAttribute="centerY" secondItem="Xxr-al-wVx" secondAttribute="centerY" id="7Y1-gT-qlx"/>
-                                                <constraint firstItem="zxl-LJ-EVW" firstAttribute="top" secondItem="xWe-2p-jqt" secondAttribute="bottom" constant="10" id="7ye-SL-Lr8"/>
                                                 <constraint firstItem="fGM-Bz-NVX" firstAttribute="leading" secondItem="Fwp-y7-0iU" secondAttribute="leading" id="ACA-C7-Lxn"/>
                                                 <constraint firstItem="ZPN-rl-BDJ" firstAttribute="leading" secondItem="cg9-6Q-d2E" secondAttribute="leadingMargin" id="CXS-Tv-vM4"/>
                                                 <constraint firstItem="zxl-LJ-EVW" firstAttribute="leading" secondItem="Xxr-al-wVx" secondAttribute="leading" id="Co8-0u-AHw"/>
@@ -568,7 +568,10 @@ Any person taking part in this group, specifically events posted on this group, 
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="attendeesView" destination="zxl-LJ-EVW" id="7aX-zy-ej8"/>
+                                            <outlet property="dateLabel" destination="ZPN-rl-BDJ" id="2Cb-re-pb1"/>
                                             <outlet property="favorateButton" destination="esT-gH-Lb4" id="Fgx-Dr-61d"/>
+                                            <outlet property="locationLabel" destination="fGM-Bz-NVX" id="RaZ-fe-b1A"/>
+                                            <outlet property="timeLabel" destination="0Rd-PS-1nF" id="biv-9J-93V"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MessageTableViewCell" rowHeight="78" id="dof-4x-iVz" customClass="MessageTableViewCell" customModule="GameMatch" customModuleProvider="target">
@@ -676,6 +679,7 @@ Any person taking part in this group, specifically events posted on this group, 
                     <navigationItem key="navigationItem" id="dWi-hf-UXw"/>
                     <connections>
                         <outlet property="headerHeight" destination="QvO-Nf-LIS" id="0gD-so-vOf"/>
+                        <outlet property="nameLabel" destination="0Fs-1M-U1V" id="Ju4-GH-ume"/>
                         <outlet property="tableView" destination="vR2-Tx-yzU" id="yL9-nn-x0F"/>
                     </connections>
                 </viewController>

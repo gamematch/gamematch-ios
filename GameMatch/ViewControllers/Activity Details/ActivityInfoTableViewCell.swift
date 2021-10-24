@@ -9,6 +9,10 @@ import UIKit
 
 class ActivityInfoTableViewCell: UITableViewCell
 {
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    
     @IBOutlet weak var favorateButton: UIButton!
     @IBOutlet weak var attendeesView: UIScrollView!
     
@@ -17,7 +21,8 @@ class ActivityInfoTableViewCell: UITableViewCell
     var invite: (() -> Void)?
     var sendMessage: (() -> Void)?
     
-    override func awakeFromNib() {
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
         
         let totalAttendees = 18
@@ -40,29 +45,42 @@ class ActivityInfoTableViewCell: UITableViewCell
         }
     }
     
-    @IBAction func joinAction(_ sender: Any) {
+    func config(startTime: Date, endTime: Date, location: String)
+    {
+        dateLabel.text = startTime.display(format: "EEE, MMM d, yyyy")
+        timeLabel.text = startTime.display(format: "h:mma") + " - " + endTime.display(format: "h:mma")
+        locationLabel.text = location
+    }
+    
+    @IBAction func joinAction(_ sender: Any)
+    {
         joinActivity?()
     }
     
-    @IBAction func favorateAction(_ sender: Any) {
+    @IBAction func favorateAction(_ sender: Any)
+    {
         favorateButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
     }
     
-    @IBAction func shareAction(_ sender: Any) {
+    @IBAction func shareAction(_ sender: Any)
+    {
         shareActivity?()
     }
     
-    @IBAction func directionAction(_ sender: Any) {
+    @IBAction func directionAction(_ sender: Any)
+    {
         if let targetURL = URL(string: "http://maps.apple.com/?q=danville") {
             UIApplication.shared.open(targetURL)
         }
     }
     
-    @IBAction func messageAction(_ sender: Any) {
+    @IBAction func messageAction(_ sender: Any)
+    {
         sendMessage?()
     }
     
-    @IBAction func inviteAction(_ sender: Any) {
+    @IBAction func inviteAction(_ sender: Any)
+    {
         invite?()
     }
 }

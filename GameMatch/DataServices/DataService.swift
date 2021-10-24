@@ -26,6 +26,13 @@ protocol DataService
 
 protocol DataRequest
 {
-    var url: URL? { get }
-    func getURL(pathParams: String) -> URL?
+    func getURL(pathParams: String?) -> URL?
+}
+
+extension DataRequest
+{
+    var url: URL?
+    {
+        return getURL(pathParams: nil)
+    }
 }
