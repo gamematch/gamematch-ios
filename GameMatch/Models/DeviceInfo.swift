@@ -14,7 +14,7 @@ class DeviceInfo: NSObject, Codable
     let userId: String?
     let token: String?
     let appPackageId: String?
-    let badgeNumber: Int?
+    let appVersion: String?
     let channelType: String?
     let make: String?
     let model: String?
@@ -23,7 +23,8 @@ class DeviceInfo: NSObject, Codable
     let platform: String?
     let platformVersion: String?
     let timezone: String?
-    
+    let badgeNumber: Int?
+
     init(token: String)
     {
         self.token = token
@@ -33,6 +34,7 @@ class DeviceInfo: NSObject, Codable
         badgeNumber = nil
 
         appPackageId = Bundle.main.bundleIdentifier
+        appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
         make = "Apple"
         model = "iPhone"
         modelVersion = UIDevice.current.model
