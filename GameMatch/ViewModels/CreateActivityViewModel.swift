@@ -27,7 +27,7 @@ class CreateActivityViewModel
                                 startTime: Int(now.addingTimeInterval(24 * 3600).timeIntervalSince1970),
                                 endTime: Int(now.addingTimeInterval(26 * 3600).timeIntervalSince1970))
         
-        ActivityAPIService().activity(activity,
-                                      completion: completion)
+        ActivityAPIService().createActivity(activity,
+                                            completion: completion)
     }
 }

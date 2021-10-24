@@ -10,10 +10,10 @@ import CoreLocation
 
 class ActivityAPIService: BaseAPIService
 {
-    func activities(latitude: CLLocationDegrees,
-                    longitude: CLLocationDegrees,
-                    name: String?,
-                    completion: @escaping (Result<[Activity], Error>) -> Void)
+    func getActivities(latitude: CLLocationDegrees,
+                       longitude: CLLocationDegrees,
+                       name: String?,
+                       completion: @escaping (Result<[Activity], Error>) -> Void)
     {
         let locationInfo = ["latitude": latitude,
                             "longitude": longitude]
@@ -34,12 +34,28 @@ class ActivityAPIService: BaseAPIService
                          })
     }
     
-    func activity(_ activity: Activity,
-                  completion: @escaping (Result<Activity, Error>) -> Void)
+    func createActivity(_ activity: Activity,
+                        completion: @escaping (Result<Activity, Error>) -> Void)
     {        
         post(request: APIRequests.activity,
              parameters: activity.dict,
              completion: { (result: Result<Activity, Error>) in
+                            switch result {
+                            case .success(let activity):
+                                completion(.success(activity))
+                            case .failure(let error):
+                                completion(.failure(error))
+                            }
+                         })
+    }
+    
+    func getActivity(id: String,
+                     completion: @escaping (Result<Activity, Error>) -> Void)
+    {
+        get(request: APIRequests.activity,
+            pathParams: id,
+            parameters: nil,
+            completion: { (result: Result<Activity, Error>) in
                             switch result {
                             case .success(let activity):
                                 completion(.success(activity))

@@ -27,8 +27,13 @@ enum APIRequests: String, DataRequest
     case activities = "/api/v1/activities"
     case activity = "/api/v1/activity"
 
-    var url: URL
+    var url: URL?
     {
-        return URL(string: hostname + rawValue)!
+        return URL(string: hostname + rawValue)
+    }
+    
+    func getURL(pathParams: String) -> URL?
+    {
+        return URL(string: hostname + rawValue + "/\(pathParams)")
     }
 }

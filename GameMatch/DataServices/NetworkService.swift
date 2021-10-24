@@ -15,14 +15,20 @@ final class NetworkService: DataService
                                               "x-gm-session-id": SessionManager.shared.sessionId]
     
     func get(request: DataRequest,
-             pathParams: String? = nil,
+             pathParams: String?,
              parameters: [String: String]?,
              completion: @escaping (Result<Data, Error>) -> Void)
     {
-        var url = request.url
+        let url: URL?
         if let pathParams = pathParams {
-            let path = "\(url.path)/\(pathParams)"
-            url = URL(string: path)!
+            url = request.getURL(pathParams: pathParams)
+        } else {
+            url = request.url
+        }
+        
+        guard let url = url else {
+            completion(.failure(ServiceError.invalidData))
+            return
         }
         
         var components = URLComponents(url: url,
@@ -60,12 +66,18 @@ final class NetworkService: DataService
              parameters: [String: Any?]?,
              completion: @escaping (Result<Data, Error>) -> Void)
     {
-        var url = request.url
+        let url: URL?
         if let pathParams = pathParams {
-            let path = "\(url.path)/\(pathParams)"
-            url = URL(string: path)!
+            url = request.getURL(pathParams: pathParams)
+        } else {
+            url = request.url
         }
         
+        guard let url = url else {
+            completion(.failure(ServiceError.invalidData))
+            return
+        }
+
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "PUT"
         urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")
@@ -100,7 +112,11 @@ final class NetworkService: DataService
               parameters: [String: Any?]?,
               completion: @escaping (Result<Data, Error>) -> Void)
     {
-        let url = request.url
+        guard let url = request.url else {
+            completion(.failure(ServiceError.invalidData))
+            return
+        }
+        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")

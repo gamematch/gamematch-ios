@@ -127,19 +127,19 @@ class ExploreViewController: BaseViewController
     private func searchActivities(location: CLLocation, name: String?)
     {
         startSpinner()
-        exploreVM.activities(latitude: location.coordinate.latitude,
-                             longitude: location.coordinate.longitude,
-                             name: name,
-                             completion: { [weak self] result in
-                                 self?.stopSpinner()
-                                 switch result {
-                                 case .success():
-                                     self?.locationSearchBar.isHidden = true
-                                     self?.showSearchResult()
-                                 case .failure(let error):
-                                     self?.showError(error)
-                                 }
-                             })
+        exploreVM.getActivities(latitude: location.coordinate.latitude,
+                                longitude: location.coordinate.longitude,
+                                name: name,
+                                completion: { [weak self] result in
+                                    self?.stopSpinner()
+                                    switch result {
+                                    case .success():
+                                        self?.locationSearchBar.isHidden = true
+                                        self?.showSearchResult()
+                                    case .failure(let error):
+                                        self?.showError(error)
+                                    }
+                                })
     }
         
     @objc func panAction(_ pan: UIPanGestureRecognizer)
@@ -165,10 +165,13 @@ class ExploreViewController: BaseViewController
         }
     }
     
-    func showActivityDetails()
+    func showActivityDetails(activity: Activity)
     {
         if let activityScreen = UIStoryboard(name: "Main",
-                                             bundle: nil).instantiateViewController(identifier: "ActivityDetailsViewController") as? ActivityDetailsViewController {
+                                             bundle: nil).instantiateViewController(identifier: "ActivityDetailsViewController") as? ActivityDetailsViewController,
+           let activityId = activity.id
+        {
+            activityScreen.setup(activityId: activityId)
             navigationController?.pushViewController(activityScreen, animated: true)
         }
     }
@@ -331,7 +334,9 @@ extension ExploreViewController: UITableViewDelegate
         tableView.deselectRow(at: indexPath, animated: true)
         
         if tableView == eventsTableView {
-            showActivityDetails()
+            if let activity = exploreVM.activities?[indexPath.row] {
+                showActivityDetails(activity: activity)
+            }
         } else {
             let location = locationSearchResults[indexPath.row]
             locationSearchBar.text = location.title + ", " + location.subtitle

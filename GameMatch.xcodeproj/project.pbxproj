@@ -15,6 +15,7 @@
 		A311A16A271FBD5D0013E498 /* CreateActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A169271FBD5D0013E498 /* CreateActivityViewModel.swift */; };
 		A311A16C271FBE2B0013E498 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A16B271FBE2B0013E498 /* LocationService.swift */; };
 		A311A16E271FDD530013E498 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A16D271FDD530013E498 /* Encodable+.swift */; };
+		A311A1702724F9440013E498 /* ActivityDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A16F2724F9440013E498 /* ActivityDetailsViewModel.swift */; };
 		A3385B1826FFD3E9004799E8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1726FFD3E9004799E8 /* DataService.swift */; };
 		A3385B1A26FFD458004799E8 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1926FFD458004799E8 /* NetworkService.swift */; };
 		A3385B1F26FFD7FC004799E8 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B1E26FFD7FC004799E8 /* LoginState.swift */; };
@@ -94,6 +95,7 @@
 		A311A169271FBD5D0013E498 /* CreateActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityViewModel.swift; sourceTree = "<group>"; };
 		A311A16B271FBE2B0013E498 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		A311A16D271FDD530013E498 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
+		A311A16F2724F9440013E498 /* ActivityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewModel.swift; sourceTree = "<group>"; };
 		A3385B1726FFD3E9004799E8 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		A3385B1926FFD458004799E8 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		A3385B1E26FFD7FC004799E8 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		A3385B1D26FFD75E004799E8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A311A16F2724F9440013E498 /* ActivityDetailsViewModel.swift */,
 				A311A169271FBD5D0013E498 /* CreateActivityViewModel.swift */,
 				A3B6B4942709301C00309925 /* ExploreViewModel.swift */,
 				A3B6B49C270AD37600309925 /* ProfileViewModel.swift */,
@@ -608,6 +611,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3893F9726CCCBC10004C766 /* UIImageView+.swift in Sources */,
+				A311A1702724F9440013E498 /* ActivityDetailsViewModel.swift in Sources */,
 				A3893F5626C4D84B0004C766 /* ExploreViewController.swift in Sources */,
 				A3CD34F326DC5E500049C6AE /* NewEventViewController.swift in Sources */,
 				A3C6F61E26D34AD600C01549 /* GMTabBar.swift in Sources */,

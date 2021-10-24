@@ -10,10 +10,12 @@ import Foundation
 class BaseAPIService
 {
     internal func get<T: Decodable>(request: DataRequest,
+                                    pathParams: String?,
                                     parameters: [String: String]?,
                                     completion: @escaping (Result<T, Error>) -> Void)
     {
         NetworkService().get(request: request,
+                             pathParams: pathParams,
                              parameters: parameters) { result in
             self.parseResult(result, completion: completion)
         }

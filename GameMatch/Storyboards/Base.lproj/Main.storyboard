@@ -676,6 +676,7 @@ Any person taking part in this group, specifically events posted on this group, 
                     <navigationItem key="navigationItem" id="dWi-hf-UXw"/>
                     <connections>
                         <outlet property="headerHeight" destination="QvO-Nf-LIS" id="0gD-so-vOf"/>
+                        <outlet property="tableView" destination="vR2-Tx-yzU" id="yL9-nn-x0F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gkb-IS-2Kb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

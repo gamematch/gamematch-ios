@@ -9,38 +9,69 @@ import UIKit
 
 class ActivityDetailsViewController: BaseViewController
 {    
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerHeight: NSLayoutConstraint!
+    
+    private var activityDetailsVM: ActivityDetailsViewModel?
     
     private var headerStartHeight: CGFloat = 0
     
-    override func viewDidLoad() {
+    func setup(activityId: String)
+    {
+        activityDetailsVM = ActivityDetailsViewModel(activityId: activityId)
+    }
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         headerStartHeight = headerHeight.constant
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool)
+    {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        
+        loadData()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool)
+    {
         super.viewWillDisappear(animated)
         
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil
     }
+    
+    private func loadData()
+    {
+        if let activityDetailsVM = activityDetailsVM {
+            startSpinner()
+            activityDetailsVM.getActivity { [weak self] result in
+                self?.stopSpinner()
+                switch result {
+                case .success():
+                    self?.tableView.reloadData()
+                case .failure(let error):
+                    self?.showError(error)
+                }
+            }
+        }
+    }
             
-    func showContacts() {
+    func showContacts()
+    {
         if let activityScreen = UIStoryboard(name: "Main",
                                              bundle: nil).instantiateViewController(identifier: "ContactsViewController") as? ContactsViewController {
             navigationController?.pushViewController(activityScreen, animated: true)
         }
     }
     
-    func sendMessage() {
+    func sendMessage()
+    {
         if let nextScreen = UIStoryboard(name: "Main",
                                          bundle: nil).instantiateViewController(identifier: "SendMessageNavController") as? UINavigationController {
             nextScreen.modalPresentationStyle = .fullScreen
@@ -48,7 +79,8 @@ class ActivityDetailsViewController: BaseViewController
         }
     }
     
-    func showLogin() {
+    func showLogin()
+    {
         if let nextScreen = UIStoryboard(name: "Main",
                                          bundle: nil).instantiateViewController(identifier: "LoginNavController") as? UINavigationController {
             nextScreen.modalPresentationStyle = .fullScreen
@@ -59,22 +91,26 @@ class ActivityDetailsViewController: BaseViewController
 
 extension ActivityDetailsViewController: UITableViewDelegate
 {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
 extension ActivityDetailsViewController: UITableViewDataSource
 {
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
         return 2
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
         return section == 0 ? 1 : 10
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
         let cellId = indexPath.section == 0 ? "ActivityInfoTableViewCell" : "MessageTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
@@ -113,12 +149,14 @@ extension ActivityDetailsViewController: UITableViewDataSource
         return cell
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
+    {
         return section == 0 ? nil : "Messages"
     }
 }
 
-extension ActivityDetailsViewController: UIScrollViewDelegate {
+extension ActivityDetailsViewController: UIScrollViewDelegate
+{
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offsetY = -(scrollView.contentOffset.y + scrollView.contentInset.top)
         if offsetY == 0 {

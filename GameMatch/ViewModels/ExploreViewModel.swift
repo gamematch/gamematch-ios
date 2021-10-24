@@ -12,22 +12,22 @@ class ExploreViewModel
 {
     var activities: [Activity]?
     
-    func activities(latitude: CLLocationDegrees,
-                    longitude: CLLocationDegrees,
-                    name: String?,
-                    completion: @escaping (Result<Void, Error>) -> Void)
+    func getActivities(latitude: CLLocationDegrees,
+                       longitude: CLLocationDegrees,
+                       name: String?,
+                       completion: @escaping (Result<Void, Error>) -> Void)
     {
-        ActivityAPIService().activities(latitude: latitude,
-                                        longitude: longitude,
-                                        name: name,
-                                        completion: { [weak self] result in
-                                            switch result {
-                                            case .success(let activities):
-                                                self?.activities = activities
-                                                completion(.success(()))
-                                            case .failure(let error):
-                                                completion(.failure(error))
-                                            }
-                                        })
+        ActivityAPIService().getActivities(latitude: latitude,
+                                           longitude: longitude,
+                                           name: name,
+                                           completion: { [weak self] result in
+                                                switch result {
+                                                case .success(let activities):
+                                                    self?.activities = activities
+                                                    completion(.success(()))
+                                                case .failure(let error):
+                                                    completion(.failure(error))
+                                                }
+                                           })
     }
 }
