@@ -24,14 +24,37 @@ class PushNotificationManager
         didSet {
             if let deviceToken = deviceToken {
                 print("======= register \(deviceToken) =========")
-                DeviceAPIService().register(deviceToken: deviceToken) { [weak self] result in
-                    switch result {
-                    case .success(let deviceInfo):
-                        UserDefaults.standard.set(deviceInfo.deviceId, forKey: self?.deviceIdKey ?? "")
-                    case .failure(let error):
-                        print(error)
-                    }
+
+                if let deviceId = UserDefaults.standard.string(forKey: deviceIdKey) {
+                    updateDevice(deviceId: deviceId, deviceToken: deviceToken)
+                } else {
+                    registerDevice(deviceToken: deviceToken)
                 }
+            }
+        }
+    }
+    
+    private func registerDevice(deviceToken: String)
+    {
+        DeviceAPIService().register(deviceToken: deviceToken) { [weak self] result in
+            switch result {
+            case .success(let deviceInfo):
+                UserDefaults.standard.set(deviceInfo.deviceId, forKey: self?.deviceIdKey ?? "")
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    private func updateDevice(deviceId: String, deviceToken: String)
+    {
+        DeviceAPIService().update(deviceId: deviceId,
+                                  deviceToken: deviceToken) { result in
+            switch result {
+            case .success(()):
+                break
+            case .failure(let error):
+                print(error)
             }
         }
     }

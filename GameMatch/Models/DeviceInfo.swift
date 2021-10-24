@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import UIKit
 
 class DeviceInfo: NSObject, Codable
 {
-    let deviceId: String
+    let deviceId: String?
     let userId: String?
     let token: String?
     let appPackageId: String?
@@ -22,4 +23,24 @@ class DeviceInfo: NSObject, Codable
     let platform: String?
     let platformVersion: String?
     let timezone: String?
+    
+    init(token: String)
+    {
+        self.token = token
+        
+        deviceId = nil
+        userId = nil
+        badgeNumber = nil
+        channelType = nil
+        
+        appPackageId = Bundle.main.bundleIdentifier
+        make = "Apple"
+        model = "iPhone"
+        modelVersion = UIDevice.current.model
+        platform = "iOS"
+        platformVersion = UIDevice.current.systemVersion
+        timezone = TimeZone.current.identifier
+        
+        notificationOn = true
+    }
 }

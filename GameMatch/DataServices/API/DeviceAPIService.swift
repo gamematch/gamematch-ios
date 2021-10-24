@@ -12,9 +12,10 @@ class DeviceAPIService: BaseAPIService
     func register(deviceToken: String,
                   completion: @escaping (Result<DeviceInfo, Error>) -> Void)
     {
+        let deviceInfo = DeviceInfo(token: deviceToken)
+        
         post(request: APIRequests.device,
-             parameters: ["token": deviceToken,
-                          "notificationOn": true],
+             parameters: deviceInfo.dict,
              completion: { (result: Result<DeviceInfo, Error>) in
                             switch result {
                             case .success(let deviceInfo):
@@ -31,10 +32,11 @@ class DeviceAPIService: BaseAPIService
                 deviceToken: String,
                 completion: @escaping (Result<Void, Error>) -> Void)
     {
+        let deviceInfo = DeviceInfo(token: deviceToken)
+        
         put(request: APIRequests.device,
             pathParams: deviceId,
-            parameters: ["token": deviceToken,
-                         "notificationOn": true],
+            parameters: deviceInfo.dict,
             completion: { (result: Result<Void, Error>) in
                             switch result {
                             case .success():
