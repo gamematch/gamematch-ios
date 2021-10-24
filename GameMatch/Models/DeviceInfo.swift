@@ -31,7 +31,12 @@ class DeviceInfo: NSObject, Codable
         deviceId = nil
         userId = nil
         badgeNumber = nil
-        channelType = nil
+        
+#if DEBUG
+        channelType = "APNS_SANDBOX"
+#else
+        channelType = "APNS_PRODUCTION"
+#endif
         
         appPackageId = Bundle.main.bundleIdentifier
         make = "Apple"
