@@ -27,17 +27,11 @@ class DeviceInfo: NSObject, Codable
     init(token: String)
     {
         self.token = token
-        
+
         deviceId = nil
         userId = nil
         badgeNumber = nil
-        
-#if DEBUG
-        channelType = "APNS_SANDBOX"
-#else
-        channelType = "APNS_PRODUCTION"
-#endif
-        
+
         appPackageId = Bundle.main.bundleIdentifier
         make = "Apple"
         model = "iPhone"
@@ -45,7 +39,13 @@ class DeviceInfo: NSObject, Codable
         platform = "iOS"
         platformVersion = UIDevice.current.systemVersion
         timezone = TimeZone.current.identifier
-        
+
+#if DEBUG
+        channelType = "APNS_SANDBOX"
+#else
+        channelType = "APNS_PRODUCTION"
+#endif
+
         notificationOn = true
     }
 }
