@@ -56,6 +56,9 @@
 		A3B6B49D270AD37600309925 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6B49C270AD37600309925 /* ProfileViewModel.swift */; };
 		A3C6F61E26D34AD600C01549 /* GMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61D26D34AD600C01549 /* GMTabBar.swift */; };
 		A3C6F62026D3803D00C01549 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61F26D3803D00C01549 /* LoginViewController.swift */; };
+		A3CB3D6A27339F7900006762 /* InviteAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB3D6927339F7900006762 /* InviteAPIService.swift */; };
+		A3CB3D6C27339FEE00006762 /* Invitation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB3D6B27339FEE00006762 /* Invitation.swift */; };
+		A3CB3D6E2733AA4C00006762 /* ContactsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB3D6D2733AA4C00006762 /* ContactsViewModel.swift */; };
 		A3CD34E826D76A990049C6AE /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34E726D76A990049C6AE /* UIImage+.swift */; };
 		A3CD34EA26D88C950049C6AE /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34E926D88C950049C6AE /* SendMessageViewController.swift */; };
 		A3CD34EC26DAB1C20049C6AE /* GroupDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CD34EB26DAB1C20049C6AE /* GroupDetailsViewController.swift */; };
@@ -142,6 +145,9 @@
 		A3B6B49C270AD37600309925 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		A3C6F61D26D34AD600C01549 /* GMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMTabBar.swift; sourceTree = "<group>"; };
 		A3C6F61F26D3803D00C01549 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A3CB3D6927339F7900006762 /* InviteAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteAPIService.swift; sourceTree = "<group>"; };
+		A3CB3D6B27339FEE00006762 /* Invitation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invitation.swift; sourceTree = "<group>"; };
+		A3CB3D6D2733AA4C00006762 /* ContactsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewModel.swift; sourceTree = "<group>"; };
 		A3CD34E726D76A990049C6AE /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		A3CD34E926D88C950049C6AE /* SendMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
 		A3CD34EB26DAB1C20049C6AE /* GroupDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +232,7 @@
 				A3385B2F27001F27004799E8 /* AuthenticationAPIService.swift */,
 				A3385B26270008C0004799E8 /* BaseAPIService.swift */,
 				A311A165271BF66E0013E498 /* DeviceAPIService.swift */,
+				A3CB3D6927339F7900006762 /* InviteAPIService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -235,6 +242,7 @@
 			children = (
 				A3B6B4962709318800309925 /* Activity.swift */,
 				A311A167271BF7360013E498 /* DeviceInfo.swift */,
+				A3CB3D6B27339FEE00006762 /* Invitation.swift */,
 				A3385B1E26FFD7FC004799E8 /* LoginState.swift */,
 				A3385B2426FFDDC5004799E8 /* SignUpState.swift */,
 			);
@@ -245,6 +253,7 @@
 			isa = PBXGroup;
 			children = (
 				A311A16F2724F9440013E498 /* ActivityDetailsViewModel.swift */,
+				A3CB3D6D2733AA4C00006762 /* ContactsViewModel.swift */,
 				A311A169271FBD5D0013E498 /* CreateActivityViewModel.swift */,
 				A3B6B4942709301C00309925 /* ExploreViewModel.swift */,
 				A3B6B49C270AD37600309925 /* ProfileViewModel.swift */,
@@ -649,8 +658,11 @@
 				A3385B2526FFDDC5004799E8 /* SignUpState.swift in Sources */,
 				A311A166271BF66E0013E498 /* DeviceAPIService.swift in Sources */,
 				A3B6B4972709318800309925 /* Activity.swift in Sources */,
+				A3CB3D6A27339F7900006762 /* InviteAPIService.swift in Sources */,
 				A3CD34EA26D88C950049C6AE /* SendMessageViewController.swift in Sources */,
 				A3CD34F126DB46C50049C6AE /* EventTableViewCell.swift in Sources */,
+				A3CB3D6C27339FEE00006762 /* Invitation.swift in Sources */,
+				A3CB3D6E2733AA4C00006762 /* ContactsViewModel.swift in Sources */,
 				A3893F5426C4D84B0004C766 /* SceneDelegate.swift in Sources */,
 				A3385B1A26FFD458004799E8 /* NetworkService.swift in Sources */,
 				A39C061E26DC6BB900CE8DCA /* MKMapView+.swift in Sources */,

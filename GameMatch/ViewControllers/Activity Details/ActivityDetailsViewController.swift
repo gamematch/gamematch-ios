@@ -66,9 +66,10 @@ class ActivityDetailsViewController: BaseViewController
             
     func showContacts()
     {
-        if let activityScreen = UIStoryboard(name: "Main",
-                                             bundle: nil).instantiateViewController(identifier: "ContactsViewController") as? ContactsViewController {
-            navigationController?.pushViewController(activityScreen, animated: true)
+        if let nextScreen = UIStoryboard(name: "Main",
+                                         bundle: nil).instantiateViewController(identifier: "ContactsViewController") as? ContactsViewController {
+            nextScreen.setup(activity: activityDetailsVM?.activity)
+            navigationController?.pushViewController(nextScreen, animated: true)
         }
     }
     
