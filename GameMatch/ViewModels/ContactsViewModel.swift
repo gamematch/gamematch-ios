@@ -36,7 +36,7 @@ class ContactsViewModel
                     let number = phoneNumber.value
                     if let label = phoneNumber.label {
                         let localizedLabel = CNLabeledValue<CNPhoneNumber>.localizedString(forLabel: label)
-                        print("\(contact.givenName) \(contact.familyName) tel:\(localizedLabel) -- \(number.stringValue), email: \(contact.emailAddresses)")
+                        print("\(contact.givenName) \(contact.familyName) tel:\(localizedLabel) -- \(number.stringValue), email: \(String(describing: contact.emailAddresses.first?.value))")
                     }
                 }
             }
@@ -48,14 +48,19 @@ class ContactsViewModel
     func sendInvitation(selected: [Bool], completion: @escaping (Result<Void, Error>) -> Void)
     {
         guard let activityId = activity?.id else {
+            completion(.failure(GMError(message: "No Activity")))
             return
         }
 
         var invites = [String]()
         for index in 0 ..< selected.count {
-            if selected[index],
-               let phone = contacts[index].phoneNumbers.first?.value.stringValue {
-                invites.append(phone)
+            if selected[index] {
+                let contact = contacts[index]
+                let phone = contact.phoneNumbers.first?.value.stringValue
+                let email = contact.emailAddresses.first?.value
+                if let invite = phone ?? (email as String?) {
+                    invites.append(invite)
+                }
             }
         }
 
