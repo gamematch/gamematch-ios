@@ -12,7 +12,7 @@ class ContactsViewModel
 {
     var contacts = [CNContact]()
     var activity: Activity?
-    var inviteState: InviteState?
+    var inviteStates: [InviteState]?
 
     init()
     {
@@ -56,10 +56,10 @@ class ContactsViewModel
         for index in 0 ..< selected.count {
             if selected[index] {
                 let contact = contacts[index]
-                let phone = contact.phoneNumbers.first?.value.stringValue
-                let email = contact.emailAddresses.first?.value
-                if let invite = phone ?? (email as String?) {
-                    invites.append(invite)
+                if let phone = contact.phoneNumbers.first?.value.stringValue.filter({ ("0"..."9").contains($0) }) {
+                    invites.append("+1" + phone)
+                } else if let email = contact.emailAddresses.first?.value as String? {
+                    invites.append(email)
                 }
             }
         }
@@ -67,8 +67,8 @@ class ContactsViewModel
         let invitation = Invitation(activityId: activityId, invites: invites)
         InviteAPIService().send(invitation: invitation) { [weak self] result in
             switch result {
-            case .success(let inviteState):
-                self?.inviteState = inviteState
+            case .success(let inviteStates):
+                self?.inviteStates = inviteStates
                 completion(.success(()))
             case .failure(let error):
                 completion(.failure(error))

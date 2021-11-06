@@ -23,4 +23,6 @@ class Invitation: NSObject, Codable
 
 class InviteState: NSObject, Codable
 {
+    let identity: String
+    let status: String
 }
