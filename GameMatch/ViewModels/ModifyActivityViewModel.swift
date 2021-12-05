@@ -58,4 +58,12 @@ class ModifyActivityViewModel
                                                 completion: completion)
         }
     }
+
+    func deleteActivity(completion: @escaping (Result<Void, Error>) -> Void)
+    {
+        if let activity = activity {
+            ActivityAPIService().deleteActivity(activity,
+                                                completion: completion)
+        }
+    }
 }

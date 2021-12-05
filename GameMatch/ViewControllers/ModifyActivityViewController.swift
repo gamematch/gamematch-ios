@@ -17,6 +17,7 @@ class ModifyActivityViewController: BaseViewController
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var noteTextView: UITextView!
+    @IBOutlet weak var deleteButton: UIButton!
 
     private var modifyActivityVM: ModifyActivityViewModel?
 
@@ -43,6 +44,8 @@ class ModifyActivityViewController: BaseViewController
             dateField.text = eventStartTime.display(format: "MM/dd/yyyy")
             timeField.text = eventStartTime.display(format: "h:mma")
         }
+
+        deleteButton.isHidden = false
     }
     
     override func viewDidLoad()
@@ -56,6 +59,7 @@ class ModifyActivityViewController: BaseViewController
         if modifyActivityVM == nil {
             modifyActivityVM = ModifyActivityViewModel()
             navigationItem.title = "Create Activity"
+            deleteButton.isHidden = true
         }
     }
     
@@ -103,5 +107,20 @@ class ModifyActivityViewController: BaseViewController
 
     @IBAction func deleteAction(_ sender: Any)
     {
+        if let modifyActivityVM = modifyActivityVM {
+            startSpinner()
+            modifyActivityVM.deleteActivity() { [weak self] result in
+                                                self?.stopSpinner()
+                                                switch result {
+                                                case .success:
+                                                    self?.dismiss(animated: true,
+                                                                  completion: {
+                                                                      self?.navigationController?.popToRootViewController(animated: true)
+                                                                  })
+                                                case .failure(let error):
+                                                    self?.showError(error)
+                                                }
+                                            }
+        }
     }
 }

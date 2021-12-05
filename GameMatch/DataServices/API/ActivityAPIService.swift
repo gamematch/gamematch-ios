@@ -73,4 +73,12 @@ class ActivityAPIService: BaseAPIService
             parameters: activity.dict,
             completion: completion)
     }
+
+    func deleteActivity(_ activity: Activity,
+                        completion: @escaping (Result<Void, Error>) -> Void)
+    {
+        delete(request: APIRequests.activity,
+               pathParams: activity.id,
+               completion: completion)
+    }
 }

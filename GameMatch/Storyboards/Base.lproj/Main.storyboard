@@ -264,6 +264,7 @@
                     <connections>
                         <outlet property="addressField" destination="zOr-BF-bF8" id="nUz-Qk-W91"/>
                         <outlet property="dateField" destination="Jl8-QR-yiR" id="fGX-65-QzB"/>
+                        <outlet property="deleteButton" destination="GkG-jp-PaZ" id="zYJ-1b-aXt"/>
                         <outlet property="latitudeField" destination="Fa2-RI-kKa" id="Y0k-e0-yCT"/>
                         <outlet property="locationNameField" destination="vxR-xx-Dxt" id="rqY-QU-cB3"/>
                         <outlet property="longitudeField" destination="r59-oK-C9w" id="WJ1-6s-Ken"/>

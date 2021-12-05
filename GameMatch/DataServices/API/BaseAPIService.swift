@@ -90,6 +90,25 @@ class BaseAPIService
             }
         }
     }
+
+    internal func delete(request: DataRequest,
+                         pathParams: String?,
+                         completion: @escaping (Result<Void, Error>) -> Void)
+    {
+        NetworkService().delete(request: request,
+                                pathParams: pathParams) { result in
+            switch result {
+            case .success(_):
+                DispatchQueue.main.async {
+                    completion(.success(()))
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
         
     private func parseResult<T: Decodable>(_ result: Result<Data, Error>,
                                            completion: @escaping (Result<T, Error>) -> Void)
