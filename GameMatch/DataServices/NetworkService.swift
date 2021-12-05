@@ -41,24 +41,34 @@ final class NetworkService: DataService
             var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = "GET"
 
-            for header in headers {
-                urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
-            }
-            
-            URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-                if let error = error {
-                    completion(.failure(error))
-                    return
-                }
-                guard let data = data else {
-                    completion(.failure(ServiceError.invalidData))
-                    return
-                }
-                completion(.success(data))
-            }.resume()
+            sendUrlRequest(urlRequest,
+                           completion: completion)
         } else {
             completion(.failure(ServiceError.invalidData))
         }
+    }
+
+    func delete(request: DataRequest,
+                pathParams: String?,
+                completion: @escaping (Result<Data, Error>) -> Void)
+    {
+        let url: URL?
+        if let pathParams = pathParams {
+            url = request.getURL(pathParams: pathParams)
+        } else {
+            url = request.url
+        }
+
+        guard let url = url else {
+            completion(.failure(ServiceError.invalidData))
+            return
+        }
+
+        var urlRequest = URLRequest(url: url)
+        urlRequest.httpMethod = "DELETE"
+
+        sendUrlRequest(urlRequest,
+                       completion: completion)
     }
     
     func put(request: DataRequest,
@@ -77,40 +87,6 @@ final class NetworkService: DataService
                 method: "PUT",
                 parameters: parameters,
                 completion: completion)
-        
-//        guard let url = url else {
-//            completion(.failure(ServiceError.invalidData))
-//            return
-//        }
-//
-//        var urlRequest = URLRequest(url: url)
-//        urlRequest.httpMethod = "PUT"
-//        urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-//
-//        for header in headers {
-//            urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
-//        }
-//
-//        if let parameters = parameters {
-//            if let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
-//                urlRequest.httpBody = httpBody
-//            } else {
-//                completion(.failure(ServiceError.invalidData))
-//                return
-//            }
-//        }
-//
-//        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-//            if let error = error {
-//                completion(.failure(error))
-//                return
-//            }
-//            guard let data = data else {
-//                completion(.failure(ServiceError.invalidData))
-//                return
-//            }
-//            completion(.success(data))
-//        }.resume()
     }
     
     func post(request: DataRequest,
@@ -155,10 +131,6 @@ final class NetworkService: DataService
         urlRequest.httpMethod = method
         urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")
 
-        for header in headers {
-            urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
-        }
-
         if let parameters = parameters {
             if let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
                 urlRequest.httpBody = httpBody
@@ -166,6 +138,19 @@ final class NetworkService: DataService
                 completion(.failure(ServiceError.invalidData))
                 return
             }
+        }
+
+        sendUrlRequest(urlRequest,
+                       completion: completion)
+    }
+
+    private func sendUrlRequest(_ urlRequest: URLRequest,
+                                completion: @escaping (Result<Data, Error>) -> Void)
+    {
+        var urlRequest = urlRequest
+
+        for header in headers {
+            urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
         }
 
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in

@@ -68,9 +68,9 @@ class ActivityAPIService: BaseAPIService
     func changeActivity(_ activity: Activity,
                         completion: @escaping (Result<Void, Error>) -> Void)
     {
-        patch(request: APIRequests.activity,
-              pathParams: activity.id,
-              parameters: activity.dict,
-              completion: completion)
+        put(request: APIRequests.activity,
+            pathParams: activity.id,
+            parameters: activity.dict,
+            completion: completion)
     }
 }
