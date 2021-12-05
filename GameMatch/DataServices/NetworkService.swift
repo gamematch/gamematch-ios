@@ -72,59 +72,93 @@ final class NetworkService: DataService
         } else {
             url = request.url
         }
-        
-        guard let url = url else {
-            completion(.failure(ServiceError.invalidData))
-            return
-        }
 
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "PUT"
-        urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+        sendUrl(url,
+                method: "PUT",
+                parameters: parameters,
+                completion: completion)
         
-        for header in headers {
-            urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
-        }
-        
-        if let parameters = parameters {
-            if let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
-                urlRequest.httpBody = httpBody
-            } else {
-                completion(.failure(ServiceError.invalidData))
-                return
-            }
-        }
-        
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            if let error = error {
-                completion(.failure(error))
-                return
-            }
-            guard let data = data else {
-                completion(.failure(ServiceError.invalidData))
-                return
-            }
-            completion(.success(data))
-        }.resume()
+//        guard let url = url else {
+//            completion(.failure(ServiceError.invalidData))
+//            return
+//        }
+//
+//        var urlRequest = URLRequest(url: url)
+//        urlRequest.httpMethod = "PUT"
+//        urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")
+//
+//        for header in headers {
+//            urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
+//        }
+//
+//        if let parameters = parameters {
+//            if let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
+//                urlRequest.httpBody = httpBody
+//            } else {
+//                completion(.failure(ServiceError.invalidData))
+//                return
+//            }
+//        }
+//
+//        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+//            if let error = error {
+//                completion(.failure(error))
+//                return
+//            }
+//            guard let data = data else {
+//                completion(.failure(ServiceError.invalidData))
+//                return
+//            }
+//            completion(.success(data))
+//        }.resume()
     }
     
     func post(request: DataRequest,
               parameters: [String: Any?]?,
               completion: @escaping (Result<Data, Error>) -> Void)
     {
-        guard let url = request.url else {
+        sendUrl(request.url,
+                method: "POST",
+                parameters: parameters,
+                completion: completion)
+    }
+
+    func patch(request: DataRequest,
+               pathParams: String?,
+               parameters: [String: Any?]?,
+               completion: @escaping (Result<Data, Error>) -> Void)
+    {
+        let url: URL?
+        if let pathParams = pathParams {
+            url = request.getURL(pathParams: pathParams)
+        } else {
+            url = request.url
+        }
+
+        sendUrl(url,
+                method: "PATCH",
+                parameters: parameters,
+                completion: completion)
+    }
+
+    private func sendUrl(_ url: URL?,
+                         method: String,
+                         parameters: [String: Any?]?,
+                         completion: @escaping (Result<Data, Error>) -> Void)
+    {
+        guard let url = url else {
             completion(.failure(ServiceError.invalidData))
             return
         }
-        
+
         var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
+        urlRequest.httpMethod = method
         urlRequest.setValue("Application/json", forHTTPHeaderField: "Content-Type")
-        
+
         for header in headers {
             urlRequest.setValue(header.value, forHTTPHeaderField: header.key)
         }
-        
+
         if let parameters = parameters {
             if let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) {
                 urlRequest.httpBody = httpBody
@@ -133,7 +167,7 @@ final class NetworkService: DataService
                 return
             }
         }
-        
+
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))

@@ -90,6 +90,18 @@ class ActivityDetailsViewController: BaseViewController
             present(nextScreen, animated: true, completion: nil)
         }
     }
+
+    @IBAction func editAction()
+    {
+        if let nextScreen = UIStoryboard(name: "Main",
+                                        bundle: nil).instantiateViewController(identifier: "ModifyActivityNavController") as? UINavigationController,
+           let controller = nextScreen.topViewController as? ModifyActivityViewController
+        {
+            controller.setup(activity: activityDetailsVM?.activity)
+            nextScreen.modalPresentationStyle = .fullScreen
+            present(nextScreen, animated: true, completion: nil)
+        }
+    }
 }
 
 extension ActivityDetailsViewController: UITableViewDelegate

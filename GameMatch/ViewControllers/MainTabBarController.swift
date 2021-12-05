@@ -46,7 +46,7 @@ class MainTabBarController: UITabBarController
     
     @objc func addActivity() {
         if let nextScreen = UIStoryboard(name: "Main",
-                                         bundle: nil).instantiateViewController(identifier: "CreateActivityNavController") as? UINavigationController {
+                                         bundle: nil).instantiateViewController(identifier: "ModifyActivityNavController") as? UINavigationController {
             nextScreen.modalPresentationStyle = .fullScreen
             present(nextScreen, animated: true)
         }

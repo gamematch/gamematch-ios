@@ -12,7 +12,7 @@
 		A311A164271BA8230013E498 /* PushNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A163271BA8230013E498 /* PushNotificationManager.swift */; };
 		A311A166271BF66E0013E498 /* DeviceAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A165271BF66E0013E498 /* DeviceAPIService.swift */; };
 		A311A168271BF7360013E498 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A167271BF7360013E498 /* DeviceInfo.swift */; };
-		A311A16A271FBD5D0013E498 /* CreateActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A169271FBD5D0013E498 /* CreateActivityViewModel.swift */; };
+		A311A16A271FBD5D0013E498 /* ModifyActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A169271FBD5D0013E498 /* ModifyActivityViewModel.swift */; };
 		A311A16C271FBE2B0013E498 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A16B271FBE2B0013E498 /* LocationService.swift */; };
 		A311A16E271FDD530013E498 /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A16D271FDD530013E498 /* Encodable+.swift */; };
 		A311A1702724F9440013E498 /* ActivityDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A311A16F2724F9440013E498 /* ActivityDetailsViewModel.swift */; };
@@ -38,7 +38,7 @@
 		A3893F8426C4DED80004C766 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F8326C4DED80004C766 /* ProfileViewController.swift */; };
 		A3893F8726C604DB0004C766 /* ActivityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F8626C604DB0004C766 /* ActivityTableViewCell.swift */; };
 		A3893F8926C633D50004C766 /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F8826C633D50004C766 /* ActivityDetailsViewController.swift */; };
-		A3893F8B26C63C310004C766 /* CreateActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F8A26C63C310004C766 /* CreateActivityViewController.swift */; };
+		A3893F8B26C63C310004C766 /* ModifyActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F8A26C63C310004C766 /* ModifyActivityViewController.swift */; };
 		A3893F8E26C64EA60004C766 /* ActivityInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F8D26C64EA60004C766 /* ActivityInfoTableViewCell.swift */; };
 		A3893F9026C7A5340004C766 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F8F26C7A5340004C766 /* MessageTableViewCell.swift */; };
 		A3893F9226CC8DE10004C766 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F9126CC8DE10004C766 /* MainTabBarController.swift */; };
@@ -95,7 +95,7 @@
 		A311A163271BA8230013E498 /* PushNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotificationManager.swift; sourceTree = "<group>"; };
 		A311A165271BF66E0013E498 /* DeviceAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAPIService.swift; sourceTree = "<group>"; };
 		A311A167271BF7360013E498 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
-		A311A169271FBD5D0013E498 /* CreateActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityViewModel.swift; sourceTree = "<group>"; };
+		A311A169271FBD5D0013E498 /* ModifyActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyActivityViewModel.swift; sourceTree = "<group>"; };
 		A311A16B271FBE2B0013E498 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		A311A16D271FDD530013E498 /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		A311A16F2724F9440013E498 /* ActivityDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		A3893F8326C4DED80004C766 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A3893F8626C604DB0004C766 /* ActivityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewCell.swift; sourceTree = "<group>"; };
 		A3893F8826C633D50004C766 /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
-		A3893F8A26C63C310004C766 /* CreateActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateActivityViewController.swift; sourceTree = "<group>"; };
+		A3893F8A26C63C310004C766 /* ModifyActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyActivityViewController.swift; sourceTree = "<group>"; };
 		A3893F8D26C64EA60004C766 /* ActivityInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityInfoTableViewCell.swift; sourceTree = "<group>"; };
 		A3893F8F26C7A5340004C766 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 		A3893F9126CC8DE10004C766 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -254,7 +254,7 @@
 			children = (
 				A311A16F2724F9440013E498 /* ActivityDetailsViewModel.swift */,
 				A3CB3D6D2733AA4C00006762 /* ContactsViewModel.swift */,
-				A311A169271FBD5D0013E498 /* CreateActivityViewModel.swift */,
+				A311A169271FBD5D0013E498 /* ModifyActivityViewModel.swift */,
 				A3B6B4942709301C00309925 /* ExploreViewModel.swift */,
 				A3B6B49C270AD37600309925 /* ProfileViewModel.swift */,
 				A3385B2D2700166A004799E8 /* SignInViewModel.swift */,
@@ -338,7 +338,7 @@
 				A3893F8126C4DEBA0004C766 /* ActivitiesViewController.swift */,
 				A3385B31270022E6004799E8 /* BaseViewController.swift */,
 				A3893F9326CCAD0B0004C766 /* ContactsViewController.swift */,
-				A3893F8A26C63C310004C766 /* CreateActivityViewController.swift */,
+				A3893F8A26C63C310004C766 /* ModifyActivityViewController.swift */,
 				A3893F9126CC8DE10004C766 /* MainTabBarController.swift */,
 				A3CD34F226DC5E500049C6AE /* NewEventViewController.swift */,
 				A3893F8326C4DED80004C766 /* ProfileViewController.swift */,
@@ -626,7 +626,7 @@
 				A3C6F61E26D34AD600C01549 /* GMTabBar.swift in Sources */,
 				A3CD34E826D76A990049C6AE /* UIImage+.swift in Sources */,
 				A3C6F62026D3803D00C01549 /* LoginViewController.swift in Sources */,
-				A3893F8B26C63C310004C766 /* CreateActivityViewController.swift in Sources */,
+				A3893F8B26C63C310004C766 /* ModifyActivityViewController.swift in Sources */,
 				A311A16E271FDD530013E498 /* Encodable+.swift in Sources */,
 				A39C062826DD978E00CE8DCA /* EventsViewController.swift in Sources */,
 				A3893F9226CC8DE10004C766 /* MainTabBarController.swift in Sources */,
@@ -642,7 +642,7 @@
 				A3B6B49D270AD37600309925 /* ProfileViewModel.swift in Sources */,
 				A3385B2C27000EE0004799E8 /* RegisterViewController.swift in Sources */,
 				A3893F9426CCAD0B0004C766 /* ContactsViewController.swift in Sources */,
-				A311A16A271FBD5D0013E498 /* CreateActivityViewModel.swift in Sources */,
+				A311A16A271FBD5D0013E498 /* ModifyActivityViewModel.swift in Sources */,
 				A3893F8E26C64EA60004C766 /* ActivityInfoTableViewCell.swift in Sources */,
 				A311A168271BF7360013E498 /* DeviceInfo.swift in Sources */,
 				A3893F8726C604DB0004C766 /* ActivityTableViewCell.swift in Sources */,

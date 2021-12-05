@@ -10,13 +10,14 @@ import Foundation
 class Activity: NSObject, Codable
 {
     let id: String?
-    let sportId: Int?
-    let name: String?
-    let location: Location?
-    let startTime: Int?
-    let endTime: Int?
-    let createdTime: Int?
-    let activityType: String?
+    var sportId: Int?
+    var name: String?
+    var location: Location?
+    var startTime: Int?
+    var endTime: Int?
+    var createdTime: Int?
+    var activityType: String?
+    let invitationUrl: String?
 
     var eventStartTime: Date? {
         if let startTime = startTime {
@@ -42,6 +43,7 @@ class Activity: NSObject, Codable
         self.createdTime = Int(Date().timeIntervalSince1970)
         self.sportId = 1
         self.activityType = "public"
+        self.invitationUrl = nil
         
         super.init()
     }

@@ -14,56 +14,64 @@ class GroupDetailsViewController: BaseViewController
 
     private var headerStartHeight: CGFloat = 0
         
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         headerStartHeight = headerHeight.constant
         tableView.separatorStyle = .singleLine
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool)
+    {
         super.viewWillAppear(animated)
         
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
+    override func viewWillDisappear(_ animated: Bool)
+    {
         super.viewWillDisappear(animated)
         
         navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         navigationController?.navigationBar.shadowImage = nil
     }
     
-    func showActivityDetails() {
+    func showActivityDetails()
+    {
         if let activityScreen = UIStoryboard(name: "Main",
                                              bundle: nil).instantiateViewController(identifier: "ActivityDetailsViewController") as? ActivityDetailsViewController {
             navigationController?.pushViewController(activityScreen, animated: true)
         }
     }
     
-    @IBAction func editAction(_ sender: Any) {
+    @IBAction func editAction(_ sender: Any)
+    {
         if let newScreen = UIStoryboard(name: "Main",
-                                        bundle: nil).instantiateViewController(identifier: "CreateActivityNavController") as? UINavigationController {
+                                        bundle: nil).instantiateViewController(identifier: "ModifyActivityNavController") as? UINavigationController {
             present(newScreen, animated: true, completion: nil)
         }
     }
     
-    func showNewEvent() {
+    func showNewEvent()
+    {
         if let newScreen = UIStoryboard(name: "Main",
                                         bundle: nil).instantiateViewController(identifier: "NewEventNavController") as? UINavigationController {
             present(newScreen, animated: true, completion: nil)
         }
     }
     
-    func showMembers() {
+    func showMembers()
+    {
         if let newScreen = UIStoryboard(name: "Main",
                                         bundle: nil).instantiateViewController(identifier: "MembersViewController") as? MembersViewController {
             navigationController?.pushViewController(newScreen, animated: true)
         }
     }
     
-    func showEvents() {
+    func showEvents()
+    {
         if let newScreen = UIStoryboard(name: "Main",
                                         bundle: nil).instantiateViewController(identifier: "EventsViewController") as? EventsViewController {
             navigationController?.pushViewController(newScreen, animated: true)
