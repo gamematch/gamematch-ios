@@ -109,18 +109,19 @@ class ModifyActivityViewController: BaseViewController
     {
         if let modifyActivityVM = modifyActivityVM {
             startSpinner()
-            modifyActivityVM.deleteActivity() { [weak self] result in
-                                                self?.stopSpinner()
-                                                switch result {
-                                                case .success:
-                                                    self?.dismiss(animated: true,
-                                                                  completion: {
-                                                                      self?.navigationController?.popToRootViewController(animated: true)
-                                                                  })
-                                                case .failure(let error):
-                                                    self?.showError(error)
-                                                }
-                                            }
+            modifyActivityVM.deleteActivity()
+            { [weak self] result in
+                self?.stopSpinner()
+                switch result {
+                case .success:
+                    self?.dismiss(animated: true,
+                                  completion: {
+                                      self?.navigationController?.popToRootViewController(animated: true)
+                                  })
+                case .failure(let error):
+                    self?.showError(error)
+                }
+            }
         }
     }
 }
