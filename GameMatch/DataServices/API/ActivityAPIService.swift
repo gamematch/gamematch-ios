@@ -68,10 +68,10 @@ class ActivityAPIService: BaseAPIService
     func changeActivity(_ activity: Activity,
                         completion: @escaping (Result<Void, Error>) -> Void)
     {
-        put(request: APIRequests.activity,
-            pathParams: activity.id,
-            parameters: activity.dict,
-            completion: completion)
+        patch(request: APIRequests.activity,
+              pathParams: activity.id,
+              parameters: activity.dict,
+              completion: completion)
     }
 
     func deleteActivity(_ activity: Activity,
