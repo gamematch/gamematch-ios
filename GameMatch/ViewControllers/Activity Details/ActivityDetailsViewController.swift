@@ -142,8 +142,10 @@ extension ActivityDetailsViewController: UITableViewDataSource
             cell.shareActivity = { [weak self] in
                 let textToShare = self?.activityDetailsVM?.activity?.name ?? ""
 
-                if let myWebsite = URL(string: "http://www.codingexplorer.com/") {
-                    let objectsToShare: [Any] = [textToShare, myWebsite]
+                if let invitationUrl = self?.activityDetailsVM?.activity?.invitationUrl,
+                   let invitationWeb = URL(string: invitationUrl)
+                {
+                    let objectsToShare: [Any] = [textToShare, invitationWeb]
                     let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
 
                     activityVC.popoverPresentationController?.sourceView = cell

@@ -9,7 +9,7 @@ import Foundation
 
 class Activity: NSObject, Codable
 {
-    let id: String?
+    var id: String?
     var sportId: Int?
     var name: String?
     var location: Location?
@@ -17,7 +17,7 @@ class Activity: NSObject, Codable
     var endTime: Int?
     var createdTime: Int?
     var activityType: String?
-    let invitationUrl: String?
+    var invitationUrl: String?
 
     var eventStartTime: Date? {
         if let startTime = startTime {

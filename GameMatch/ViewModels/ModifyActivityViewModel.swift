@@ -38,6 +38,8 @@ class ModifyActivityViewModel
             activity.location = location
             activity.startTime = startTime
             activity.endTime = endTime
+            activity.invitationUrl = nil
+            activity.createdTime = nil
 
             ActivityAPIService().changeActivity(activity,
                                                 completion: { (result: Result<Void, Error>) in
