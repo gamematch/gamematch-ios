@@ -26,6 +26,7 @@ enum APIRequests: String, DataRequest
     
     case activities = "/api/v1/activities"
     case activity = "/api/v1/activity"
+    case myActivities = "/api/v1/activities/self"
 
     case invite = "/api/v1/invite"
     

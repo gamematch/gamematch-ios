@@ -18,6 +18,7 @@ class Activity: NSObject, Codable
     var createdTime: Int?
     var activityType: String?
     var invitationUrl: String?
+    let isCancelled: Bool?
 
     var eventStartTime: Date? {
         if let startTime = startTime {
@@ -44,6 +45,7 @@ class Activity: NSObject, Codable
         self.sportId = 1
         self.activityType = "public"
         self.invitationUrl = nil
+        self.isCancelled = nil
         
         super.init()
     }

@@ -55,7 +55,8 @@ class ActivityDetailsViewController: BaseViewController
                 self?.stopSpinner()
                 switch result {
                 case .success():
-                    self?.nameLabel.text = activityDetailsVM.activity?.name
+                    let status = activityDetailsVM.activity?.isCancelled == true ? " (Canceled)" : ""
+                    self?.nameLabel.text = (activityDetailsVM.activity?.name ?? "") + status
                     self?.tableView.reloadData()
                 case .failure(let error):
                     self?.showError(error)

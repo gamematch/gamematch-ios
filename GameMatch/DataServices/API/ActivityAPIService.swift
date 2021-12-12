@@ -33,6 +33,19 @@ class ActivityAPIService: BaseAPIService
                             }
                          })
     }
+
+    func getMyActivities(completion: @escaping (Result<[Activity], Error>) -> Void)
+    {
+        get(request: APIRequests.myActivities,
+            completion: { (result: Result<Activities, Error>) in
+                            switch result {
+                            case .success(let activities):
+                                completion(.success(activities.activities))
+                            case .failure(let error):
+                                completion(.failure(error))
+                            }
+                        })
+    }
     
     func createActivity(_ activity: Activity,
                         completion: @escaping (Result<Activity, Error>) -> Void)
@@ -54,7 +67,6 @@ class ActivityAPIService: BaseAPIService
     {
         get(request: APIRequests.activity,
             pathParams: id,
-            parameters: nil,
             completion: { (result: Result<Activity, Error>) in
                             switch result {
                             case .success(let activity):
