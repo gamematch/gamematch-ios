@@ -171,7 +171,8 @@ class ExploreViewController: BaseViewController
                                              bundle: nil).instantiateViewController(identifier: "ActivityDetailsViewController") as? ActivityDetailsViewController,
            let activityId = activity.id
         {
-            activityScreen.setup(activityId: activityId)
+            activityScreen.setup(activityId: activityId,
+                                 isEditable: false)
             navigationController?.pushViewController(activityScreen, animated: true)
         }
     }

@@ -12,14 +12,17 @@ class ActivityDetailsViewController: BaseViewController
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerHeight: NSLayoutConstraint!
+    @IBOutlet weak var editButton: UIButton!
     
     private var activityDetailsVM: ActivityDetailsViewModel?
     
     private var headerStartHeight: CGFloat = 0
     
-    func setup(activityId: String)
+    func setup(activityId: String,
+               isEditable: Bool)
     {
         activityDetailsVM = ActivityDetailsViewModel(activityId: activityId)
+        editButton.isHidden = !isEditable
     }
     
     override func viewDidLoad()

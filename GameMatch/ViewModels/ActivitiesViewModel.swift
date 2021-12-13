@@ -16,7 +16,10 @@ class ActivitiesViewModel
         ActivityAPIService().getMyActivities(completion: { [weak self] result in
                                                 switch result {
                                                 case .success(let activities):
-                                                    self?.activities = activities
+                                                    self?.activities = activities.map { activity in
+                                                        activity.isEditable = true
+                                                        return activity
+                                                    }
                                                     completion(.success(()))
                                                 case .failure(let error):
                                                     completion(.failure(error))
