@@ -19,7 +19,7 @@ class DeviceAPIService: BaseAPIService
              completion: { (result: Result<DeviceInfo, Error>) in
                             switch result {
                             case .success(let deviceInfo):
-                                print("========== deviceInfo: \(deviceInfo.deviceId) ===========")
+                                print("========== deviceInfo: \(String(describing: deviceInfo.deviceId)) ===========")
                                 completion(.success(deviceInfo))
                             case .failure(let error):
                                 print("========== error: \(error) ===========")
