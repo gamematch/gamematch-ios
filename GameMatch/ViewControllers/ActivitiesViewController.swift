@@ -110,7 +110,7 @@ extension ActivitiesViewController: UITableViewDataSource
                let locationName = activity.location?.name
             {
                 var details = locationName
-                if activity.isCancelled == true {
+                if activity.cancelled == true {
                     details += " (canceled)"
                 }
                 cell.config(icon: icon,

@@ -18,7 +18,7 @@ class Activity: NSObject, Codable
     var createdTime: Int?
     var activityType: String?
     var invitationUrl: String?
-    let isCancelled: Bool?
+    let cancelled: Bool?
     var isEditable: Bool?
 
     var eventStartTime: Date? {
@@ -46,7 +46,7 @@ class Activity: NSObject, Codable
         self.sportId = 1
         self.activityType = "public"
         self.invitationUrl = nil
-        self.isCancelled = nil
+        self.cancelled = nil
         
         super.init()
     }
