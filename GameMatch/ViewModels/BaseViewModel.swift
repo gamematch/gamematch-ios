@@ -7,7 +7,10 @@
 
 import Foundation
 
-class BaseViewModel
+class BaseViewModel: ObservableObject
 {
+    @Published var loading = false
+    @Published var error: Error?
+
     var needData = true
 }

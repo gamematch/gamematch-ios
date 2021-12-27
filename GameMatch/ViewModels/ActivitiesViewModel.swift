@@ -9,24 +9,25 @@ import Foundation
 
 class ActivitiesViewModel: BaseViewModel
 {
-    var activities: [Activity]?
+    @Published var activities: [Activity]? = nil
 
-    func getMyActivities(completion: @escaping (Result<Void, Error>) -> Void)
+    func getMyActivities()
     {
-        ActivityAPIService().getMyActivities(completion: { [weak self] result in
+        loading = true
+        ActivityAPIService().getMyActivities(completion: { result in
+                                                self.loading = false
                                                 switch result {
                                                 case .success(let activities):
                                                     if activities.isEmpty == false {
-                                                        self?.needData = false
+                                                        self.needData = false
                                                     }
 
-                                                    self?.activities = activities.map { activity in
+                                                    self.activities = activities.map { activity in
                                                         activity.isEditable = true
                                                         return activity
                                                     }
-                                                    completion(.success(()))
                                                 case .failure(let error):
-                                                    completion(.failure(error))
+                                                    self.error = error
                                                 }
                                             })
     }

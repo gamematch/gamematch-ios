@@ -13,7 +13,7 @@ class ActivitiesViewController: BaseViewController
     @IBOutlet weak var tableView: UITableView!
     
     private let activitiesVM = ActivitiesViewModel()
-    
+
     private var profileButtonItem: UIBarButtonItem?
     
     override func viewDidLoad()
@@ -23,6 +23,22 @@ class ActivitiesViewController: BaseViewController
         navigationItem.title = "My Activities" // "Activities & Events"
         
         profileButtonItem = navigationItem.rightBarButtonItem
+    }
+
+    override func setupViewModel()
+    {
+        self.viewModel = activitiesVM
+    }
+
+    override func bindViewModel()
+    {
+        super.bindViewModel()
+
+        activitiesVM.$activities.sink { _ in
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }.store(in: &cancellables)
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -37,27 +53,13 @@ class ActivitiesViewController: BaseViewController
 
         if SessionManager.shared.loggedIn {
             if activitiesVM.needData {
-                loadData()
+                activitiesVM.getMyActivities()
             }
         } else {
             showLogin()
         }
     }
 
-    private func loadData()
-    {
-        startSpinner()
-        activitiesVM.getMyActivities(completion: { [weak self] result in
-                                        self?.stopSpinner()
-                                        switch result {
-                                        case .success():
-                                            self?.tableView.reloadData()
-                                        case .failure(let error):
-                                            self?.showError(error)
-                                        }
-                                    })
-    }
-    
     @IBAction func showProfile(_ sender: UIBarButtonItem)
     {
         if let nextScreen = UIStoryboard(name: "Main",

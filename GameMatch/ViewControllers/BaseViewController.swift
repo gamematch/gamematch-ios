@@ -7,9 +7,13 @@
 
 import UIKit
 import NVActivityIndicatorView
+import Combine
 
 class BaseViewController: UIViewController
 {
+    var viewModel: BaseViewModel!
+    var cancellables: Set<AnyCancellable> = []
+
     private var spinner = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
 
     open override func awakeFromNib()
@@ -19,6 +23,40 @@ class BaseViewController: UIViewController
         spinner.center = CGPoint(x: view.bounds.width / 2, y: view.bounds.height / 2)
         spinner.color = traitCollection.userInterfaceStyle == .light ? .gray : .white
         view.addSubview(spinner)
+    }
+
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+
+        setupViewModel()
+        bindViewModel()
+    }
+
+    func setupViewModel()
+    {
+        self.viewModel = BaseViewModel()
+    }
+
+    func bindViewModel()
+    {
+        viewModel.$loading.sink { loading in
+            DispatchQueue.main.async {
+                if loading {
+                    self.startSpinner()
+                } else {
+                    self.stopSpinner()
+                }
+            }
+        }.store(in: &cancellables)
+
+        viewModel.$error.sink { error in
+            if let error = error {
+                DispatchQueue.main.async {
+                    self.showError(error)
+                }
+            }
+        }.store(in: &cancellables)
     }
     
     func startSpinner()
