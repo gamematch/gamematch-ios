@@ -12,6 +12,11 @@ class SessionManager
     static let shared = SessionManager()
     
     private let sessionKey = "sessionId"
+
+    var loggedIn: Bool
+    {
+        return sessionId != nil
+    }
     
     var sessionId: String?
     {

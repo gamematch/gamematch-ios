@@ -85,15 +85,6 @@ class ActivityDetailsViewController: BaseViewController
             present(nextScreen, animated: true)
         }
     }
-    
-    func showLogin()
-    {
-        if let nextScreen = UIStoryboard(name: "Main",
-                                         bundle: nil).instantiateViewController(identifier: "LoginNavController") as? UINavigationController {
-            nextScreen.modalPresentationStyle = .fullScreen
-            present(nextScreen, animated: true, completion: nil)
-        }
-    }
 
     @IBAction func editAction()
     {

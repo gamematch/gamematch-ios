@@ -23,18 +23,24 @@ class ActivitiesViewController: BaseViewController
         navigationItem.title = "My Activities" // "Activities & Events"
         
         profileButtonItem = navigationItem.rightBarButtonItem
-
-        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         
-        if SessionManager.shared.sessionId == nil {
-            navigationItem.rightBarButtonItem = nil
-        } else {
+        if SessionManager.shared.loggedIn {
             navigationItem.rightBarButtonItem = profileButtonItem
+        } else {
+            navigationItem.rightBarButtonItem = nil
+        }
+
+        if SessionManager.shared.loggedIn {
+            if activitiesVM.needData {
+                loadData()
+            }
+        } else {
+            showLogin()
         }
     }
 

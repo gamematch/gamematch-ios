@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ActivitiesViewModel
+class ActivitiesViewModel: BaseViewModel
 {
     var activities: [Activity]?
 
@@ -16,6 +16,10 @@ class ActivitiesViewModel
         ActivityAPIService().getMyActivities(completion: { [weak self] result in
                                                 switch result {
                                                 case .success(let activities):
+                                                    if activities.isEmpty == false {
+                                                        self?.needData = false
+                                                    }
+
                                                     self?.activities = activities.map { activity in
                                                         activity.isEditable = true
                                                         return activity

@@ -54,4 +54,13 @@ class BaseViewController: UIViewController
             showMessage(error.localizedDescription)
         }
     }
+
+    func showLogin()
+    {
+        if let nextScreen = UIStoryboard(name: "Main",
+                                         bundle: nil).instantiateViewController(identifier: "LoginNavController") as? UINavigationController {
+            nextScreen.modalPresentationStyle = .fullScreen
+            present(nextScreen, animated: true, completion: nil)
+        }
+    }
 }

@@ -55,6 +55,7 @@
 		A3B6B4972709318800309925 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6B4962709318800309925 /* Activity.swift */; };
 		A3B6B49B270960BD00309925 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6B49A270960BD00309925 /* Date+.swift */; };
 		A3B6B49D270AD37600309925 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B6B49C270AD37600309925 /* ProfileViewModel.swift */; };
+		A3BEE6332779752D005E9B8C /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BEE6322779752D005E9B8C /* BaseViewModel.swift */; };
 		A3C6F61E26D34AD600C01549 /* GMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61D26D34AD600C01549 /* GMTabBar.swift */; };
 		A3C6F62026D3803D00C01549 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C6F61F26D3803D00C01549 /* LoginViewController.swift */; };
 		A3CB3D6A27339F7900006762 /* InviteAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB3D6927339F7900006762 /* InviteAPIService.swift */; };
@@ -145,6 +146,7 @@
 		A3B6B4962709318800309925 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		A3B6B49A270960BD00309925 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		A3B6B49C270AD37600309925 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		A3BEE6322779752D005E9B8C /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		A3C6F61D26D34AD600C01549 /* GMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMTabBar.swift; sourceTree = "<group>"; };
 		A3C6F61F26D3803D00C01549 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A3CB3D6927339F7900006762 /* InviteAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteAPIService.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				A3A951512765B30E0067962C /* ActivitiesViewModel.swift */,
 				A311A16F2724F9440013E498 /* ActivityDetailsViewModel.swift */,
+				A3BEE6322779752D005E9B8C /* BaseViewModel.swift */,
 				A3CB3D6D2733AA4C00006762 /* ContactsViewModel.swift */,
 				A3B6B4942709301C00309925 /* ExploreViewModel.swift */,
 				A311A169271FBD5D0013E498 /* ModifyActivityViewModel.swift */,
@@ -667,6 +670,7 @@
 				A3CD34F126DB46C50049C6AE /* EventTableViewCell.swift in Sources */,
 				A3CB3D6C27339FEE00006762 /* Invitation.swift in Sources */,
 				A3CB3D6E2733AA4C00006762 /* ContactsViewModel.swift in Sources */,
+				A3BEE6332779752D005E9B8C /* BaseViewModel.swift in Sources */,
 				A3893F5426C4D84B0004C766 /* SceneDelegate.swift in Sources */,
 				A3385B1A26FFD458004799E8 /* NetworkService.swift in Sources */,
 				A39C061E26DC6BB900CE8DCA /* MKMapView+.swift in Sources */,
