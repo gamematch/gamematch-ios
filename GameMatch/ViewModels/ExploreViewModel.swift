@@ -8,25 +8,25 @@
 import Foundation
 import CoreLocation
 
-class ExploreViewModel
+class ExploreViewModel: BaseViewModel
 {
-    var activities: [Activity]?
+    @Published var activities: [Activity]?
     
     func getActivities(latitude: CLLocationDegrees,
                        longitude: CLLocationDegrees,
-                       name: String?,
-                       completion: @escaping (Result<Void, Error>) -> Void)
+                       name: String?)
     {
+        loading = true
         ActivityAPIService().getActivities(latitude: latitude,
                                            longitude: longitude,
                                            name: name,
                                            completion: { [weak self] result in
+                                                self?.loading = false
                                                 switch result {
                                                 case .success(let activities):
                                                     self?.activities = activities
-                                                    completion(.success(()))
                                                 case .failure(let error):
-                                                    completion(.failure(error))
+                                                    self?.error = error
                                                 }
                                            })
     }

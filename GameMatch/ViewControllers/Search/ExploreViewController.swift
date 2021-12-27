@@ -75,6 +75,25 @@ class ExploreViewController: BaseViewController
                                                name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
     }
+
+    override func setupViewModel()
+    {
+        self.viewModel = exploreVM
+    }
+
+    override func bindViewModel()
+    {
+        super.bindViewModel()
+
+        exploreVM.$activities.sink { activities in
+            if activities != nil {
+                DispatchQueue.main.async {
+                    self.locationSearchBar.isHidden = true
+                    self.showSearchResult()
+                }
+            }
+        }.store(in: &cancellables)
+    }
         
     @objc private func keyboardWillShow(_ notification: Notification)
     {
@@ -126,20 +145,9 @@ class ExploreViewController: BaseViewController
     
     private func searchActivities(location: CLLocation, name: String?)
     {
-        startSpinner()
         exploreVM.getActivities(latitude: location.coordinate.latitude,
                                 longitude: location.coordinate.longitude,
-                                name: name,
-                                completion: { [weak self] result in
-                                    self?.stopSpinner()
-                                    switch result {
-                                    case .success():
-                                        self?.locationSearchBar.isHidden = true
-                                        self?.showSearchResult()
-                                    case .failure(let error):
-                                        self?.showError(error)
-                                    }
-                                })
+                                name: name)
     }
         
     @objc func panAction(_ pan: UIPanGestureRecognizer)
