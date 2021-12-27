@@ -31,6 +31,24 @@ class ActivityDetailsViewController: BaseViewController
         
         headerStartHeight = headerHeight.constant
     }
+
+    override func setupViewModel()
+    {
+        self.viewModel = activityDetailsVM
+    }
+
+    override func bindViewModel()
+    {
+        super.bindViewModel()
+
+        activityDetailsVM?.$activity.sink { activity in
+            DispatchQueue.main.async {
+                let status = self.activityDetailsVM?.activity?.cancelled == true ? " (Canceled)" : ""
+                self.nameLabel.text = (self.activityDetailsVM?.activity?.name ?? "") + status
+                self.tableView.reloadData()
+            }
+        }.store(in: &cancellables)
+    }
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -52,20 +70,7 @@ class ActivityDetailsViewController: BaseViewController
     
     private func loadData()
     {
-        if let activityDetailsVM = activityDetailsVM {
-            startSpinner()
-            activityDetailsVM.getActivity { [weak self] result in
-                self?.stopSpinner()
-                switch result {
-                case .success():
-                    let status = activityDetailsVM.activity?.cancelled == true ? " (Canceled)" : ""
-                    self?.nameLabel.text = (activityDetailsVM.activity?.name ?? "") + status
-                    self?.tableView.reloadData()
-                case .failure(let error):
-                    self?.showError(error)
-                }
-            }
-        }
+        activityDetailsVM?.getActivity()
     }
             
     func showContacts()

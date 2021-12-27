@@ -7,9 +7,9 @@
 
 import Foundation
 
-class ActivityDetailsViewModel
+class ActivityDetailsViewModel: BaseViewModel
 {
-    var activity: Activity?
+    @Published var activity: Activity?
     
     private var activityId: String
     
@@ -18,16 +18,17 @@ class ActivityDetailsViewModel
         self.activityId = activityId
     }
     
-    func getActivity(completion: @escaping (Result<Void, Error>) -> Void)
+    func getActivity()
     {
+        loading = true
         ActivityAPIService().getActivity(id: activityId) { [weak self] result in
-             switch result {
-             case .success(let activity):
-                 self?.activity = activity
-                 completion(.success(()))
-             case .failure(let error):
-                 completion(.failure(error))
-             }
+            self?.loading = false
+            switch result {
+            case .success(let activity):
+                self?.activity = activity
+            case .failure(let error):
+                self?.error = error
+            }
         }
     }
 }

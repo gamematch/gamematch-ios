@@ -11,7 +11,7 @@ import Combine
 
 class BaseViewController: UIViewController
 {
-    var viewModel: BaseViewModel!
+    var viewModel: BaseViewModel?
     var cancellables: Set<AnyCancellable> = []
 
     private var spinner = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -40,7 +40,7 @@ class BaseViewController: UIViewController
 
     func bindViewModel()
     {
-        viewModel.$loading.sink { loading in
+        viewModel?.$loading.sink { loading in
             DispatchQueue.main.async {
                 if loading {
                     self.startSpinner()
@@ -50,7 +50,7 @@ class BaseViewController: UIViewController
             }
         }.store(in: &cancellables)
 
-        viewModel.$error.sink { error in
+        viewModel?.$error.sink { error in
             if let error = error {
                 DispatchQueue.main.async {
                     self.showError(error)
