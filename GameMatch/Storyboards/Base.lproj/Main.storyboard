@@ -1332,40 +1332,51 @@ Any person taking part in this group, specifically events posted on this group, 
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Michel Platini" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZH-Og-fFn">
-                                <rect key="frame" x="149.5" y="128" width="115" height="22"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="platini" translatesAutoresizingMaskIntoConstraints="NO" id="O5B-pc-zsS">
-                                <rect key="frame" x="147" y="190" width="120" height="120"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="platini" translatesAutoresizingMaskIntoConstraints="NO" id="O5B-pc-zsS">
+                                <rect key="frame" x="137" y="216.5" width="140" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="2oH-UL-ghL"/>
-                                    <constraint firstAttribute="width" constant="120" id="Xwd-1t-UBx"/>
+                                    <constraint firstAttribute="height" constant="140" id="2oH-UL-ghL"/>
+                                    <constraint firstAttribute="width" constant="140" id="Xwd-1t-UBx"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="60"/>
+                                        <integer key="value" value="70"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="415-999-8989" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DC-sV-y5y">
-                                <rect key="frame" x="149" y="390" width="116" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Michel Platini" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xo3-MA-hM3">
+                                <rect key="frame" x="124.5" y="128" width="165" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="0lb-iH-JIJ" id="Vff-gb-ih3"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="415-999-8990" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrM-wm-ZQh">
+                                <rect key="frame" x="131.5" y="416.5" width="151" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="0lb-iH-JIJ" id="Lxv-kO-Tne"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKX-Y8-Lc9">
+                                <rect key="frame" x="137" y="752" width="140" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Change Password"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ibV-SW-A3J"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8DC-sV-y5y" firstAttribute="top" secondItem="O5B-pc-zsS" secondAttribute="bottom" constant="80" id="Nck-NY-Vti"/>
-                            <constraint firstItem="RZH-Og-fFn" firstAttribute="centerX" secondItem="ArG-e2-G6A" secondAttribute="centerX" id="Vad-lh-QQY"/>
+                            <constraint firstItem="HKX-Y8-Lc9" firstAttribute="centerX" secondItem="ArG-e2-G6A" secondAttribute="centerX" id="8g7-vz-zCn"/>
+                            <constraint firstItem="rrM-wm-ZQh" firstAttribute="centerX" secondItem="ArG-e2-G6A" secondAttribute="centerX" id="CiA-5f-pny"/>
+                            <constraint firstItem="ibV-SW-A3J" firstAttribute="bottom" secondItem="HKX-Y8-Lc9" secondAttribute="bottom" constant="30" id="Ezt-tx-X8U"/>
+                            <constraint firstItem="xo3-MA-hM3" firstAttribute="top" secondItem="ibV-SW-A3J" secondAttribute="top" constant="40" id="FRW-CJ-3IE"/>
+                            <constraint firstItem="O5B-pc-zsS" firstAttribute="top" secondItem="xo3-MA-hM3" secondAttribute="bottom" constant="50" id="Qzz-AQ-Wf3"/>
                             <constraint firstItem="O5B-pc-zsS" firstAttribute="centerX" secondItem="ArG-e2-G6A" secondAttribute="centerX" id="XUX-8m-sGI"/>
-                            <constraint firstItem="RZH-Og-fFn" firstAttribute="top" secondItem="ibV-SW-A3J" secondAttribute="top" constant="40" id="ZAj-Ia-V3f"/>
-                            <constraint firstItem="8DC-sV-y5y" firstAttribute="centerX" secondItem="ArG-e2-G6A" secondAttribute="centerX" id="eCy-Us-soa"/>
-                            <constraint firstItem="O5B-pc-zsS" firstAttribute="top" secondItem="RZH-Og-fFn" secondAttribute="bottom" constant="40" id="yCX-hI-SZJ"/>
+                            <constraint firstItem="xo3-MA-hM3" firstAttribute="centerX" secondItem="ArG-e2-G6A" secondAttribute="centerX" id="ujs-pI-exK"/>
+                            <constraint firstItem="rrM-wm-ZQh" firstAttribute="top" secondItem="O5B-pc-zsS" secondAttribute="bottom" constant="60" id="zmF-7e-5kA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="gQd-sk-HqN">
@@ -1380,6 +1391,11 @@ Any person taking part in this group, specifically events posted on this group, 
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="avatarView" destination="O5B-pc-zsS" id="pYd-8P-RtS"/>
+                        <outlet property="contactField" destination="rrM-wm-ZQh" id="mw2-CA-3rc"/>
+                        <outlet property="nameField" destination="xo3-MA-hM3" id="1N7-Wl-34h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGH-jQ-Mro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
