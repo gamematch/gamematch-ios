@@ -27,6 +27,7 @@
 		A3385B2E2700166A004799E8 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B2D2700166A004799E8 /* SignInViewModel.swift */; };
 		A3385B3027001F27004799E8 /* AuthenticationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B2F27001F27004799E8 /* AuthenticationAPIService.swift */; };
 		A3385B32270022E6004799E8 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3385B31270022E6004799E8 /* BaseViewController.swift */; };
+		A387A5A727876DBB00E0CF89 /* PasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387A5A627876DBA00E0CF89 /* PasswordViewController.swift */; };
 		A3893F5226C4D84B0004C766 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F5126C4D84B0004C766 /* AppDelegate.swift */; };
 		A3893F5426C4D84B0004C766 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F5326C4D84B0004C766 /* SceneDelegate.swift */; };
 		A3893F5626C4D84B0004C766 /* ExploreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F5526C4D84B0004C766 /* ExploreViewController.swift */; };
@@ -112,6 +113,7 @@
 		A3385B2D2700166A004799E8 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		A3385B2F27001F27004799E8 /* AuthenticationAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationAPIService.swift; sourceTree = "<group>"; };
 		A3385B31270022E6004799E8 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A387A5A627876DBA00E0CF89 /* PasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordViewController.swift; sourceTree = "<group>"; };
 		A3893F4E26C4D84B0004C766 /* GameMatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameMatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3893F5126C4D84B0004C766 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3893F5326C4D84B0004C766 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -278,6 +280,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		A387A5A527876D7700E0CF89 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A387A5A627876DBA00E0CF89 /* PasswordViewController.swift */,
+				A3893F8326C4DED80004C766 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		A3893F4526C4D84B0004C766 = {
 			isa = PBXGroup;
 			children = (
@@ -344,16 +355,16 @@
 				A3893F8126C4DEBA0004C766 /* ActivitiesViewController.swift */,
 				A3385B31270022E6004799E8 /* BaseViewController.swift */,
 				A3893F9326CCAD0B0004C766 /* ContactsViewController.swift */,
-				A3893F8A26C63C310004C766 /* ModifyActivityViewController.swift */,
 				A3893F9126CC8DE10004C766 /* MainTabBarController.swift */,
+				A3893F8A26C63C310004C766 /* ModifyActivityViewController.swift */,
 				A3CD34F226DC5E500049C6AE /* NewEventViewController.swift */,
-				A3893F8326C4DED80004C766 /* ProfileViewController.swift */,
 				A3CD34E926D88C950049C6AE /* SendMessageViewController.swift */,
 				A3893F8C26C64E5A0004C766 /* Activity Details */,
 				A39C062626DD976800CE8DCA /* Events */,
 				A3CD34ED26DB1E2C0049C6AE /* Group Details */,
 				A3385B2827000CC2004799E8 /* Login */,
 				A39C062326DD82F700CE8DCA /* Members */,
+				A387A5A527876D7700E0CF89 /* Profile */,
 				A311A162270FCE4F0013E498 /* Search */,
 			);
 			path = ViewControllers;
@@ -669,6 +680,7 @@
 				A3CD34EA26D88C950049C6AE /* SendMessageViewController.swift in Sources */,
 				A3CD34F126DB46C50049C6AE /* EventTableViewCell.swift in Sources */,
 				A3CB3D6C27339FEE00006762 /* Invitation.swift in Sources */,
+				A387A5A727876DBB00E0CF89 /* PasswordViewController.swift in Sources */,
 				A3CB3D6E2733AA4C00006762 /* ContactsViewModel.swift in Sources */,
 				A3BEE6332779752D005E9B8C /* BaseViewModel.swift in Sources */,
 				A3893F5426C4D84B0004C766 /* SceneDelegate.swift in Sources */,

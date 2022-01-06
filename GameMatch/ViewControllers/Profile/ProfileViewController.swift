@@ -51,6 +51,14 @@ class ProfileViewController: BaseViewController
         closeAction(sender)
     }
 
+    @IBAction func changePasswordAction()
+    {
+        if let nextScreen = UIStoryboard(name: "Main",
+                                         bundle: nil).instantiateViewController(identifier: "PasswordViewController") as? PasswordViewController {
+            navigationController?.pushViewController(nextScreen, animated: true)
+        }
+    }
+    
     private func openCamera()
     {
         if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .authorized

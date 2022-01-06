@@ -1364,6 +1364,9 @@ Any person taking part in this group, specifically events posted on this group, 
                                 <rect key="frame" x="137" y="752" width="140" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Change Password"/>
+                                <connections>
+                                    <action selector="changePasswordAction" destination="0lb-iH-JIJ" eventType="touchUpInside" id="yq6-fG-vLm"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ibV-SW-A3J"/>
@@ -1400,6 +1403,59 @@ Any person taking part in this group, specifically events posted on this group, 
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cGH-jQ-Mro" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="671.01449275362324" y="1144.4196428571429"/>
+        </scene>
+        <!--Password View Controller-->
+        <scene sceneID="zF4-qm-FrB">
+            <objects>
+                <viewController storyboardIdentifier="PasswordViewController" id="MYd-Cx-rHx" customClass="PasswordViewController" customModule="GameMatch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zyi-XA-yyX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0qH-ac-Ppn">
+                                <rect key="frame" x="60" y="104" width="294" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hzJ-y7-sQg">
+                                <rect key="frame" x="60" y="158" width="294" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T1O-dP-AJU">
+                                <rect key="frame" x="60" y="212" width="294" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6e-wR-eHU">
+                                <rect key="frame" x="170" y="296" width="74" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Change"/>
+                                <connections>
+                                    <action selector="changeAction" destination="MYd-Cx-rHx" eventType="touchUpInside" id="jUo-9j-yB8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FxL-W3-tZX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hzJ-y7-sQg" firstAttribute="leading" secondItem="0qH-ac-Ppn" secondAttribute="leading" id="2Ee-el-gkL"/>
+                            <constraint firstItem="0qH-ac-Ppn" firstAttribute="leading" secondItem="FxL-W3-tZX" secondAttribute="leading" constant="60" id="5d9-mt-mDW"/>
+                            <constraint firstItem="0qH-ac-Ppn" firstAttribute="top" secondItem="FxL-W3-tZX" secondAttribute="top" constant="60" id="7vA-GE-GVd"/>
+                            <constraint firstItem="0qH-ac-Ppn" firstAttribute="centerX" secondItem="Zyi-XA-yyX" secondAttribute="centerX" id="8qP-hZ-dAr"/>
+                            <constraint firstItem="hzJ-y7-sQg" firstAttribute="trailing" secondItem="0qH-ac-Ppn" secondAttribute="trailing" id="FY6-x5-yd6"/>
+                            <constraint firstItem="H6e-wR-eHU" firstAttribute="centerX" secondItem="Zyi-XA-yyX" secondAttribute="centerX" id="W48-1g-9ir"/>
+                            <constraint firstItem="T1O-dP-AJU" firstAttribute="leading" secondItem="0qH-ac-Ppn" secondAttribute="leading" id="bSn-pG-Tv5"/>
+                            <constraint firstItem="T1O-dP-AJU" firstAttribute="top" secondItem="hzJ-y7-sQg" secondAttribute="bottom" constant="20" id="blp-AF-WJ3"/>
+                            <constraint firstItem="H6e-wR-eHU" firstAttribute="top" secondItem="T1O-dP-AJU" secondAttribute="bottom" constant="50" id="dEU-3Y-Qwd"/>
+                            <constraint firstItem="T1O-dP-AJU" firstAttribute="trailing" secondItem="0qH-ac-Ppn" secondAttribute="trailing" id="fzi-bO-z4H"/>
+                            <constraint firstItem="hzJ-y7-sQg" firstAttribute="top" secondItem="0qH-ac-Ppn" secondAttribute="bottom" constant="20" id="r8A-CG-MD3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qCq-CS-ajQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="671" y="1807"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aic-yY-q5e">
