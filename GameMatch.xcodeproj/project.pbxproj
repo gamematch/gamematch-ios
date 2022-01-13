@@ -45,6 +45,8 @@
 		A3893F9226CC8DE10004C766 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F9126CC8DE10004C766 /* MainTabBarController.swift */; };
 		A3893F9426CCAD0B0004C766 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F9326CCAD0B0004C766 /* ContactsViewController.swift */; };
 		A3893F9726CCCBC10004C766 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3893F9626CCCBC10004C766 /* UIImageView+.swift */; };
+		A39044B8279011A000EA39CB /* ProfileAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39044B7279011A000EA39CB /* ProfileAPIService.swift */; };
+		A39044BA2790123E00EA39CB /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39044B92790123E00EA39CB /* Profile.swift */; };
 		A39C061E26DC6BB900CE8DCA /* MKMapView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C061D26DC6BB900CE8DCA /* MKMapView+.swift */; };
 		A39C062026DC986200CE8DCA /* GMPointAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C061F26DC986200CE8DCA /* GMPointAnnotation.swift */; };
 		A39C062226DCB25B00CE8DCA /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39C062126DCB25B00CE8DCA /* MembersViewController.swift */; };
@@ -137,6 +139,8 @@
 		A3893F9126CC8DE10004C766 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		A3893F9326CCAD0B0004C766 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		A3893F9626CCCBC10004C766 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
+		A39044B7279011A000EA39CB /* ProfileAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAPIService.swift; sourceTree = "<group>"; };
+		A39044B92790123E00EA39CB /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		A39C061D26DC6BB900CE8DCA /* MKMapView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKMapView+.swift"; sourceTree = "<group>"; };
 		A39C061F26DC986200CE8DCA /* GMPointAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMPointAnnotation.swift; sourceTree = "<group>"; };
 		A39C062126DCB25B00CE8DCA /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 				A3385B26270008C0004799E8 /* BaseAPIService.swift */,
 				A311A165271BF66E0013E498 /* DeviceAPIService.swift */,
 				A3CB3D6927339F7900006762 /* InviteAPIService.swift */,
+				A39044B7279011A000EA39CB /* ProfileAPIService.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -250,6 +255,7 @@
 				A311A167271BF7360013E498 /* DeviceInfo.swift */,
 				A3CB3D6B27339FEE00006762 /* Invitation.swift */,
 				A3385B1E26FFD7FC004799E8 /* LoginState.swift */,
+				A39044B92790123E00EA39CB /* Profile.swift */,
 				A3385B2426FFDDC5004799E8 /* SignUpState.swift */,
 			);
 			path = Models;
@@ -666,6 +672,7 @@
 				A3893F5226C4D84B0004C766 /* AppDelegate.swift in Sources */,
 				A3893F8926C633D50004C766 /* ActivityDetailsViewController.swift in Sources */,
 				A3385B2E2700166A004799E8 /* SignInViewModel.swift in Sources */,
+				A39044B8279011A000EA39CB /* ProfileAPIService.swift in Sources */,
 				A39C062526DD837000CE8DCA /* MemberTableViewCell.swift in Sources */,
 				A3B6B4952709301C00309925 /* ExploreViewModel.swift in Sources */,
 				A3385B2A27000D32004799E8 /* SignInViewController.swift in Sources */,
@@ -684,6 +691,7 @@
 				A3CB3D6E2733AA4C00006762 /* ContactsViewModel.swift in Sources */,
 				A3BEE6332779752D005E9B8C /* BaseViewModel.swift in Sources */,
 				A3893F5426C4D84B0004C766 /* SceneDelegate.swift in Sources */,
+				A39044BA2790123E00EA39CB /* Profile.swift in Sources */,
 				A3385B1A26FFD458004799E8 /* NetworkService.swift in Sources */,
 				A39C061E26DC6BB900CE8DCA /* MKMapView+.swift in Sources */,
 				A3385B1F26FFD7FC004799E8 /* LoginState.swift in Sources */,

@@ -1333,7 +1333,7 @@ Any person taking part in this group, specifically events posted on this group, 
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="platini" translatesAutoresizingMaskIntoConstraints="NO" id="O5B-pc-zsS">
-                                <rect key="frame" x="137" y="216.5" width="140" height="140"/>
+                                <rect key="frame" x="137" y="207" width="140" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="2oH-UL-ghL"/>
                                     <constraint firstAttribute="width" constant="140" id="Xwd-1t-UBx"/>
@@ -1344,16 +1344,16 @@ Any person taking part in this group, specifically events posted on this group, 
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Michel Platini" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xo3-MA-hM3">
-                                <rect key="frame" x="124.5" y="128" width="165" height="38.5"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Michel Platini" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xo3-MA-hM3">
+                                <rect key="frame" x="138.5" y="128" width="137" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="0lb-iH-JIJ" id="Vff-gb-ih3"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="415-999-8990" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrM-wm-ZQh">
-                                <rect key="frame" x="131.5" y="416.5" width="151" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="415-999-8990" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rrM-wm-ZQh">
+                                <rect key="frame" x="145.5" y="407" width="123" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>

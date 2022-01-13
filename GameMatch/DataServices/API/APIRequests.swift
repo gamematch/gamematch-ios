@@ -29,6 +29,8 @@ enum APIRequests: String, DataRequest
     case myActivities = "/api/v1/activities/self"
 
     case invite = "/api/v1/invite"
+
+    case profile = "/api/v1/user/profile"
     
     func getURL(pathParams: String?) -> URL?
     {

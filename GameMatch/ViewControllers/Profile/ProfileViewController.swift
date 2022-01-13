@@ -16,7 +16,31 @@ class ProfileViewController: BaseViewController
     @IBOutlet weak var contactField: UITextField!
 
     private let profileVM = ProfileViewModel()
-    
+
+    override func setupViewModel()
+    {
+        self.viewModel = profileVM
+    }
+
+    override func bindViewModel()
+    {
+        super.bindViewModel()
+
+        profileVM.$profile.sink { _ in
+            DispatchQueue.main.async {
+                self.displayProfile()
+            }
+        }.store(in: &cancellables)
+    }
+
+    private func displayProfile()
+    {
+        if let profile = profileVM.profile {
+            nameField.text = profile.name
+            contactField.text = profile.contact
+        }
+    }
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -25,6 +49,13 @@ class ProfileViewController: BaseViewController
 
         let avatarTapGesture = UITapGestureRecognizer(target: self, action: #selector(changePhoto))
         avatarView.addGestureRecognizer(avatarTapGesture)
+    }
+
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+
+        profileVM.getProfile()
     }
 
     @objc private func changePhoto()
