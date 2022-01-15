@@ -45,7 +45,7 @@ class DeviceInfo: NSObject, Codable
 #if DEBUG
         channelType = "APNS_SANDBOX"
 #else
-        channelType = "APNS_PRODUCTION"
+        channelType = "APNS"
 #endif
 
         notificationOn = true

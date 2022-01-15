@@ -22,8 +22,6 @@ class ProfileViewModel: BaseViewModel
             case .failure(let error):
                 self?.error = error
             }
-
-            self?.profile = Profile(name: "Maladona", contact: "123456789", url: "")
         }
     }
 

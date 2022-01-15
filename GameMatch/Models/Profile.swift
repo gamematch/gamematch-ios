@@ -9,11 +9,11 @@ import Foundation
 
 class Profile: NSObject, Codable
 {
-    let name: String
-    let contact: String
-    let url: String
+    let name: String?
+    let contact: String?
+    let url: String?
 
-    internal init(name: String, contact: String, url: String)
+    internal init(name: String?, contact: String?, url: String?)
     {
         self.name = name
         self.contact = contact
