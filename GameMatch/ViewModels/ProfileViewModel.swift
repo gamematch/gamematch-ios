@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class ProfileViewModel: BaseViewModel
 {
@@ -23,6 +24,12 @@ class ProfileViewModel: BaseViewModel
                 self?.error = error
             }
         }
+    }
+
+    func uploadAvatar(_ avatar: UIImage)
+    {
+        let image = avatar.resize(to: CGSize(width: 100, height: 100))
+        ProfileAPIService().update(avatar: image) { _ in }
     }
 
     func logout()

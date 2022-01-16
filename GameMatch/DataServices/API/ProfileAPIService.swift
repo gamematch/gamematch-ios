@@ -5,7 +5,7 @@
 //  Created by Luke Shi on 1/12/22.
 //
 
-import Foundation
+import UIKit
 
 class ProfileAPIService: BaseAPIService
 {
@@ -21,5 +21,16 @@ class ProfileAPIService: BaseAPIService
                                 completion(.failure(error))
                             }
                         })
+    }
+
+    func update(avatar: UIImage,
+                completion: @escaping (Result<Void, Error>) -> Void)
+    {
+        let imageBase64String = avatar.pngData()?.base64EncodedString()
+
+        patch(request: APIRequests.profile,
+              pathParams: nil,
+              parameters: ["image": imageBase64String],
+              completion: completion)
     }
 }

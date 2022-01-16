@@ -22,6 +22,11 @@ protocol DataService
     func post(request: DataRequest,
               parameters: [String: Any?]?,
               completion: @escaping (Result<Data, Error>) -> Void)
+
+    func patch(request: DataRequest,
+               pathParams: String?,
+               parameters: [String: Any?]?,
+               completion: @escaping (Result<Data, Error>) -> Void)
 }
 
 protocol DataRequest

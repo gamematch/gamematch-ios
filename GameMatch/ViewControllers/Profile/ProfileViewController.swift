@@ -38,6 +38,11 @@ class ProfileViewController: BaseViewController
         if let profile = profileVM.profile {
             nameField.text = profile.name
             contactField.text = profile.contact
+
+            if let urlStr = profile.url,
+               let url = URL(string: urlStr) {
+                avatarView.load(url: url)
+            }
         }
     }
 
@@ -149,8 +154,9 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         // Local variable inserted by Swift 4.2 migrator.
         let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
 
-        if let chosenImage = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
-            avatarView.image = chosenImage
+        if let avatar = info[convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)] as? UIImage {
+            avatarView.image = avatar
+            profileVM.uploadAvatar(avatar)
         }
         picker.dismiss(animated: true, completion: nil)
     }
