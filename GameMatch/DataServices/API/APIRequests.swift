@@ -25,18 +25,19 @@ enum APIRequests: String, DataRequest
     case device = "/api/v1/device"
     
     case activities = "/api/v1/activities"
-    case activity = "/api/v1/activity"
+    case activity = "/api/v1/activity/{parameter}"
+    case activityDetail = "/api/v1/activity/{parameter}/detail"
     case myActivities = "/api/v1/activities/self"
 
     case invite = "/api/v1/invite"
 
     case profile = "/api/v1/user/profile"
     
-    func getURL(pathParams: String?) -> URL?
+    func getURL(pathParam: String?) -> URL?
     {
         var urlString = hostname + rawValue
-        if let pathParams = pathParams {
-            urlString += "/\(pathParams)"
+        if let pathParam = pathParam {
+            urlString = urlString.replacingOccurrences(of: "{parameter}", with: pathParam)
         }
         return URL(string: urlString)
     }

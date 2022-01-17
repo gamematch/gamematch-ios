@@ -10,12 +10,12 @@ import Foundation
 protocol DataService
 {
     func get(request: DataRequest,
-             pathParams: String?,
+             pathParam: String?,
              parameters: [String: String]?,
              completion: @escaping (Result<Data, Error>) -> Void)
     
     func put(request: DataRequest,
-             pathParams: String?,
+             pathParam: String?,
              parameters: [String: Any?]?,
              completion: @escaping (Result<Data, Error>) -> Void)
     
@@ -24,20 +24,20 @@ protocol DataService
               completion: @escaping (Result<Data, Error>) -> Void)
 
     func patch(request: DataRequest,
-               pathParams: String?,
+               pathParam: String?,
                parameters: [String: Any?]?,
                completion: @escaping (Result<Data, Error>) -> Void)
 }
 
 protocol DataRequest
 {
-    func getURL(pathParams: String?) -> URL?
+    func getURL(pathParam: String?) -> URL?
 }
 
 extension DataRequest
 {
     var url: URL?
     {
-        return getURL(pathParams: nil)
+        return getURL(pathParam: nil)
     }
 }

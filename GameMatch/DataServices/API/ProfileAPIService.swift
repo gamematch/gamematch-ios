@@ -29,7 +29,7 @@ class ProfileAPIService: BaseAPIService
         let imageBase64String = avatar.pngData()?.base64EncodedString()
 
         patch(request: APIRequests.profile,
-              pathParams: nil,
+              pathParam: nil,
               parameters: ["image": imageBase64String],
               completion: completion)
     }

@@ -23,11 +23,8 @@ class ActivitiesViewController: BaseViewController
         navigationItem.title = "My Activities" // "Activities & Events"
         
         profileButtonItem = navigationItem.rightBarButtonItem
-    }
 
-    override func setupViewModel()
-    {
-        self.viewModel = activitiesVM
+        setupViewModel(activitiesVM)
     }
 
     override func bindViewModel()

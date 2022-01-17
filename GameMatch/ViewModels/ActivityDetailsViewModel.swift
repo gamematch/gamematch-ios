@@ -9,8 +9,6 @@ import Foundation
 
 class ActivityDetailsViewModel: BaseViewModel
 {
-    @Published var activity: Activity?
-    
     private var activityId: String
     
     init(activityId: String)
@@ -25,7 +23,7 @@ class ActivityDetailsViewModel: BaseViewModel
             self?.loading = false
             switch result {
             case .success(let activity):
-                self?.activity = activity
+                self?.data = activity
             case .failure(let error):
                 self?.error = error
             }

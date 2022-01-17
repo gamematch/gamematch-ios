@@ -35,7 +35,7 @@ class DeviceAPIService: BaseAPIService
         let deviceInfo = DeviceInfo(token: deviceToken)
         
         put(request: APIRequests.device,
-            pathParams: deviceId,
+            pathParam: deviceId,
             parameters: deviceInfo.dict,
             completion: { (result: Result<Void, Error>) in
                             switch result {

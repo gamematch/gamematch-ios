@@ -10,24 +10,24 @@ import Foundation
 class BaseAPIService
 {
     internal func get<T: Decodable>(request: DataRequest,
-                                    pathParams: String? = nil,
+                                    pathParam: String? = nil,
                                     parameters: [String: String]? = nil,
                                     completion: @escaping (Result<T, Error>) -> Void)
     {
         NetworkService().get(request: request,
-                             pathParams: pathParams,
+                             pathParam: pathParam,
                              parameters: parameters) { result in
             self.parseResult(result, completion: completion)
         }
     }
     
     internal func put(request: DataRequest,
-                      pathParams: String?,
+                      pathParam: String?,
                       parameters: [String: Any?]?,
                       completion: @escaping (Result<Void, Error>) -> Void)
     {
         NetworkService().put(request: request,
-                             pathParams: pathParams,
+                             pathParam: pathParam,
                              parameters: parameters) { result in
             switch result {
             case .success(_):
@@ -71,12 +71,12 @@ class BaseAPIService
     }
 
     internal func patch(request: DataRequest,
-                        pathParams: String?,
+                        pathParam: String?,
                         parameters: [String: Any?]?,
                         completion: @escaping (Result<Void, Error>) -> Void)
     {
         NetworkService().patch(request: request,
-                               pathParams: pathParams,
+                               pathParam: pathParam,
                                parameters: parameters) { result in
             switch result {
             case .success(_):
@@ -92,11 +92,11 @@ class BaseAPIService
     }
 
     internal func delete(request: DataRequest,
-                         pathParams: String?,
+                         pathParam: String?,
                          completion: @escaping (Result<Void, Error>) -> Void)
     {
         NetworkService().delete(request: request,
-                                pathParams: pathParams) { result in
+                                pathParam: pathParam) { result in
             switch result {
             case .success(_):
                 DispatchQueue.main.async {

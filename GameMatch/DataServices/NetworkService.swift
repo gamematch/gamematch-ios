@@ -15,13 +15,13 @@ final class NetworkService: DataService
                                               "x-gm-session-id": SessionManager.shared.sessionId]
     
     func get(request: DataRequest,
-             pathParams: String?,
+             pathParam: String?,
              parameters: [String: String]?,
              completion: @escaping (Result<Data, Error>) -> Void)
     {
         let url: URL?
-        if let pathParams = pathParams {
-            url = request.getURL(pathParams: pathParams)
+        if let pathParam = pathParam {
+            url = request.getURL(pathParam: pathParam)
         } else {
             url = request.url
         }
@@ -31,8 +31,7 @@ final class NetworkService: DataService
             return
         }
         
-        var components = URLComponents(url: url,
-                                       resolvingAgainstBaseURL: false)
+        var components = URLComponents(url: url, resolvingAgainstBaseURL: false)
         components?.queryItems = parameters?.map { (key, value) in
             URLQueryItem(name: key, value: value)
         }
@@ -41,20 +40,19 @@ final class NetworkService: DataService
             var urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = "GET"
 
-            sendUrlRequest(urlRequest,
-                           completion: completion)
+            sendUrlRequest(urlRequest, completion: completion)
         } else {
             completion(.failure(ServiceError.invalidData))
         }
     }
 
     func delete(request: DataRequest,
-                pathParams: String?,
+                pathParam: String?,
                 completion: @escaping (Result<Data, Error>) -> Void)
     {
         let url: URL?
-        if let pathParams = pathParams {
-            url = request.getURL(pathParams: pathParams)
+        if let pathParam = pathParam {
+            url = request.getURL(pathParam: pathParam)
         } else {
             url = request.url
         }
@@ -72,13 +70,13 @@ final class NetworkService: DataService
     }
     
     func put(request: DataRequest,
-             pathParams: String? = nil,
+             pathParam: String? = nil,
              parameters: [String: Any?]?,
              completion: @escaping (Result<Data, Error>) -> Void)
     {
         let url: URL?
-        if let pathParams = pathParams {
-            url = request.getURL(pathParams: pathParams)
+        if let pathParam = pathParam {
+            url = request.getURL(pathParam: pathParam)
         } else {
             url = request.url
         }
@@ -100,13 +98,13 @@ final class NetworkService: DataService
     }
 
     func patch(request: DataRequest,
-               pathParams: String?,
+               pathParam: String?,
                parameters: [String: Any?]?,
                completion: @escaping (Result<Data, Error>) -> Void)
     {
         let url: URL?
-        if let pathParams = pathParams {
-            url = request.getURL(pathParams: pathParams)
+        if let pathParam = pathParam {
+            url = request.getURL(pathParam: pathParam)
         } else {
             url = request.url
         }

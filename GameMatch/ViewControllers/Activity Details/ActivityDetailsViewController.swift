@@ -15,6 +15,11 @@ class ActivityDetailsViewController: BaseViewController
     @IBOutlet weak var editButton: UIButton!
     
     private var activityDetailsVM: ActivityDetailsViewModel?
+    {
+        didSet {
+            setupViewModel(activityDetailsVM)
+        }
+    }
     
     private var headerStartHeight: CGFloat = 0
     
@@ -32,24 +37,17 @@ class ActivityDetailsViewController: BaseViewController
         headerStartHeight = headerHeight.constant
     }
 
-    override func setupViewModel()
+    override func displayData()
     {
-        self.viewModel = activityDetailsVM
-    }
-
-    override func bindViewModel()
-    {
-        super.bindViewModel()
-
-        activityDetailsVM?.$activity.sink { activity in
+        if let activity = activityDetailsVM?.data as? Activity {
             DispatchQueue.main.async {
-                let status = self.activityDetailsVM?.activity?.cancelled == true ? " (Canceled)" : ""
-                self.nameLabel.text = (self.activityDetailsVM?.activity?.name ?? "") + status
+                let status = activity.cancelled == true ? " (Canceled)" : ""
+                self.nameLabel.text = (activity.name ?? "") + status
                 self.tableView.reloadData()
             }
-        }.store(in: &cancellables)
+        }
     }
-    
+
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
@@ -77,7 +75,7 @@ class ActivityDetailsViewController: BaseViewController
     {
         if let nextScreen = UIStoryboard(name: "Main",
                                          bundle: nil).instantiateViewController(identifier: "ContactsViewController") as? ContactsViewController {
-            nextScreen.setup(activity: activityDetailsVM?.activity)
+            nextScreen.setup(activity: activityDetailsVM?.data as? Activity)
             navigationController?.pushViewController(nextScreen, animated: true)
         }
     }
@@ -97,7 +95,7 @@ class ActivityDetailsViewController: BaseViewController
                                         bundle: nil).instantiateViewController(identifier: "ModifyActivityNavController") as? UINavigationController,
            let controller = nextScreen.topViewController as? ModifyActivityViewController
         {
-            controller.setup(activity: activityDetailsVM?.activity)
+            controller.setup(activity: activityDetailsVM?.data as? Activity)
             nextScreen.modalPresentationStyle = .fullScreen
             present(nextScreen, animated: true, completion: nil)
         }
@@ -129,10 +127,11 @@ extension ActivityDetailsViewController: UITableViewDataSource
         let cellId = indexPath.section == 0 ? "ActivityInfoTableViewCell" : "MessageTableViewCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
-        if let cell = cell as? ActivityInfoTableViewCell {
-            if let startTime = activityDetailsVM?.activity?.eventStartTime,
-               let endTime = activityDetailsVM?.activity?.eventEndTime,
-               let location = activityDetailsVM?.activity?.location?.name
+        if let cell = cell as? ActivityInfoTableViewCell,
+           let activity = activityDetailsVM?.data as? Activity {
+            if let startTime = activity.eventStartTime,
+               let endTime = activity.eventEndTime,
+               let location = activity.location?.name
             {
                 cell.config(startTime: startTime,
                             endTime: endTime,
@@ -140,9 +139,9 @@ extension ActivityDetailsViewController: UITableViewDataSource
             }
             
             cell.shareActivity = { [weak self] in
-                let textToShare = self?.activityDetailsVM?.activity?.name ?? ""
+                let textToShare = activity.name ?? ""
 
-                if let invitationUrl = self?.activityDetailsVM?.activity?.invitationUrl,
+                if let invitationUrl = activity.invitationUrl,
                    let invitationWeb = URL(string: invitationUrl)
                 {
                     let objectsToShare: [Any] = [textToShare, invitationWeb]

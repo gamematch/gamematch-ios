@@ -10,6 +10,7 @@ import Foundation
 class BaseViewModel: ObservableObject
 {
     @Published var loading = false
+    @Published var data: Any?
     @Published var error: Error?
 
     var needData = true

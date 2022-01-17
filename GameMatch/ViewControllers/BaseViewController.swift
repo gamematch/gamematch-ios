@@ -27,17 +27,15 @@ class BaseViewController: UIViewController
         view.addSubview(spinner)
     }
 
-    override func viewDidLoad()
+    func setupViewModel(_ viewModel: BaseViewModel?)
     {
-        super.viewDidLoad()
-
-        setupViewModel()
+        self.viewModel = viewModel
         bindViewModel()
     }
 
-    func setupViewModel()
+    func displayData()
     {
-        self.viewModel = BaseViewModel()
+        // To be overriden
     }
 
     func bindViewModel()
@@ -49,6 +47,12 @@ class BaseViewController: UIViewController
                 } else {
                     self.stopSpinner()
                 }
+            }
+        }.store(in: &cancellables)
+
+        viewModel?.$data.sink { _ in
+            DispatchQueue.main.async {
+                self.displayData()
             }
         }.store(in: &cancellables)
 

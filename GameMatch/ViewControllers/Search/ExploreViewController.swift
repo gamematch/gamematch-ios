@@ -74,11 +74,8 @@ class ExploreViewController: BaseViewController
                                                selector: #selector(keyboardWillShow(_:)),
                                                name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
-    }
 
-    override func setupViewModel()
-    {
-        self.viewModel = exploreVM
+        setupViewModel(exploreVM)
     }
 
     override func bindViewModel()

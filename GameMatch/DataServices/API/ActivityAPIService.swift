@@ -65,8 +65,8 @@ class ActivityAPIService: BaseAPIService
     func getActivity(id: String,
                      completion: @escaping (Result<Activity, Error>) -> Void)
     {
-        get(request: APIRequests.activity,
-            pathParams: id,
+        get(request: APIRequests.activityDetail,
+            pathParam: id,
             completion: { (result: Result<Activity, Error>) in
                             switch result {
                             case .success(let activity):
@@ -81,7 +81,7 @@ class ActivityAPIService: BaseAPIService
                         completion: @escaping (Result<Void, Error>) -> Void)
     {
         patch(request: APIRequests.activity,
-              pathParams: activity.id,
+              pathParam: activity.id,
               parameters: activity.dict,
               completion: completion)
     }
@@ -90,7 +90,7 @@ class ActivityAPIService: BaseAPIService
                         completion: @escaping (Result<Void, Error>) -> Void)
     {
         delete(request: APIRequests.activity,
-               pathParams: activity.id,
+               pathParam: activity.id,
                completion: completion)
     }
 }

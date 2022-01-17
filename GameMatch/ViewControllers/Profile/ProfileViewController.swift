@@ -13,14 +13,9 @@ class ProfileViewController: BaseViewController
 {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var avatarView: UIImageView!
-    @IBOutlet weak var contactField: UITextField!
+    @IBOutlet weak var identityField: UITextField!
 
     private let profileVM = ProfileViewModel()
-
-    override func setupViewModel()
-    {
-        self.viewModel = profileVM
-    }
 
     override func bindViewModel()
     {
@@ -37,7 +32,7 @@ class ProfileViewController: BaseViewController
     {
         if let profile = profileVM.profile {
             nameField.text = profile.name
-            contactField.text = profile.contact
+            identityField.text = profile.identity
 
             if let urlStr = profile.url,
                let url = URL(string: urlStr) {
@@ -54,6 +49,8 @@ class ProfileViewController: BaseViewController
 
         let avatarTapGesture = UITapGestureRecognizer(target: self, action: #selector(changePhoto))
         avatarView.addGestureRecognizer(avatarTapGesture)
+
+        setupViewModel(profileVM)
     }
 
     override func viewWillAppear(_ animated: Bool)
