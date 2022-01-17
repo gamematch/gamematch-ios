@@ -9,9 +9,7 @@ import Foundation
 import CoreLocation
 
 class ExploreViewModel: BaseViewModel
-{
-    @Published var activities: [Activity]?
-    
+{    
     func getActivities(latitude: CLLocationDegrees,
                        longitude: CLLocationDegrees,
                        name: String?)
@@ -24,7 +22,7 @@ class ExploreViewModel: BaseViewModel
                                                 self?.loading = false
                                                 switch result {
                                                 case .success(let activities):
-                                                    self?.activities = activities
+                                                    self?.data = activities
                                                 case .failure(let error):
                                                     self?.error = error
                                                 }

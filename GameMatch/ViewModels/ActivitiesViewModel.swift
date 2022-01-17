@@ -9,8 +9,6 @@ import Foundation
 
 class ActivitiesViewModel: BaseViewModel
 {
-    @Published var activities: [Activity]? = nil
-
     func getMyActivities()
     {
         loading = true
@@ -22,10 +20,11 @@ class ActivitiesViewModel: BaseViewModel
                                                         self?.needData = false
                                                     }
 
-                                                    self?.activities = activities.map { activity in
+                                                    let editableActivities: [Activity]? = activities.map { activity in
                                                         activity.isEditable = true
                                                         return activity
                                                     }
+                                                    self?.data = editableActivities
                                                 case .failure(let error):
                                                     self?.error = error
                                                 }

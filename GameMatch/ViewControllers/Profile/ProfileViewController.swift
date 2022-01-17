@@ -17,26 +17,17 @@ class ProfileViewController: BaseViewController
 
     private let profileVM = ProfileViewModel()
 
-    override func bindViewModel()
+    override func displayData()
     {
-        super.bindViewModel()
+        DispatchQueue.main.async {
+            if let profile = self.profileVM.data as? Profile {
+                self.nameField.text = profile.name
+                self.identityField.text = profile.identity
 
-        profileVM.$profile.sink { _ in
-            DispatchQueue.main.async {
-                self.displayProfile()
-            }
-        }.store(in: &cancellables)
-    }
-
-    private func displayProfile()
-    {
-        if let profile = profileVM.profile {
-            nameField.text = profile.name
-            identityField.text = profile.identity
-
-            if let urlStr = profile.url,
-               let url = URL(string: urlStr) {
-                avatarView.load(url: url)
+                if let urlStr = profile.url,
+                   let url = URL(string: urlStr) {
+                    self.avatarView.load(url: url)
+                }
             }
         }
     }

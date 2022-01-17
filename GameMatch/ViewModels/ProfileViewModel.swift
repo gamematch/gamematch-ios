@@ -10,8 +10,6 @@ import UIKit
 
 class ProfileViewModel: BaseViewModel
 {
-    @Published var profile: Profile? = nil
-
     func getProfile()
     {
         loading = true
@@ -19,7 +17,7 @@ class ProfileViewModel: BaseViewModel
             self?.loading = false
             switch result {
             case .success(let profile):
-                self?.profile = profile
+                self?.data = profile
             case .failure(let error):
                 self?.error = error
             }

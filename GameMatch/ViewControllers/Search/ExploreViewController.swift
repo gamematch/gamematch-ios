@@ -78,18 +78,14 @@ class ExploreViewController: BaseViewController
         setupViewModel(exploreVM)
     }
 
-    override func bindViewModel()
+    override func displayData()
     {
-        super.bindViewModel()
-
-        exploreVM.$activities.sink { activities in
-            if activities != nil {
-                DispatchQueue.main.async {
-                    self.locationSearchBar.isHidden = true
-                    self.showSearchResult()
-                }
+        if exploreVM.data != nil {
+            DispatchQueue.main.async {
+                self.locationSearchBar.isHidden = true
+                self.showSearchResult()
             }
-        }.store(in: &cancellables)
+        }
     }
         
     @objc private func keyboardWillShow(_ notification: Notification)
@@ -187,7 +183,7 @@ class ExploreViewController: BaseViewController
         mapView.removeAnnotations(mapView.annotations)
         
         let pins = ["soccer-pin", "volleyball-pin", "golf-pin"]
-        if let activities = exploreVM.activities {
+        if let activities = exploreVM.data as? [Activity] {
             for activity in activities {
                 if let latitude = activity.location?.latitude,
                    let longitude = activity.location?.longitude
@@ -287,8 +283,10 @@ extension ExploreViewController: UITableViewDataSource
 {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if tableView == eventsTableView {
-            return exploreVM.activities?.count ?? 0
+        if tableView == eventsTableView,
+           let activities = exploreVM.data as? [Activity]
+        {
+            return activities.count
         }
         return locationSearchResults.count
     }
@@ -315,7 +313,7 @@ extension ExploreViewController: UITableViewDataSource
     {
         let cell = eventsTableView.dequeueReusableCell(withIdentifier: "ActivityTableViewCell", for: indexPath)
         if let cell = cell as? ActivityTableViewCell,
-           let activities = exploreVM.activities
+           let activities = exploreVM.data as? [Activity]
         {
             let activity = activities[indexPath.row]
             let icon = indexPath.row % 2 == 0 ? UIImage(named: "soccerball") : UIImage(named: "hiking")
@@ -339,10 +337,11 @@ extension ExploreViewController: UITableViewDelegate
     {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        if tableView == eventsTableView {
-            if let activity = exploreVM.activities?[indexPath.row] {
-                showActivityDetails(activity: activity)
-            }
+        if tableView == eventsTableView,
+           let activities = exploreVM.data as? [Activity]
+        {
+            let activity = activities[indexPath.row]
+            showActivityDetails(activity: activity)
         } else {
             let location = locationSearchResults[indexPath.row]
             locationSearchBar.text = location.title + ", " + location.subtitle

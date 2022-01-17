@@ -27,15 +27,11 @@ class ActivitiesViewController: BaseViewController
         setupViewModel(activitiesVM)
     }
 
-    override func bindViewModel()
+    override func displayData()
     {
-        super.bindViewModel()
-
-        activitiesVM.$activities.sink { _ in
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }.store(in: &cancellables)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -96,8 +92,11 @@ extension ActivitiesViewController: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return activitiesVM.activities?.count ?? 0
-//        return section == 0 ? (activitiesVM.activities?.count ?? 0) : 6
+        if let activities = activitiesVM.data as? [Activity]
+        {
+            return activities.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -105,7 +104,7 @@ extension ActivitiesViewController: UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: "ActivityTableViewCell", for: indexPath)
 
         if let cell = cell as? ActivityTableViewCell,
-           let activities = activitiesVM.activities
+           let activities = activitiesVM.data as? [Activity]
         {
             let activity = activities[indexPath.row]
             let icon = indexPath.row % 2 == 0 ? UIImage(named: "soccerball") : UIImage(named: "hiking")
@@ -154,7 +153,7 @@ extension ActivitiesViewController: UITableViewDelegate
     {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        if let activities = activitiesVM.activities {
+        if let activities = activitiesVM.data as? [Activity] {
             let activity = activities[indexPath.row]
             showActivityDetails(activity: activity)
         }

@@ -38,7 +38,7 @@ class BaseViewController: UIViewController
         // To be overriden
     }
 
-    func bindViewModel()
+    private func bindViewModel()
     {
         viewModel?.$loading.sink { loading in
             DispatchQueue.main.async {
