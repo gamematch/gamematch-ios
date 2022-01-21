@@ -24,7 +24,7 @@ class ActivitiesViewController: BaseViewController
         
         profileButtonItem = navigationItem.rightBarButtonItem
 
-        setupViewModel(activitiesVM)
+        bindViewModel(activitiesVM)
     }
 
     override func displayData()

@@ -17,7 +17,9 @@ class ActivityDetailsViewController: BaseViewController
     private var activityDetailsVM: ActivityDetailsViewModel?
     {
         didSet {
-            setupViewModel(activityDetailsVM)
+            if let activityDetailsVM = activityDetailsVM {
+                bindViewModel(activityDetailsVM)
+            }
         }
     }
     

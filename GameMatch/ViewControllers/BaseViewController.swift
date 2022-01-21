@@ -13,7 +13,6 @@ typealias MenuAction = (title: String, actionStyle: UIAlertAction.Style, action:
 
 class BaseViewController: UIViewController
 {
-    var viewModel: BaseViewModel?
     var cancellables: Set<AnyCancellable> = []
 
     private var spinner = NVActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
@@ -27,20 +26,14 @@ class BaseViewController: UIViewController
         view.addSubview(spinner)
     }
 
-    func setupViewModel(_ viewModel: BaseViewModel?)
-    {
-        self.viewModel = viewModel
-        bindViewModel()
-    }
-
     func displayData()
     {
         // To be overriden
     }
 
-    private func bindViewModel()
+    func bindViewModel(_ viewModel: BaseViewModel)
     {
-        viewModel?.$loading.sink { loading in
+        viewModel.$loading.sink { loading in
             DispatchQueue.main.async {
                 if loading {
                     self.startSpinner()
@@ -50,13 +43,13 @@ class BaseViewController: UIViewController
             }
         }.store(in: &cancellables)
 
-        viewModel?.$data.sink { _ in
+        viewModel.$data.sink { _ in
             DispatchQueue.main.async {
                 self.displayData()
             }
         }.store(in: &cancellables)
 
-        viewModel?.$error.sink { error in
+        viewModel.$error.sink { error in
             if let error = error {
                 DispatchQueue.main.async {
                     self.showError(error)

@@ -41,7 +41,7 @@ class ProfileViewController: BaseViewController
         let avatarTapGesture = UITapGestureRecognizer(target: self, action: #selector(changePhoto))
         avatarView.addGestureRecognizer(avatarTapGesture)
 
-        setupViewModel(profileVM)
+        bindViewModel(profileVM)
     }
 
     override func viewWillAppear(_ animated: Bool)
