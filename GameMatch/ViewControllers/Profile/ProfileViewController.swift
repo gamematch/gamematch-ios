@@ -20,7 +20,7 @@ class ProfileViewController: BaseViewController
     override func displayData()
     {
         DispatchQueue.main.async {
-            if let profile = self.profileVM.data as? Profile {
+            if let profile = self.profileVM.data as? User {
                 self.nameField.text = profile.name
                 self.identityField.text = profile.identity
 

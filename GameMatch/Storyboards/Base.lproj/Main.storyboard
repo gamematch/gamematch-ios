@@ -613,6 +613,8 @@ Any person taking part in this group, specifically events posted on this group, 
                                             <outlet property="dateLabel" destination="ZPN-rl-BDJ" id="2Cb-re-pb1"/>
                                             <outlet property="favorateButton" destination="esT-gH-Lb4" id="Fgx-Dr-61d"/>
                                             <outlet property="locationLabel" destination="fGM-Bz-NVX" id="RaZ-fe-b1A"/>
+                                            <outlet property="organizerAvatar" destination="N6Q-m2-f70" id="Nul-he-Vsw"/>
+                                            <outlet property="organizerNameLabel" destination="iVY-Vi-FT6" id="03c-SX-50i"/>
                                             <outlet property="timeLabel" destination="0Rd-PS-1nF" id="biv-9J-93V"/>
                                         </connections>
                                     </tableViewCell>

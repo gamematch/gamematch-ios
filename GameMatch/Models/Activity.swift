@@ -19,6 +19,7 @@ class Activity: NSObject, Codable
     var activityType: String?
     var invitationUrl: String?
     let cancelled: Bool?
+    var organizer: User?
     var isEditable: Bool?
 
     var eventStartTime: Date? {

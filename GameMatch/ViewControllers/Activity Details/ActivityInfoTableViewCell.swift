@@ -12,7 +12,9 @@ class ActivityInfoTableViewCell: UITableViewCell
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    
+    @IBOutlet weak var organizerAvatar: UIImageView!
+    @IBOutlet weak var organizerNameLabel: UILabel!
+
     @IBOutlet weak var favorateButton: UIButton!
     @IBOutlet weak var attendeesView: UIScrollView!
     
@@ -44,14 +46,25 @@ class ActivityInfoTableViewCell: UITableViewCell
             currentViewOffset += contentHeight + 5
         }
     }
-    
-    func config(startTime: Date, endTime: Date, location: String)
+
+    func config(activity: Activity)
     {
-        dateLabel.text = startTime.display(format: "EEE, MMM d, yyyy")
-        timeLabel.text = startTime.display(format: "h:mma") + " - " + endTime.display(format: "h:mma")
-        locationLabel.text = location
+        if let startTime = activity.eventStartTime,
+           let endTime = activity.eventEndTime
+        {
+            dateLabel.text = startTime.display(format: "EEE, MMM d, yyyy")
+            timeLabel.text = startTime.display(format: "h:mma") + " - " + endTime.display(format: "h:mma")
+        }
+
+        locationLabel.text = activity.location?.name
+
+        organizerNameLabel.text = activity.organizer?.name
+        if let avatar = activity.organizer?.avatar,
+           let url = URL(string: avatar) {
+            organizerAvatar.load(url: url)
+        }
     }
-    
+        
     @IBAction func joinAction(_ sender: Any)
     {
         joinActivity?()

@@ -13,7 +13,7 @@ class ActivityDetailsViewController: BaseViewController
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerHeight: NSLayoutConstraint!
     @IBOutlet weak var editButton: UIButton!
-    
+
     private var activityDetailsVM: ActivityDetailsViewModel?
     {
         didSet {
@@ -130,15 +130,9 @@ extension ActivityDetailsViewController: UITableViewDataSource
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
         
         if let cell = cell as? ActivityInfoTableViewCell,
-           let activity = activityDetailsVM?.data as? Activity {
-            if let startTime = activity.eventStartTime,
-               let endTime = activity.eventEndTime,
-               let location = activity.location?.name
-            {
-                cell.config(startTime: startTime,
-                            endTime: endTime,
-                            location: location)
-            }
+           let activity = activityDetailsVM?.data as? Activity
+        {
+            cell.config(activity: activity)
             
             cell.shareActivity = { [weak self] in
                 let textToShare = activity.name ?? ""

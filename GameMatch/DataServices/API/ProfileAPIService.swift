@@ -9,11 +9,11 @@ import UIKit
 
 class ProfileAPIService: BaseAPIService
 {
-    func get(completion: @escaping (Result<Profile, Error>) -> Void)
+    func get(completion: @escaping (Result<User, Error>) -> Void)
     {
         get(request: APIRequests.profile,
             parameters: nil,
-            completion: { (result: Result<Profile, Error>) in
+            completion: { (result: Result<User, Error>) in
                             switch result {
                             case .success(let profile):
                                 completion(.success(profile))
